@@ -2,33 +2,29 @@
 # GLOBAL SITE SETTINGS
 # ---------------------
 
-cname: DOMAIN.yourwebvisual.com
+cname: loadshift.yourwebvisual.com
 
 # META
-title: "Your Website"
-seo_title: "liquidvisual Builder"
-company: "liquidvisual"
-description: ""
+title: "Loadshift"
+seo_title: "Loadshift"
+company: "Loadshift"
+description: "Loadshift is Australia's Leading Heavy Haulage Transport Marketplace"
 
 # CONTACT
-email: david@digitalmomentum.com.au
-phone: (05) 555 555
-fax: (05) 555 555
-abn: 13 168 867 927
+email: contact@loadshift.com.au
+phone: 1300 562 374
+text: (02) 4587 7560
+fax: (02) 4587 7560
+abn: 79003633224
 
 # OFFICES
 offices:
-  - title: Melbourne
-    address: "Level 5<br> 55 Placeholder Avenue<br> Melbourne Victoria 3000"
-    phone: 05 5555 5555
-    fax: 05 5555 5555
-
   - title: Sydney
-    address: "123"
+    address: "P.O. Box 349<br>Windsor NSW, 2756"
 
 # SOCIAL MEDIA
-facebook: ""
-linked_in: ""
+facebook: "https://www.facebook.com/loadshift/"
+youtube: https://www.youtube.com/user/terex4066
 google_plus: ""
 
 # GOOGLE
@@ -37,7 +33,7 @@ google_analytics: "UA-XXXXXXXX-X"
 
 # AUTHOR
 author:
-  - title: liquidvisual
-    url: http://www.liquidvisual.com
-    logo: /img/ui/liquidvisual-logo.svg
-    description: Website by liquidvisual
+  - title: Digital Momentum
+    url: http://digitalmomentum.com.au
+    logo:
+    description: Website by Digital Momentum
