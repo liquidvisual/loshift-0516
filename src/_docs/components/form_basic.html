@@ -1,0 +1,58 @@
+---
+title: Basic Form
+type: component
+scss: _assets/stylesheets/_buttons.scss
+usage: A simple accordion
+---
+
+<!-- IF SUCCESS -->
+<div class="alert alert-success" hidden>
+    <h4>Success!</h4>
+    <p>Your form has been submitted.</p>
+</div>
+
+<!-- IF FAILURE -->
+<div class="alert alert-danger alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4>Oops!</h4>
+    <p>Something went wrong. Please check your details.</p>
+</div>
+
+<form data-toggle="validator">
+
+    <!-- NAME -->
+    <fieldset class="form-group">
+    	<label for="name">Name*</label>
+    	<input class="form-control" id="name" type="text" placeholder="Name" required>
+    	<small class="error">Your name is required.</small>
+    </fieldset>
+
+    <!-- EMAIL -->
+    <fieldset class="form-group">
+    	<label for="email">Email*</label>
+    	<input class="form-control" id="email" type="email" placeholder="Email" required>
+    	<small class="error">A valid email is required.</small>
+    </fieldset>
+
+    <!-- PHONE -->
+    <fieldset class="form-group">
+    	<label for="phone">Phone</label>
+    	<input class="form-control" id="phone" type="text" placeholder="Phone" required>
+    	<small class="error">A valid phone number is required.</small>
+    </fieldset>
+
+    <!-- MESSAGE -->
+    <fieldset class="form-group">
+    	<label for="message">Your Message *</label>
+    	<textarea class="form-control" id="message" rows="3" placeholder="Message" required></textarea>
+    	<small class="error">A message is required.</small>
+    </fieldset>
+
+    <!-- SUBMIT -->
+    <div class="text-xs-right">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+
+</form>

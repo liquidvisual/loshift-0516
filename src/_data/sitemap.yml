@@ -1,0 +1,97 @@
+# A Typical Sitemap structure
+
+- title: Home
+  url: /
+
+- title: About Us
+  url: /about-us/
+
+- title: How It Works
+  url: /how-it-works/
+  include_children_in_nav: true
+  children:
+    - title: Shippers
+      url: /how-it-works/shippers/
+    - title: Carriers
+      url: /how-it-works/carriers/
+
+- title: Get Quotes
+  url: /get-quotes/
+
+- title: Find Trucks
+  url: /find-trucks/
+
+- title: Membership
+  url: /membership/
+
+- title: Blog
+  url: /blog/
+
+- title: News
+  url: /news/
+
+- title: Help
+  url: /help/
+
+- title: User Philosophy
+  url: /user-philosphy/
+
+- title: Advertising
+  url: /advertising/
+
+- title: Escrow Pay Service
+  url: /escrow-pay-service/
+
+- title: Cargo Categories
+  url: /cargo-categories/
+  include_children_in_nav: true
+  children:
+    - title: Machinery Transport
+      url: #/cargo-categories/
+    - title: Heavy Haulage
+      url: #/cargo-categories/
+    - title: General Freight
+      url: #/cargo-categories/
+    - title: Palletised Freight
+      url: #/cargo-categories/
+    - title: Car Transport
+      url: #/cargo-categories/
+    - title: Container Transport
+      url: #/cargo-categories/
+    - title: Truck Transport
+      url: #/cargo-categories/
+    - title: Furniture Removal
+      url: #/cargo-categories/
+      status: new
+    - title: Boat Transport
+      url: #/cargo-categories/
+    - title: Trailer Transport
+      url: #/cargo-categories/
+    - title: Hay Transport
+      url: #/cargo-categories/
+    - title: Grain Transport
+      url: #/cargo-categories/
+    - title: Portable Buildings
+      url: #/cargo-categories/
+    - title: Livestock Transport
+      url: #/cargo-categories/
+    - title: Bulk Tipper Transport
+      url: #/cargo-categories/
+
+- title: Contact Us
+  url: /contact-us/
+
+##############################
+
+- title: Sitemap
+  url: /sitemap/
+  type: utility
+
+- title: Terms & Conditions
+  url: /terms-and-conditions/
+  type: utility
+
+- title: Privacy Policy
+  url: /privacy-policy/
+  type: utility
+

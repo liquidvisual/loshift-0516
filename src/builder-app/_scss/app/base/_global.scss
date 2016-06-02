@@ -1,0 +1,77 @@
+/*
+    BASE.CSS
+
+    - Last updated: 02.06.15
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$page-padding: rem-calc(40);
+
+//-----------------------------------------------------------------
+// Foundation Overrides (Hacks)
+//-----------------------------------------------------------------
+
+html, body {
+    @media #{$small-only} {
+        // font-size: 85%;
+    }
+}
+
+html {
+    // overflow-x: hidden;
+}
+
+//-----------------------------------------------------------------
+// Foundation Overrides (Hacks)
+//-----------------------------------------------------------------
+
+.lv-super,
+.lv-page {
+    height: 100%;
+}
+
+//-----------------------------------------------------------------
+// Snap Grid
+//
+// Tells grid to "snap" into each breakpoint.
+// Removes issue of seeing elements super large
+// before falling into place naturally.
+//-----------------------------------------------------------------
+
+.row {
+    // @media #{$medium-up}  { max-width: calc(upper-bound($medium-range)       + #{$page-padding * 2};  }
+    // @media #{$large-up}   { max-width: calc(upper-bound($large-range)        + #{$page-padding * 2};  }
+    // @media #{$xlarge-up}  { max-width: calc(#{upper-bound($xlarge-range)}    + #{$page-padding * 2}); }
+    // @media #{$xxlarge-up} { max-width: calc(#{upper-bound($xxlarge-range)}   + #{$page-padding * 2}); }
+
+
+// fix this
+    @media #{$medium-up}  { max-width: calc(#{upper-bound($medium-range)}  + #{$page-padding * 2}); }
+    @media #{$large-up}   { max-width: calc(#{upper-bound($large-range)}   + #{$page-padding * 2}); }
+    @media #{$xlarge-up}  { max-width: calc(#{upper-bound($xlarge-range)}  + #{$page-padding * 2}); }
+    @media #{$xxlarge-up} { max-width: calc(#{upper-bound($xxlarge-range)} + #{$page-padding * 2}); }
+
+    &.outer-row {
+        padding: rem-calc(0 5);
+
+        @media #{$medium-up} {
+            padding: 0 ($page-padding - $column-gutter / 2);
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+// Patch Block Grid
+//-----------------------------------------------------------------
+
+// Ensure images scale to block grid LIs */
+// ul[class*='block-grid'] li img {
+//  width: 100%;
+// }
+
+//=========================================
+//
+//=========================================

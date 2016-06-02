@@ -1,0 +1,21 @@
+{% assign settings = site.data.settings %}
+{% assign logo = "/assets/images/content/logo.png" %}
+{% assign logo = "/img/content/logo-white.svg" %}
+
+<div class="container">
+    <div class="display-table">
+        <div class="display-cell">
+
+            <!-- Logo -->
+            <a class="logo" href="/" title="{{ settings.seo_title }}" itemprop="url">
+                <img src="{{ logo }}" alt="{{ settings.company_title }}" itemprop="logo">
+            </a>
+
+            <!-- Hamburger -->
+            <div class="global-mobile-menu hidden-xl-up">
+                <a class="hamburger"><i class="fa fa fa-navicon"></i></a>
+            </div>
+
+        </div>
+    </div>
+</div>

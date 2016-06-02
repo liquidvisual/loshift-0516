@@ -1,0 +1,151 @@
+/*
+    HEADER.CSS
+
+    - Last updated: 00.00.00
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$header-height-sm: 60px !default; // optimal
+$header-height-md: 130px !default;
+$header-height-lg: 220px !default;
+
+//-----------------------------------------------------------------
+// Headroom
+//-----------------------------------------------------------------
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+    @include media-breakpoint-down(sm) {
+        transform: translateY(0%);
+    }
+}
+.headroom--unpinned {
+	@include media-breakpoint-down(sm) {
+    	transform: translateY(-100%);
+	}
+}
+
+//-----------------------------------------------------------------
+// Header
+//-----------------------------------------------------------------
+
+.global-header {
+	// position: absolute; // covers more use cases
+	position: fixed;
+	top: 0;
+	width: 100%;
+	// background: rgba($brand-primary, 0.9);
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0077c8+0,003c71+100&0.9+0,0.9+100 */
+	  background: -moz-radial-gradient(center, ellipse cover, rgba(0, 119, 200, 0.9) 0%, rgba(0, 60, 113, 0.9) 100%);
+	  /* FF3.6-15 */
+	  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 119, 200, 0.9) 0%, rgba(0, 60, 113, 0.9) 100%);
+	  /* Chrome10-25,Safari5.1-6 */
+	  background: radial-gradient(ellipse at center, rgba(0, 119, 200, 0.9) 0%, rgba(0, 60, 113, 0.9) 100%);
+	  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e60077c8', endColorstr='#e6003c71', GradientType=1);
+	  /* IE6-9 fallback on horizontal gradient */
+
+	z-index: 1000;
+}
+
+//=========================================
+// Header Height [locked]
+//=========================================
+
+.global-header,
+.global-header .display-table {
+	height: $header-height-sm;
+
+	@include media-breakpoint-up(md) {
+	    height: $header-height-md;
+	}
+
+	@include media-breakpoint-up(xl) {
+		height: $header-height-lg;
+	}
+}
+
+//=========================================
+// Fixed Mobile [locked]
+//=========================================
+
+.global-header {
+	@include media-breakpoint-down(sm) {
+	    position: fixed;
+	}
+}
+
+//-----------------------------------------------------------------
+// Logo
+//-----------------------------------------------------------------
+
+.global-header .logo {
+	position: relative;
+	top: 0;
+
+	@include media-breakpoint-up(md) {
+	    top: 0;
+	}
+
+	@include media-breakpoint-up(lg) {
+	    top: 0;
+	}
+
+	@include media-breakpoint-up(xl) {
+	    top: 0;
+	}
+
+	img {
+		// width: auto;
+		width: 150px;
+		height: $header-height-sm;
+		padding: rem-calc(5 0);
+
+		@include media-breakpoint-up(md) {
+			width: 298px;
+		    height: $header-height-md;
+		    padding: rem-calc(15 0);
+		}
+
+		@include media-breakpoint-up(xl) {
+		    height: auto;
+		    padding: none;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// Hamburger
+//-----------------------------------------------------------------
+
+.global-mobile-menu {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	display: block;
+	overflow: hidden;
+
+	@include media-breakpoint-up(md) {
+	    top: calc(50% - 30px/2);
+	}
+
+	.hamburger {
+		display: block;
+		font-size: rem-calc(35);
+		line-height: 0;
+		color: #383D43;
+		cursor: pointer;
+	}
+}
+
+//=========================================
+//
+//=========================================

@@ -1,0 +1,8 @@
+{% assign address = site.data.settings.offices[0].address %}
+
+<iframe class="lv-google-map"
+        width="100%"
+        height="250"
+        frameborder="0"
+        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed">
+</iframe>

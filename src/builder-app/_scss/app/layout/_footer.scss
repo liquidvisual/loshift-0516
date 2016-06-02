@@ -1,0 +1,67 @@
+/*
+    FOOTER.CSS
+
+    - Last updated:
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$lv-footer-height: 44px !default;
+
+//-----------------------------------------------------------------
+// Global Footer
+//-----------------------------------------------------------------
+
+.lv-footer {
+	position: relative;
+	width: 100%;
+	padding: rem-calc(0 15);
+	border-top: 1px solid #DDDDDD;
+	background: rgba(white, 1);
+	z-index: 60;
+
+	@include media-breakpoint-up(md) {
+	    position: fixed;
+	    bottom: -$lv-footer-height;
+	    height: $lv-footer-height;
+	    line-height: $lv-footer-height;
+	}
+}
+
+.lv-footer-legal {
+	float: left;
+	font-size: rem-calc(11);
+}
+
+//-----------------------------------------------------------------
+// Global Footer
+//-----------------------------------------------------------------
+
+.lv-footer-links {
+	display: inline-block;
+	margin: 0; // failsafe
+	padding: 0; // failsafe
+	float: right;
+	text-decoration: none;
+	list-style: none;
+
+
+	li {
+		display: inline-block;
+		float: left;
+
+		a {
+			display: block;
+			font-size: rem-calc(13);
+			// font-weight: bold;
+			padding: rem-calc(0 15);
+			color: $body-color;
+		}
+	}
+}
+
+//=========================================
+//
+//=========================================

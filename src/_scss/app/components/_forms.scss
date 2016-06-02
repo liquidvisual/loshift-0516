@@ -1,0 +1,57 @@
+/*
+    FORMS.CSS
+
+    - Last updated: 18.03.16
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Forms
+//-----------------------------------------------------------------
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+	-webkit-appearance: none; // removes shadow on iOS
+}
+
+//-----------------------------------------------------------------
+// Bootstrap Validation
+//
+// http://1000hz.github.io/bootstrap-validator/#validator-events
+//-----------------------------------------------------------------
+
+form[data-toggle="validator"] .error {
+	display: none;
+	width: 100%;
+	padding: rem-calc(5 10);
+	background: $brand-danger;
+	color: white;
+}
+
+form[data-toggle="validator"] .has-error > .form-control {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+form[data-toggle="validator"] .has-error > .error {
+	display: block;
+}
+
+//-----------------------------------------------------------------
+// Search Form Off Canvas
+//-----------------------------------------------------------------
+
+// .off-canvas-menu .search-form {
+// 	::-webkit-input-placeholder { color: white; opacity: 1; }
+// 	:-ms-input-placeholder { color: white; opacity: 1; }
+// 	::-moz-placeholder { color: white; opacity: 1; }
+// 	:-moz-placeholder { color: white; opacity: 1; }
+// }
+
+//=========================================
+//
+//=========================================

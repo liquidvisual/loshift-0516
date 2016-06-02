@@ -1,0 +1,85 @@
+/*
+    TYPE.CSS
+
+    - Last updated: 16.03.16
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Responsive Typography
+//-----------------------------------------------------------------
+
+// html {
+// 	@include media-breakpoint-up(xs) { font-size: $font-size-xs; }
+// 	@include media-breakpoint-up(sm) { font-size: $font-size-sm; }
+// 	@include media-breakpoint-up(md) { font-size: $font-size-md; }
+// 	@include media-breakpoint-up(lg) { font-size: $font-size-lg; }
+// 	@include media-breakpoint-up(xl) { font-size: $font-size-xl; }
+// }
+//-----------------------------------------------------------------
+// Missing from Bootstrap
+//-----------------------------------------------------------------
+
+// p, ul, ol {
+// 	margin-bottom: rem-calc(24); // requested - should be in bootstrap
+// }
+
+h1, h2, h3, h4, h5, h6 {
+	font-variant: small-caps;
+}
+
+//-----------------------------------------------------------------
+// Spacer
+//-----------------------------------------------------------------
+
+.spacer {
+	width: 1px;
+	height: 1px;
+}
+
+//-----------------------------------------------------------------
+// Headers with ICONS inside
+//-----------------------------------------------------------------
+
+.header-icon {
+	display: table;
+
+	i,
+	.text {
+		display: table-cell;
+	}
+
+	i {
+		@include media-breakpoint-up(md) {
+		    font-size: rem-calc(28);
+		}
+	}
+
+	.text {
+		padding-left: rem-calc(10);
+	}
+}
+
+//-----------------------------------------------------------------
+// Anchors
+//-----------------------------------------------------------------
+
+a:not(.logo),
+.btn {
+	@include transition();
+}
+
+// consider: http://stackoverflow.com/questions/27878304/css-darken-on-hover-with-unknown-color
+// Use this instead of setting colors
+// a:hover {
+// 	opacity: 0.95;
+// }
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================

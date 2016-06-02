@@ -1,0 +1,58 @@
+{% assign settings = site.data.settings %}
+{% assign sitemap = site.data.sitemap %}
+{% assign cargo_categories = sitemap[12].children %}
+
+<!-- Footer Body -->
+<section class="global-footer-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <h2>Company</h2>
+                <ul class="block-grid-xs-1">
+                    <li><a href="/about-us/">About Us</a></li>
+                    <li><a href="/history/">History</a></li>
+                    <li><a href="/shippers/">Shippers</a></li>
+                    <li><a href="/carriers/">Carriers</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="/user-philosophy/">User Philosophy</a></li>
+                    <li><a href="/advertising/">Advertising</a></li>
+                    <li><a href="/contact-us/">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div class="col-md-6">
+
+                <h2>Categories</h2>
+                <ul class="block-grid-xs-1 block-grid-md-2">
+                    {% for item in cargo_categories %}
+                        <li class="{% if item.status == 'new' %}new-flag{% endif %}"><a href="#">{{ item.title }}</a></li>
+                    {% endfor %}
+                    <li><a href="#">And More...</a></li>
+                </ul>
+
+            </div>
+            <div class="col-md-3">
+                <h2>Connect</h2>
+                <ul class="social-media">
+                    <li class="facebook"><a href="{{ settings.facebook }}"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="{{ settings.twitter }}"><i class="fa fa-twitter"></i></a></li>
+                    <li class="youtube"><a href="{{ settings.youtube }}"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Bottom -->
+<section class="global-footer-bottom">
+    <div class="container text-xs-center">
+        <p>
+            <a href="/sitemap/">Sitemap</a>
+            <a href="/docs/">Docs</a><br>
+            &copy; Loadshift Transport System<br>
+            All Rights Reserved<br>
+            Use of this website consitutes acceptance of loadshift's <a href="/terms-and-conditions/">Terms &amp; Conditions</a> and <a href="/privacy-policy/">Privacy Policy</a>.
+        </p>
+    </div>
+</section>

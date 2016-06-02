@@ -1,0 +1,143 @@
+/*
+    BUTTONS.CSS
+
+    - Last updated: 03.08.15
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$lvb-button-color: saturate(darken(#EFF1F4, 5%), 10%) !default; //#D5DAE6;
+
+//-----------------------------------------------------------------
+// Buttons
+//-----------------------------------------------------------------
+
+.lv-tool-button {
+    display: inline-block;
+    min-width: 44px;
+    line-height: 30px;
+    padding: rem-calc(0 12);
+    border: 1px solid darken($lvb-button-color, 2%);
+    border-bottom: 2px solid darken($lvb-button-color, 5%);
+    margin: rem-calc(5);
+    border-radius: 3px; //$global-radius;
+    box-shadow: 0 1px 0px rgba(0,0,0,0.04);
+    background: $lvb-button-color;
+    font-size: rem-calc(14);
+    color: desaturate(darken($lvb-button-color, 35%), 20%);
+    outline: none;
+    transition: background-color .10s linear;
+
+    i {
+        position: relative;
+        top: 2px;
+        height: 100%;
+        font-size: rem-calc(20);
+        line-height: 0;
+    }
+
+    //=========================================
+    // Hover
+    //=========================================
+
+    &:hover {
+        background: lighten($lvb-button-color, 2%);
+        border-color: darken($lvb-button-color, 1%);
+        border-bottom: 2px solid darken($lvb-button-color, 5%);
+        color: desaturate(darken($lvb-button-color, 35%), 20%);
+    }
+
+    &:focus {
+        background: lighten($lvb-button-color, 2%);
+        color: desaturate(darken($lvb-button-color, 35%), 20%);
+    }
+
+    //=========================================
+    // Active
+    //=========================================
+
+    &:active {
+        position: relative;
+        top: 1px;
+        box-shadow: none; //0 1px 0px rgba(0,0,0,0.04);
+        border-bottom-width: 1px;
+        transform: scale(0.99);
+    }
+}
+
+//-----------------------------------------------------------------
+// Preview Button (eye)
+//-----------------------------------------------------------------
+
+.lv-tool-button-preview {
+    // @media #{$small-only} {
+    //     display: none;
+    // }
+}
+
+//-----------------------------------------------------------------
+// Responsive Button (screen)
+//-----------------------------------------------------------------
+
+.lv-tool-button-responsive {
+    // @media #{$small-only} {
+    //     display: none;
+    // }
+
+    // i {
+    //     @media #{$small-only} {
+    //         display: none;
+    //     }
+    // }
+
+    .lv-tool-button-screen-ratio {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            margin-left: 5px;
+        }
+    }
+
+    &.active {
+        display: block;
+        background: none;
+        border-bottom-color: $lvb-button-color;
+
+        .lv-tool-button-screen-ratio {
+            display: inline-block;
+        }
+    }
+}
+
+//=========================================
+// Responsive Dropdown
+//=========================================
+
+.lv-tool-button-dropdown {
+    // @media #{$small-only} {
+    //     display: none;
+    // }
+
+    display: block;
+    background: none;
+    border: 0;
+    box-shadow: none;
+
+    i {
+        margin-left: 2px;
+        font-size: rem-calc(12);
+        color: #444;
+        top: 0;
+        line-height: 1;
+    }
+}
+
+//=========================================
+//
+//=========================================
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------

@@ -1,0 +1,41 @@
+/*
+	BREADCRUMB.CSS
+
+	- updated: 17.03.16
+	- liquidvisual.com
+
+	- Notes: Handy additions to Bootstrap's defaults
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Breadcrumb
+//-----------------------------------------------------------------
+
+.lv-breadcrumb {
+	text-transform: capitalize;
+
+	@media (max-width: 30em) {
+		line-height: 1.5;
+	}
+
+	> li + li:before {
+		// content: "\f105";
+		// font-family: "FontAwesome";
+	}
+
+	//=========================================
+	// Truncation for long titles
+	//=========================================
+
+	a {
+		@media (max-width: 30em) {
+			display: inline-block;
+			max-width: rem-calc(100);
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+	}
+}

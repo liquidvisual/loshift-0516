@@ -1,0 +1,87 @@
+{% comment %}
+    LIQUIDVISUAL-HERO
+
+    - updated: 12.10.15
+    - notes:
+        * Multiple items in carousel_slides.yml triggers carousel mode
+        * .has-auto-height - caption will detemine height
+        * .has-fixed-height - used for internal pages to set a height
+{% endcomment %}
+
+{% assign hero_images = site.data.carousel_slides %}
+
+<div class="lv-hero-wrapper">
+
+    <!-- HERO -->
+    <div class="lv-hero">
+
+        {% for hero in hero_images %}
+
+            <!-- Hero Item -->
+            <div class="lv-hero-item" style="background-image: url('{{ hero.image | prepend: site.assets }}')" data-background-image="{{ hero.image | prepend: site.assets }}">
+                <div class="display-table">
+                    <div class="display-cell align-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-xl-7 col-xl-offset-5">
+
+                                    <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
+
+                                        <!-- Mandatory -->
+                                        <h1>{{ hero.title }}</h1>
+                                        <h2>{{ hero.subtitle }}</h2>
+
+                                        <!-- Optional -->
+                                        {% if hero.body %}
+                                            <p>{{ hero.body }}</p>
+                                        {% endif %}
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+        <section class="hero-feature-panels">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="#"><img src="/img/content/find-trucks-feature.jpg" alt=""></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><img src="/img/content/get-quotes-feature.jpg" alt=""></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><img src="/img/content/get-loads-feature.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- .lv-hero -->
+
+    {% comment %}
+    <!-- Carousel Controls -->
+    <div class="lv-hero-carousel-controls">
+        <div class="container">
+            <span href="#" class="lv-hero-carousel-prev-btn"><i class="fa fa-angle-left"></i></span>
+            <span href="#" class="lv-hero-carousel-next-btn"><i class="fa fa-angle-right"></i></span>
+        </div>
+    </div>
+
+    <!-- Carousel Bullets -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="lv-hero-carousel-bullets"></div>
+            </div>
+        </div>
+    </div>
+    {% endcomment %}
+
+</div>

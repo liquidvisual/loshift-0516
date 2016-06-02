@@ -1,0 +1,43 @@
+/*
+    SOCIAL-MEDIA.CSS
+
+    - Last updated: 00.00.00
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Social Media
+//-----------------------------------------------------------------
+
+.social-media {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline;
+	}
+
+	a {
+		display: inline-block;
+		background: $brand-primary;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		font-size: rem-calc(40);
+		color: white;
+		text-align: center;
+		border-radius: 8px;
+		margin-bottom: 5px;
+
+		&:hover {
+			background: lighten($brand-primary, 10%);
+		}
+	}
+}
+
+//=========================================
+//
+//=========================================

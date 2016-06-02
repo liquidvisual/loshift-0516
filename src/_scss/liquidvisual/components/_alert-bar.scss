@@ -1,0 +1,108 @@
+/*
+	ALERT-BAR.CSS
+
+	- updated: 27.10.15
+	- liquidvisual.com
+
+	- Notes:
+	  - Requires Modernizr
+	  - Since this is primarily an IE notifier, pxs and hacks are used
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$alert-color:         #DB2D39 !default;
+$success-color:       #43AE6E !default;
+$alert-font-size:     14px    !default;
+
+//-----------------------------------------------------------------
+// Hide page completely for < IE9
+//-----------------------------------------------------------------
+
+.lt-ie9 html,
+.lt-ie9 body {
+	overflow: hidden; // No scrollbars
+}
+
+.lt-ie9 * {
+	visibility: hidden;
+}
+
+.lt-ie9 .lv-alert-bar,
+.lt-ie9 .lv-alert-bar * {
+	visibility: visible;
+}
+
+//-----------------------------------------------------------------
+// Alerts Bar
+//-----------------------------------------------------------------
+
+.lv-alert-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	background: $alert-color;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: white;
+	text-align: center;
+	opacity: .95;
+	overflow: hidden;
+	z-index: 2147483647;
+
+	p {
+		line-height: 1;
+		padding: 15px 70px;
+		margin: 0;
+		font-weight: 500;
+		font-size: $alert-font-size;
+		color: white;
+
+		@media (max-width: 576px) {
+			padding: 15px 70px 15px 15px; // locked
+			text-align: left;
+		}
+	}
+
+	a {
+		color: #F7DDA0;
+		text-decoration: none;
+	}
+}
+
+//-----------------------------------------------------------------
+// Close Button
+//-----------------------------------------------------------------
+
+.lv-alert-bar-close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 15px;
+	height: 100%;
+	font-weight: 500;
+	font-size: 2.4em;
+	cursor: pointer;
+	transition: all .2s linear;
+
+	&:hover,
+	&:active {
+		background: darken($alert-color, 10%);
+	}
+}
+
+//-----------------------------------------------------------------
+// Alert Colors
+//-----------------------------------------------------------------
+
+.lv-alert-bar {
+	&.success-color {
+		background: $success-color;
+
+		.lv-alert-bar-close-btn:hover {
+			background: darken($success-color, 10%);
+		}
+	}
+}

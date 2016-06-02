@@ -1,0 +1,29 @@
+/*
+    SPECIAL.CSS
+
+    - Last updated: 00.00.00
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Special
+//-----------------------------------------------------------------
+
+.new-flag:after {
+  content: "NEW";
+  border: 1px solid #c70014;
+  color: #c70014;
+  display: inline-block;
+  -moz-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+  -ms-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+  -o-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+  -webkit-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+  transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+  padding: 0 4px;
+}
+
+//=========================================
+//
+//=========================================

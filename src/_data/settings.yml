@@ -1,0 +1,43 @@
+# ---------------------
+# GLOBAL SITE SETTINGS
+# ---------------------
+
+cname: DOMAIN.yourwebvisual.com
+
+# META
+title: "Your Website"
+seo_title: "liquidvisual Builder"
+company: "liquidvisual"
+description: ""
+
+# CONTACT
+email: david@digitalmomentum.com.au
+phone: (05) 555 555
+fax: (05) 555 555
+abn: 13 168 867 927
+
+# OFFICES
+offices:
+  - title: Melbourne
+    address: "Level 5<br> 55 Placeholder Avenue<br> Melbourne Victoria 3000"
+    phone: 05 5555 5555
+    fax: 05 5555 5555
+
+  - title: Sydney
+    address: "123"
+
+# SOCIAL MEDIA
+facebook: ""
+linked_in: ""
+google_plus: ""
+
+# GOOGLE
+google_map: ""
+google_analytics: "UA-XXXXXXXX-X"
+
+# AUTHOR
+author:
+  - title: liquidvisual
+    url: http://www.liquidvisual.com
+    logo: /img/ui/liquidvisual-logo.svg
+    description: Website by liquidvisual

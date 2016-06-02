@@ -1,0 +1,13 @@
+{% comment %}
+    SEO TITLE IMPLEMENTATION
+
+    - updated: 17.03.16
+    - notes:
+        * Usage: <title>{% snippets/include.seo_title %}</title>
+{% endcomment %}
+
+{% if page.url == '/' %}
+    {{ site.data.settings.seo_title }}
+{% else %}
+    {{ page.title }} · {{ site.title }}
+{% endif %}

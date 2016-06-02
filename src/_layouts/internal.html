@@ -1,0 +1,30 @@
+---
+layout: master
+---
+
+<!-- BREADCRUMBS -->
+<nav class="breadcrumbs {% unless page.breadcrumbs %} invisible {% endunless %}">
+    <div class="container">
+        {% include snippets/breadcrumb.html %}
+    </div>
+</nav>
+
+<!-- STAGE -->
+<section class="stage">
+
+    <!-- STAGE HEADER -->
+    <header class="stage-header">
+        <div class="container">
+            {% if page.title_override %}
+                <h2 class="h1">{{ page.title_override }}</h2>
+            {% else %}
+                <h1>{{ page.title }}</h1>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="main">
+        {{ content }}
+    </div>
+
+</section>

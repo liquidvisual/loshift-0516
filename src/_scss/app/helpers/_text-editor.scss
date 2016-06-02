@@ -1,0 +1,84 @@
+/*
+    TEXT-EDITOR.CSS
+
+    - Last updated: 16.03.16
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Image Alignment
+//-----------------------------------------------------------------
+
+.img-left {
+	margin-bottom: rem-calc(30);
+
+	@include media-breakpoint-down(sm) {
+	    width: 100%;
+	}
+
+	@include media-breakpoint-up(md) {
+	    float: left;
+	    margin: rem-calc(30 30 0 0);
+	}
+}
+
+.img-right {
+	margin-bottom: rem-calc(30);
+
+	@include media-breakpoint-down(sm) {
+	    width: 100%;
+	}
+
+	@include media-breakpoint-up(md) {
+	    float: right;
+	    margin: rem-calc(0 0 30 30);
+	}
+}
+
+//-----------------------------------------------------------------
+// Styled Lists
+//-----------------------------------------------------------------
+
+.styled-list {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+
+	li {
+		padding-left: rem-calc(8);
+		margin-bottom: rem-calc(5);
+
+		a:before {
+			content: "\f0da";
+			// content: "\f04b";
+			font-family: "FontAwesome";
+			position: relative;
+			top: 1px;
+			left: -5px;
+			font-size: rem-calc(17);
+			color: $primary-color;
+		}
+	}
+
+	&[class*='block-grid'] li {
+		padding-bottom: 0; // Let list items set their own inner padding
+	}
+}
+
+//-----------------------------------------------------------------
+// Font Families
+//-----------------------------------------------------------------
+
+.font-family-serif {
+	font-family: $font-family-serif;
+}
+
+.font-family-sans-serif {
+	font-family: $font-family-sans-serif;
+}
+
+//=========================================
+//
+//=========================================

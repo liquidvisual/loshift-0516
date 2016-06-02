@@ -1,0 +1,76 @@
+{% comment %}
+<!--
+    Updated: 26.08.15
+
+    - Notes -
+
+    Warning: Make sure "our-services-item" etc appears only once in sitemap - hash tag rest
+
+    58: <li class="{% if item.url == page.url or forloop.index == third_level_id %} active {% endif %}">
+
+    When 'top_level_id' is passed, data is pulled from requested node in /data/sitemap.yml creating nav list.
+    Optional: 'exclude_top_level' can be passed through the include, skipping the top level of the side nav.
+
+    YAML Vars:
+
+    side_nav_top_level_id: accesses the node in the YAML.
+    side_nav_second_level_id: opens up the list item
+    side_nav_third_level_id: makes the child active
+
+    Basic Output:
+
+        <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/some-link/"> - Some Link</a></li>
+            <li><a href="/some-link/"> - Some Link</a>
+                <ul>
+                    <li><a href="/">Nested Link</a></li>
+                </ul>
+            </li>
+            <li><a href="/some-link/"> - Some Link</a></li>
+        </ul>
+-->
+{% endcomment %}
+
+{% assign sitemap = site.data.sitemap %}
+{% assign exclude_top_level = include.exclude_top_level %}
+{% assign top_level_id = page.side_nav_top_level_id %}
+{% assign top_level_node = sitemap[top_level_id] %}
+{% assign second_level_id = page.side_nav_second_level_id %}
+{% assign third_level_id = page.side_nav_third_level_id %}
+
+{% if top_level_id %}
+
+    <ul class="side-nav">
+
+        {% comment %} TOP LEVEL (Optional) {% endcomment %}
+        {% unless exclude_top_level %}
+        <li class="{% if top_level_node.url == page.url %} active {% endif %}">
+            <a href="{{ top_level_node.url }}">{{ top_level_node.title }}</a>
+        </li>
+        {% endunless %}
+
+        {% comment %} SECOND LEVEL {% endcomment %}
+        {% for item in top_level_node.children %}
+        <li class="{% if forloop.index == second_level_id %} active-parent {% endif %}{% if item.url == second_level_id %} active {% endif %}">
+            <a href="{{ item.url }}">
+                {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
+                {{ item.title }}
+            </a>
+
+            {% comment %} THIRD LEVEL {% endcomment %}
+            {% if item.children and forloop.index == second_level_id %}
+            <ul class="no-bullet">
+                {% for item in item.children %}
+                    <li class="{% if forloop.index == third_level_id %} active {% endif %}">
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+        </li>
+        {% endfor %}
+
+    </ul>
+{% endif %}

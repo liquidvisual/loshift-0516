@@ -1,0 +1,85 @@
+---
+layout: internal/text_page
+title: Docs
+permalink: /docs/
+---
+
+{% assign components = site.docs | where: "type", "component" %}
+
+<div class="spacer m-b-2"></div>
+
+<nav id="component-selector" class="wrap">
+  <select name="section" id="component-select">
+    <option value>Jump to component...</option>
+    {% for item in components %}
+	    <option value="#guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</option>
+	    {% for entry in item.items %}
+	    	<option value="#guide-{{ entry.title | slugify | downcase }}">&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
+	    {% endfor %}
+    {% endfor %}
+  </select>
+</nav>
+
+<!-- component selector option list -->
+<script>
+  (function (document, undefined) {
+    // component selector
+    document.getElementById('component-select').onchange = function() {
+      //document.location=this.options[this.selectedIndex].value;
+      var val = this.value;
+      if (val !== "") {
+        window.location = val;
+      }
+    }
+  })(document);
+</script>
+
+{% for item in components %}
+
+	<header>
+		<h2 id="guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</h2>
+		{% if item.usage %}
+			<p><strong>Usage:</strong> {{ item.usage }}</p>
+		{% endif %}
+		{% if item.module %}
+			<p><strong>Include partial:</strong> <a href="{{ site.owner.github-repo }}{{ item.module }}">{{ item.module }}</a></p>
+		{% endif %}
+		{% if item.scss %}
+			<p class="item--last"><strong>SCSS partial:</strong> <a href="{{ site.owner.github-repo }}{{ item.scss }}">{{ item.scss }}</a></p>
+		{% endif %}
+	</header>
+
+	<br>
+	<br>
+
+	<div class="component-rendered">
+		{{ item.content }}
+	</div>
+
+	<br><br>
+
+	<strong>The HTML:</strong>
+
+<div class="component-code">
+{% highlight html %}{{ item.content }}{% endhighlight %}
+</div>
+
+{% endfor %}
+
+{% highlight scss %}
+.highlight {
+    background-color: $bg-color; color: $body;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px;
+
+    // padding: rem-calc(20 10 20 20);
+
+    pre {
+        padding: rem-calc(30);
+    }
+
+    span {
+        font-family: 'Source Code Pro', serif;
+    }
+{% endhighlight %}
