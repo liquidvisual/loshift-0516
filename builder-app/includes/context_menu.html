@@ -1,0 +1,256 @@
+<nav class="lv-context-menu">
+    <div class="lv-context-menu-scroller">
+
+        <!-- HEADER -->
+        <header class="lv-context-menu-header">
+            <h3 data-tool-tab-title class="subheader"></h3>
+            <span class="lv-context-menu-close-btn"></span>
+        </header>
+
+        <!-- TOOLBAR (LEFT) -->
+        <div class="lv-context-menu-toolbar">
+            <ul class="lv-context-menu-site-tools">
+                <!-- Logo -->
+                <li>
+                    <a data-logout href="/manage/" class="lv-context-menu-user-logo">
+                        <!-- <img width="32" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200" alt="..."> -->
+                        <img class="gravitar" width="32" src="..." alt="Gravitar">
+                        <script>
+                            var grav = "https://www.gravatar.com/avatar/";
+                            var gravURI = MD5("david@digitalmomentum.com.au");
+                            $('.gravitar').attr("src", grav + gravURI);
+                        </script>
+                    </a>
+                </li>
+
+                <!-- ADHOC  -->
+                <script>
+                    $('[data-logout]').click(function(){
+                        localStorage.setItem("loggedIn", "");
+                        $(window).trigger('hashchange');
+                        console.log(localStorage.getItem("loggedIn"));
+                    });
+                </script>
+
+                <!-- Links -->
+                <li data-tool-tab="dashboard"><a  href="#/dashboard/"><i class="fa fa-dashboard"></i></a></li>
+                <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li>
+                <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li>
+                <li data-tool-tab="development"><a href="#/development/"><i class="fa fa-code"></i></a></li>
+                <li data-tool-tab="preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
+            </ul>
+
+            <!-- Ignore these for now -->
+            <ul class="lv-context-menu-user-tools">
+                <li><a data-tool-tab="alert" href="#/alert/"><i class="fa fa-bell-o"></i></a></li>
+                <li><a data-tool-tab="discuss" href="#/discuss/"><i class="fa fa-comment-o"></i></a></li>
+                <!-- <li><a data-tool-tab="user" href="#/user/"><i class="fa fa-user"></i></a></li> -->
+            </ul>
+        </div>
+
+        <!-- BODY -->
+        <div class="lv-context-menu-body">
+
+            <!-- DASHBOARD -->
+            <div data-tool-tab-content="dashboard" class="lv-context-menu-panel">
+                <ul>
+                    <li><a href="#/dashboard/option-1/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
+                    <li><a href="#/dashboard/option-2/"><span class="lv-context-menu-digit">02</span>Quote</a></li>
+                    <!-- <li><a href="#/dashboard/option-3/"><span class="lv-context-menu-digit">03</span>Price Breakdown</a></li> -->
+                </ul>
+            </div>
+
+            <!-- CONTENT -->
+            <div data-tool-tab-content="content" class="lv-context-menu-panel">
+                <ul>
+                    <li><a href="#/content/settings/"><span class="lv-context-menu-digit">04</span>Settings</a></li>
+                    <li><a href="#/content/sitemap/"><span class="lv-context-menu-digit">05</span>Sitemap</a></li>
+                    <li><a href="#/content/assets/"><span class="lv-context-menu-digit">06</span>Assets</a></li>
+                    <li><a href="#/content/copywriting/"><span class="lv-context-menu-digit">07</span>Copywriting</a></li>
+                    <li><a href="#/content/seo/"><span class="lv-context-menu-digit">08</span>SEO</a></li>
+                </ul>
+            </div>
+
+            <!-- DESIGN -->
+            <div data-tool-tab-content="design" class="lv-context-menu-panel">
+                <ul>
+                    <li><a href="#/design/moodboard/"><span class="lv-context-menu-digit">09</span>Moodboard</a></li>
+                    <li><a href="#/design/wireframes/"><span class="lv-context-menu-digit">10</span>Wireframes</a></li>
+                    <li><a href="#/design/styleguide/"><span class="lv-context-menu-digit">11</span>Styleguide</a></li>
+                    <li><a href="#/design/branding/"><span class="lv-context-menu-digit">12</span>Branding</a></li>
+                    <li><a href="#/design/component-library/"><span class="lv-context-menu-digit">13</span>Component Library</a></li>
+                </ul>
+            </div>
+
+            <!-- DEVELOPMENT -->
+            <div data-tool-tab-content="development" class="lv-context-menu-panel">
+                <ul data-tool-tab-nested class="lv-context-menu-panel-tab">
+                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Site</a></li>
+                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Layout</a></li>
+                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Docs</a></li>
+                </ul>
+                <div class="lv-context-menu-panel-tab-content">
+                    options 1...
+                    <a href="https://github.com/liquidvisual/liquidvisual-builder/commits/master">Updated</a>
+                </div>
+                <div>
+                    options 2...
+                </div>
+                <div>
+                    options 3...
+                </div>
+            </div>
+
+            <!-- PREVIEW -->
+            <div data-tool-tab-content="preview" class="lv-context-menu-panel">
+                <ul>
+                    
+                        <li><a href="#/preview/">Home <br><small style="color: #1FB5C3;">/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/about-us/">About Us <br><small style="color: #1FB5C3;">/about-us/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/how-it-works/">How It Works <br><small style="color: #1FB5C3;">/how-it-works/</small></a>
+                            
+                                <ul style="margin-left:20px;">
+                                    
+                                        <li><a href>+ Shippers <br><small style="color: #1FB5C3;">/how-it-works/</small></a></li>
+                                    
+                                        <li><a href>+ Carriers <br><small style="color: #1FB5C3;">/how-it-works/</small></a></li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/get-quotes/">Get Quotes <br><small style="color: #1FB5C3;">/get-quotes/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/find-trucks/">Find Trucks <br><small style="color: #1FB5C3;">/find-trucks/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/membership/">Membership <br><small style="color: #1FB5C3;">/membership/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/blog/">Blog <br><small style="color: #1FB5C3;">/blog/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/news/">News <br><small style="color: #1FB5C3;">/news/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/help/">Help <br><small style="color: #1FB5C3;">/help/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/user-philosphy/">User Philosophy <br><small style="color: #1FB5C3;">/user-philosphy/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/advertising/">Advertising <br><small style="color: #1FB5C3;">/advertising/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/escrow-pay-service/">Escrow Pay Service <br><small style="color: #1FB5C3;">/escrow-pay-service/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/cargo-categories/">Cargo Categories <br><small style="color: #1FB5C3;">/cargo-categories/</small></a>
+                            
+                                <ul style="margin-left:20px;">
+                                    
+                                        <li><a href>+ Machinery Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Heavy Haulage <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ General Freight <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Palletised Freight <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Car Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Container Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Truck Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Furniture Removal <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Boat Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Trailer Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Hay Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Grain Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Portable Buildings <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Livestock Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                        <li><a href>+ Bulk Tipper Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/contact-us/">Contact Us <br><small style="color: #1FB5C3;">/contact-us/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/sitemap/">Sitemap <br><small style="color: #1FB5C3;">/sitemap/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/terms-and-conditions/">Terms & Conditions <br><small style="color: #1FB5C3;">/terms-and-conditions/</small></a>
+                            
+                        </li>
+                    
+                        <li><a href="#/preview/privacy-policy/">Privacy Policy <br><small style="color: #1FB5C3;">/privacy-policy/</small></a>
+                            
+                        </li>
+                    
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                    <li><a href="">Hello</a></li>
+                </ul>
+            </div>
+
+            <!-- DISCUSS (IGNORE FOR NOW) -->
+            <div data-tool-tab-content="alert" class="lv-context-menu-panel">
+                <p>Content to be decided</p>
+            </div>
+
+            <!-- DISCUSS (IGNORE FOR NOW) -->
+            <div data-tool-tab-content="discuss" class="lv-context-menu-panel">
+                <p>Content to be decided</p>
+            </div>
+
+            <!-- USER (IGNORE FOR NOW) -->
+            <div data-tool-tab-content="user" class="lv-context-menu-panel">
+                <p>Content to be decided</p>
+            </div>
+
+        </div>
+
+    </div> <!-- .lv-context-menu-scroller -->
+</nav>
