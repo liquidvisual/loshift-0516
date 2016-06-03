@@ -11,13 +11,14 @@
 // Responsive Typography
 //-----------------------------------------------------------------
 
-// html {
-// 	@include media-breakpoint-up(xs) { font-size: $font-size-xs; }
-// 	@include media-breakpoint-up(sm) { font-size: $font-size-sm; }
-// 	@include media-breakpoint-up(md) { font-size: $font-size-md; }
-// 	@include media-breakpoint-up(lg) { font-size: $font-size-lg; }
-// 	@include media-breakpoint-up(xl) { font-size: $font-size-xl; }
-// }
+html {
+	@include media-breakpoint-up(xs) { font-size: $font-size-xs; }
+	@include media-breakpoint-up(sm) { font-size: $font-size-sm; }
+	// @include media-breakpoint-up(md) { font-size: $font-size-md; }
+	@include media-breakpoint-up(lg) { font-size: $font-size-lg; }
+	// @include media-breakpoint-up(xl) { font-size: $font-size-xl; }
+}
+
 //-----------------------------------------------------------------
 // Missing from Bootstrap
 //-----------------------------------------------------------------
@@ -28,6 +29,7 @@
 
 h1, h2, h3, h4, h5, h6 {
 	// font-variant: small-caps;
+	// text-transform: uppercase;
 }
 
 //-----------------------------------------------------------------

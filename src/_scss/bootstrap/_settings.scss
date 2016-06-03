@@ -195,9 +195,9 @@ $lg-only: "screen and (min-width: #{map-get($grid-breakpoints, lg)}) and (max-wi
 // $font-size-root:             16px !default;
 
 $font-size-base:             rem-calc(14); //1rem !default;
-// $font-size-lg:               1.25rem !default;
-// $font-size-sm:               .875rem !default;
-// $font-size-xs:               .75rem !default;
+$font-size-lg:               rem-calc(14); //1.25rem !default;
+$font-size-sm:               rem-calc(12); //.875rem !default;
+$font-size-xs:               rem-calc(13); //.75rem !default;
 
 // $font-size-h1:               2.5rem !default;
 // $font-size-h2:               2rem !default;

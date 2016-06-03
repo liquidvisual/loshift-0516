@@ -12,16 +12,19 @@
 //-----------------------------------------------------------------
 
 .lv-hero {
-	@include media-breakpoint-up(lg) {
-	    // height: 100vh;
+	@include media-breakpoint-up(xl) {
+	    height: 100vh;
+	    margin: 0;
 	}
+
+	margin-bottom: $spacer-y;
 }
 
 .lv-hero .lv-hero-item {
     // background-position: center center;
     // background-size: auto !important;
 
-    padding: $header-height-sm 0;
+    padding: $header-height-sm/2 0 0 0;
 
 
     @include media-breakpoint-up(md) {
@@ -42,6 +45,14 @@
 	color: white;
 	padding: rem-calc(20 40 20 20);
 
+	@include media-breakpoint-down(sm) {
+	    margin-top: 50px;
+	}
+
+	@include media-breakpoint-up(xl) {
+	    margin-top: calc(100vh/8); // responsive shifting vertical
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		color: white;
 	}
@@ -53,38 +64,44 @@
 
 	p:before,
 	p:after {
-	  content: " ";
-	  display: inline-block;
-	  width: 70px;
-	  border: 1px solid white;
+		@include media-breakpoint-up(md) {
+		    content: " ";
+		    display: inline-block;
+		    width: 70px;
+		    border: 1px solid white;
+		}
 	}
 
 	p:before {
-	  -moz-transform: translateX(-6px) translateY(-6px);
-	  -ms-transform: translateX(-6px) translateY(-6px);
-	  -o-transform: translateX(-6px) translateY(-6px);
-	  -webkit-transform: translateX(-6px) translateY(-6px);
-	  transform: translateX(-6px) translateY(-6px);
-	  border-bottom: 1px solid transparent;
-	  -moz-border-image: -moz-linear-gradient(left, white 0%, rgba(255, 255, 255, 0) 100%);
-	  -webkit-border-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
-	  -o-border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, white 75%);
-	  border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, white 75%);
-	  border-image-slice: 1;
+		@include media-breakpoint-up(md) {
+		    -moz-transform: translateX(-6px) translateY(-6px);
+		    -ms-transform: translateX(-6px) translateY(-6px);
+		    -o-transform: translateX(-6px) translateY(-6px);
+		    -webkit-transform: translateX(-6px) translateY(-6px);
+		    transform: translateX(-6px) translateY(-6px);
+		    border-bottom: 1px solid transparent;
+		    -moz-border-image: -moz-linear-gradient(left, white 0%, rgba(255, 255, 255, 0) 100%);
+		    -webkit-border-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+		    -o-border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, white 75%);
+		    border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, white 75%);
+		    border-image-slice: 1;
+		}
 	}
 
 	p:after {
-	  -moz-transform: translateX(6px) translateY(-6px);
-	  -ms-transform: translateX(6px) translateY(-6px);
-	  -o-transform: translateX(6px) translateY(-6px);
-	  -webkit-transform: translateX(6px) translateY(-6px);
-	  transform: translateX(6px) translateY(-6px);
-	  border-bottom: 1px solid transparent;
-	  -moz-border-image: -moz-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
-	  -webkit-border-image: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 0%, white 100%);
-	  -o-border-image: linear-gradient(to left, rgba(255, 255, 255, 0) 10%, white 75%);
-	  border-image: linear-gradient(to left, rgba(255, 255, 255, 0) 10%, white 75%);
-	  border-image-slice: 1;
+		@include media-breakpoint-up(md) {
+		    -moz-transform: translateX(6px) translateY(-6px);
+		    -ms-transform: translateX(6px) translateY(-6px);
+		    -o-transform: translateX(6px) translateY(-6px);
+		    -webkit-transform: translateX(6px) translateY(-6px);
+		    transform: translateX(6px) translateY(-6px);
+		    border-bottom: 1px solid transparent;
+		    -moz-border-image: -moz-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 100%);
+		    -webkit-border-image: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 0%, white 100%);
+		    -o-border-image: linear-gradient(to left, rgba(255, 255, 255, 0) 10%, white 75%);
+		    border-image: linear-gradient(to left, rgba(255, 255, 255, 0) 10%, white 75%);
+		    border-image-slice: 1;
+		}
 	}
 
 	i {

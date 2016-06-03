@@ -1,0 +1,84 @@
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Members Login</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+      <section class="login-panel text-xs-center animated fadeInDown p-a-3">
+
+        <!-- HEADER -->
+        <header class="lv-login-header">
+          <!-- <img width="50" src="/img/content/"> -->
+          <!-- <h1 class="subheader">Login</h1><br><br> -->
+        </header>
+
+        <!-- IF SUCCESS -->
+        <div class="alert alert-success" hidden>
+            <h4>Success!</h4>
+            <p>Your form has been submitted.</p>
+        </div>
+
+        <!-- IF FAILURE -->
+        <div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Oops!</h4>
+            <p>Something went wrong. Please check your details.</p>
+        </div>
+
+        <form data-toggle="validatorX" class="lv-login-panel">
+
+            <!-- NAME -->
+            <fieldset class="form-group">
+              <label for="name"><i class="fa fa-user"></i> Username*</label>
+              <input class="form-control" id="name" type="text" placeholder="" maxlength="255" autocapitalize="off" required>
+              <small class="error" hidden>Your name is required.</small>
+            </fieldset>
+
+            <!-- PASSWORD -->
+            <fieldset class="form-group">
+              <label for="password"><i class="fa fa-key"></i> Password*</label>
+              <input class="form-control" id="password" type="password" placeholder="" required>
+              <small class="error" hidden>A valid password is required.</small>
+            </fieldset>
+
+            <div class="text-xs-right">
+              <a class="forgot-password" href="#password-reset">Forgot?</a>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="remember-me text-xs-left">
+              <input id="remember-me" name="remember-me" type="checkbox">&nbsp; <label for="remember-me">Remember Me</label>
+            </div>
+
+            <!-- SUBMIT -->
+           <!--  <div class="m-b-2">
+                <button data-login type="submit" class="btn btn-primary btn-block btn-lg">Send</button>
+                <a data-login class="btn btn-primary btn-block btn-lg">Send</a href="/">
+            </div> -->
+
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Proceed</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,34 +8,38 @@
 // Variables
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
-// Homepage
+// Feature Panels Wrapper
 //-----------------------------------------------------------------
 
-.hero-feature-panels {
-	width: 100%;
+.feature-panels-wrapper {
+	position: relative;
 
-	@include media-breakpoint-up(lg) {
-	    position: absolute;
-	    bottom: 0;
+	.feature-panels {
+		@include media-breakpoint-up(lg) {
+		    position: absolute;
+		    bottom: 0;
+		    width: 100%;
+		}
 	}
+}
 
+//-----------------------------------------------------------------
+// Feature Panels
+//-----------------------------------------------------------------
+
+.feature-panels {
 	.container {
 		background: white;
+		padding: 14px 21px;
+
+		.col-md-4 {
+		    padding: 0 7px;
+		}
 	}
 
-	// .container {
-	// 	max-width: 1180px;
-	// 	background: white;
-	// 	// padding: rem-calc(15);
-	// 	// padding: 15px 7px;
-	// 	// padding-top: 14px;
-
-	// 	.col-md-4 {
-	// 	    padding: 0 7px;
-	// 	}
-	// }
-
 	a {
+		display: block;
+		width: 100%;
 		@include media-breakpoint-down(sm) {
 		    display: inline-block;
 		    margin-bottom: $spacer-y;

@@ -138,11 +138,15 @@ $header-height-lg: 220px !default;
 
 .global-header .counter {
 	position: relative;
-	// top: 3px;
+	top: 12px;
 	display: inline-block;
 	color: white;
 	padding-right: 200px;
 	float: right;
+
+	@include media-breakpoint-up(xl) {
+	    top: 3px;
+	}
 
 	.number,
 	.km {
@@ -181,12 +185,12 @@ $header-height-lg: 220px !default;
 
 	.global-menu-btn {
 		display: inline-block;
-		font-size: rem-calc(14);
+		font-size: 14px;
 		line-height: 34px;
 		color: white;
 		cursor: pointer;
 		background: $brand-primary;
-		padding: rem-calc(0 15);
+		padding: 0 15px;
 		border-radius: 5px;
 
 		i {
