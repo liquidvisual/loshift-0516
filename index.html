@@ -43,7 +43,7 @@
             </a>
 
             <!-- Counter -->
-            <div class="counter hidden-md-down fill-1">
+            <div class="counter hidden-md-down">
                 <span class="number">198,001</span>
                 <span class="km">km</span>
                 <span class="text">of requested transport added in the last 24hrs.</span>
@@ -52,7 +52,7 @@
             <!-- Menu -->
             <div class="global-menu">
                 <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
-                <a class="global-menu-btn"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
+                <a class="global-menu-btn"><span class="hidden-sm-down" data-toggle="modal" data-target="#myModal">Login</span><i class="fa fa fa-user"></i></a>
             </div>
 
         </div>
@@ -80,7 +80,7 @@
                     <div class="display-cell align-top">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-7 col-xl-7 col-xl-offset-5">
+                                <div class="col-md-7 col-md-offset-3 col-lg-7 col-lg-offset-5">
 
                                     <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
 
@@ -104,22 +104,6 @@
 
         
 
-        <section class="hero-feature-panels">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="#"><img src="/assets/img/content/find-trucks-feature.jpg" alt=""></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#"><img src="/assets/img/content/get-quotes-feature.jpg" alt=""></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#"><img src="/assets/img/content/get-loads-feature.jpg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </div> <!-- .lv-hero -->
 
     
@@ -128,8 +112,110 @@
 
 
 
+<section class="feature-panels-wrapper">
+	<div class="feature-panels">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-md-4">
+	                <a href="#"><img src="/assets/img/content/find-trucks-feature.jpg" alt=""></a>
+	            </div>
+	            <div class="col-md-4">
+	                <a href="#"><img src="/assets/img/content/get-quotes-feature.jpg" alt=""></a>
+	            </div>
+	            <div class="col-md-4">
+	                <a href="#"><img src="/assets/img/content/get-loads-feature.jpg" alt=""></a>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+</section>
+
 <br>
 
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Members Login</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+      <section class="login-panel text-xs-center animated fadeInDown p-a-3">
+
+        <!-- HEADER -->
+        <header class="lv-login-header">
+          <!-- <img width="50" src="/img/content/"> -->
+          <!-- <h1 class="subheader">Login</h1><br><br> -->
+        </header>
+
+        <!-- IF SUCCESS -->
+        <div class="alert alert-success" hidden>
+            <h4>Success!</h4>
+            <p>Your form has been submitted.</p>
+        </div>
+
+        <!-- IF FAILURE -->
+        <div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Oops!</h4>
+            <p>Something went wrong. Please check your details.</p>
+        </div>
+
+        <form data-toggle="validatorX" class="lv-login-panel">
+
+            <!-- NAME -->
+            <fieldset class="form-group">
+              <label for="name"><i class="fa fa-user"></i> Username*</label>
+              <input class="form-control" id="name" type="text" placeholder="" maxlength="255" autocapitalize="off" required>
+              <small class="error" hidden>Your name is required.</small>
+            </fieldset>
+
+            <!-- PASSWORD -->
+            <fieldset class="form-group">
+              <label for="password"><i class="fa fa-key"></i> Password*</label>
+              <input class="form-control" id="password" type="password" placeholder="" required>
+              <small class="error" hidden>A valid password is required.</small>
+            </fieldset>
+
+            <div class="text-xs-right">
+              <a class="forgot-password" href="#password-reset">Forgot?</a>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="remember-me text-xs-left">
+              <input id="remember-me" name="remember-me" type="checkbox">&nbsp; <label for="remember-me">Remember Me</label>
+            </div>
+
+            <!-- SUBMIT -->
+           <!--  <div class="m-b-2">
+                <button data-login type="submit" class="btn btn-primary btn-block btn-lg">Send</button>
+                <a data-login class="btn btn-primary btn-block btn-lg">Send</a href="/">
+            </div> -->
+
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Proceed</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
