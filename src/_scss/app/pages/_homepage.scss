@@ -12,9 +12,12 @@
 //-----------------------------------------------------------------
 
 .hero-feature-panels {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
+
+	@include media-breakpoint-up(lg) {
+	    position: absolute;
+	    bottom: 0;
+	}
 
 	.container {
 		background: white;
@@ -31,6 +34,13 @@
 	// 	    padding: 0 7px;
 	// 	}
 	// }
+
+	a {
+		@include media-breakpoint-down(sm) {
+		    display: inline-block;
+		    margin-bottom: $spacer-y;
+		}
+	}
 
 	img {
 		// border: 10px solid white;

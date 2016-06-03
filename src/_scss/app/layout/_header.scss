@@ -84,12 +84,21 @@ $header-height-lg: 220px !default;
 }
 
 //-----------------------------------------------------------------
+// Container
+//-----------------------------------------------------------------
+
+.global-header .container {
+	position: relative;
+}
+
+//-----------------------------------------------------------------
 // Logo
 //-----------------------------------------------------------------
 
 .global-header .logo {
 	position: relative;
 	top: 0;
+	display: inline-block;
 
 	@include media-breakpoint-up(md) {
 	    top: 0;
@@ -105,17 +114,18 @@ $header-height-lg: 220px !default;
 
 	img {
 		// width: auto;
-		width: 150px;
+		width: 120px;
 		height: $header-height-sm;
 		padding: rem-calc(5 0);
 
 		@include media-breakpoint-up(md) {
-			width: 298px;
+			width: 250px;
 		    height: $header-height-md;
 		    padding: rem-calc(15 0);
 		}
 
 		@include media-breakpoint-up(xl) {
+			width: 300px;
 		    height: auto;
 		    padding: none;
 		}
@@ -123,26 +133,71 @@ $header-height-lg: 220px !default;
 }
 
 //-----------------------------------------------------------------
+// Counter
+//-----------------------------------------------------------------
+
+.global-header .counter {
+	position: relative;
+	// top: 3px;
+	display: inline-block;
+	color: white;
+	padding-right: 200px;
+	float: right;
+
+	.number,
+	.km {
+		font-weight: bold;
+		font-size: rem-calc(40);
+	}
+
+	.km {
+		font-weight: 300;
+	}
+
+	.text {
+		display: inline-block;
+		padding-left: 5px;
+		max-width: 140px;
+		font-size: rem-calc(12);
+	}
+}
+
+//-----------------------------------------------------------------
 // Hamburger
 //-----------------------------------------------------------------
 
-.global-mobile-menu {
+.global-menu {
 	position: absolute;
 	right: 15px;
-	top: 50%;
+	top: calc(50% - 34px/2); // 34=height of buttons
 	display: block;
 	overflow: hidden;
-
-	@include media-breakpoint-up(md) {
-	    top: calc(50% - 30px/2);
-	}
+	text-transform: uppercase;
 
 	.hamburger {
-		display: block;
-		font-size: rem-calc(35);
-		line-height: 0;
-		color: #383D43;
+		float: right;
+		margin-left: 5px;
+	}
+
+	.global-menu-btn {
+		display: inline-block;
+		font-size: rem-calc(14);
+		line-height: 34px;
+		color: white;
 		cursor: pointer;
+		background: $brand-primary;
+		padding: rem-calc(0 15);
+		border-radius: 5px;
+
+		i {
+			@include media-breakpoint-up(sm) {
+			    padding-left: 6px;
+			}
+		}
+
+		&:hover {
+			background: lighten($brand-primary, 10%);
+		}
 	}
 }
 

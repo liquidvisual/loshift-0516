@@ -42,7 +42,7 @@ $mm_fontSize	: 15px; //14px;
 // Colors
 $mm_pageShadow					: 0 0 10px rgba( 0, 0, 0, 0.2);
 $mm_borderColor					: rgba(255, 255, 255, 0.1);
-$mm_backgroundColor				: $primary-color;
+$mm_backgroundColor				: #111; //$primary-color;
 // $mm_emphasizedBackgroundColor	: rgba( 0, 0, 0, 0.1 );
 // $mm_highlightedBackgroundColor	: rgba( 255, 255, 255, 0.05 );
 $mm_textColor					: white; //darken(#FFF, 15%); //rgba( 255, 255, 255, 0.6 );
@@ -56,7 +56,7 @@ $mm_dimmedTextColor				: rgba(white, 0.8); //rgba( 255, 255, 255, 0.3 );
 }
 
 .mm-list a.mm-subopen::before {
-	display: none !important;
+	// display: none !important;
 }
 
 .mm-list a.mm-subopen::after,

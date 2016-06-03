@@ -1,5 +1,4 @@
 {% assign settings = site.data.settings %}
-{% assign logo = "/assets/images/content/logo.png" %}
 {% assign logo = "/img/content/logo-white.svg" %}
 
 <div class="container">
@@ -11,9 +10,17 @@
                 <img src="{{ logo }}" alt="{{ settings.company_title }}" itemprop="logo">
             </a>
 
-            <!-- Hamburger -->
-            <div class="global-mobile-menu hidden-xl-up">
-                <a class="hamburger"><i class="fa fa fa-navicon"></i></a>
+            <!-- Counter -->
+            <div class="counter hidden-md-down fill-1">
+                <span class="number">198,001</span>
+                <span class="km">km</span>
+                <span class="text">of requested transport added in the last 24hrs.</span>
+            </div>
+
+            <!-- Menu -->
+            <div class="global-menu">
+                <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
+                <a class="global-menu-btn"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
             </div>
 
         </div>
