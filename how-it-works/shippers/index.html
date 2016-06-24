@@ -11,7 +11,7 @@
 	<title>
 
 
-    Loadshift
+    Shippers · 
 </title>
 
 	<!-- CDN -->
@@ -62,27 +62,24 @@
 
           
 
-
-
-
-
-
 <div class="lv-hero-wrapper">
 
     <!-- HERO -->
     <div class="lv-hero is-full-screen">
 
-        <!-- Hero Item -->
-        <div class="lv-hero-item" style="background-image: url('/assets/img/content/hero-1.jpg')" data-background-image="/assets/img/content/hero-1.jpg">
+        <!-- HERO ITEM -->
+        <div class="lv-hero-item" style="background-image: url('/assets/img/content/hero-3.jpg')" data-background-image="/assets/img/content/hero-3.jpg">
             <div class="display-table">
                 <div class="display-cell align-top">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-7 col-md-offset-3 col-lg-7 col-lg-offset-5">
+                            <div class="col-md-6">
 
+                                <!-- HERO CAPTION -->
                                 <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
-                                    <h1>Australia's Leading Heavy Haulage Transport Marketplace</h1>
-                                    <p class="lead strike-through m-b-0">Connecting Shippers &amp; Carriers</p>
+                                    <h1>Get Quotes <br>&amp; Find Trucks</h1>
+                                    <p>Find Australia Wode Heavy Haulage transport fast.<br> Get quotes by posting a request or find trucks on the location map.</p>
+                                    <a href="/text-page/" class="btn btn-primary btn-lg">Get Quotes</a>
                                 </div>
 
                             </div>
@@ -94,49 +91,139 @@
 
     </div> <!-- .lv-hero -->
 
-</div> <!-- .lv-hero-wrapper -->
-
-<section class="feature-panels-wrapper">
-	<div class="feature-panels">
-	    <div class="container">
-	        <div class="row">
-	            <div class="col-md-4">
-	                <a href="#"><img src="/assets/img/content/find-trucks-feature.jpg" alt=""></a>
-	            </div>
-	            <div class="col-md-4">
-	                <a href="#"><img src="/assets/img/content/get-quotes-feature.jpg" alt=""></a>
-	            </div>
-	            <div class="col-md-4">
-	                <a href="#"><img src="/assets/img/content/get-loads-feature.jpg" alt=""></a>
-	            </div>
-	        </div>
-	    </div>
+    <!-- HERO ADDITION -->
+    <div class="hero-addition">
+        <div class="container">
+            <ul class="block-grid-md-4 text-xs-center">
+                <li><span class="h2">1. Post a Request</span></li>
+                <li><span class="h2">2. Request Communicated</span></li>
+                <li><span class="h2">3. Receive Quotes</span></li>
+                <li><span class="h2">4. Choose Your Carrier</span></li>
+            </ul>
+        </div>
     </div>
-</section>
 
-<!-- FEATURE ICONS -->
+</div> <!-- /.lv-hero-wrapper -->
+
+
+
+<!-- STAGE -->
+<section class="stage">
+
+    <div class="main">
+        
+
+<!-- GET QUOTES -->
 <section class="section">
 	<div class="container">
-		<ul class="block-grid-xs-3 block-grid-md-5">
-			<li><img width="100%" src="/assets/img/content/feature-icon-1.png" alt="Find Transport &amp; Loads Fast"></li>
-			<li><img width="100%" src="/assets/img/content/feature-icon-2.png" alt="Australia Wide Coverage"></li>
-			<li><img width="100%" src="/assets/img/content/feature-icon-3.png" alt="0% Commission"></li>
-			<li><img width="100%" src="/assets/img/content/feature-icon-4.png" alt="Cutout the Middleman"></li>
-			<li><img width="100%" src="/assets/img/content/feature-icon-5.png" alt="Cutout the Middleman"></li>
-		</ul>
+		<div class="row">
+			<div class="col-md-8">
+
+				<h2>Get Quotes</h2>
+				<p>Receive quotations for transport services by posting your request for quotation.</p>
+				<p>It's as easy as:</p>
+
+				<!-- BOLD -->
+				<h2><span class="circle">1</span> Phoning <a href="tel:1300562374">1300 56 23 74</a></h2>
+				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OR</h2>
+				<h2><span class="circle">2</span> Completing our simple online form</h2>
+
+				<p>Once your quote request has been posted, It is added to the "Loadboard" and then alerted to the loadshift community.</p>
+				<p>Thoes carriers that may be of assistance respond directly to you with quotation (Varing price &amp; Avaliability).</p>
+
+				<h3>You deal with whoever you choose.</h3>
+
+		</div>
+		<div class="col-md-4">
+
+			<!-- IF SUCCESS -->
+<div class="alert alert-success" hidden>
+    <h4>Success!</h4>
+    <p>Your form has been submitted.</p>
+</div>
+
+<!-- IF FAILURE -->
+<div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4>Oops!</h4>
+    <p>Something went wrong. Please check your details.</p>
+</div>
+
+<form data-toggle="validator">
+
+    <!-- PICKUP SUBURB -->
+    <fieldset class="form-group">
+        <label for="pickup-suburb">Pickup Suburb</label>
+        <select class="form-control c-select" id="pickup-suburb">
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+        </select>
+    </fieldset>
+
+    <!-- DELIVERY SUBURB -->
+    <fieldset class="form-group">
+        <label for="delivery-suburb">Delivery Suburb</label>
+        <select class="form-control c-select" id="delivery-suburb">
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+        </select>
+    </fieldset>
+
+    <!-- DELIVERY SUBURB -->
+    <fieldset class="form-group">
+        <label for="cargo-category">Cargo Category</label>
+        <select class="form-control c-select" id="cargo-category">
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+            <option>...</option>
+        </select>
+    </fieldset>
+
+    <!-- CARGO DESC -->
+    <fieldset class="form-group">
+        <label for="cargo-desc">Cargo Description</label>
+        <input class="form-control" id="cargo-desc" type="text" placeholder="" required>
+        <small class="error">Your description is required.</small>
+    </fieldset>
+
+    <!-- SUBMIT -->
+    <div class="text-xs-right">
+        <button type="submit" class="btn btn-primary">Get Quotes</button>
+    </div>
+
+</form>
+
+		</div>
 	</div>
 </section>
 
-<!-- CARDS SECTION -->
+<!-- FIND TRUCKS -->
 <section class="section section-light">
 	<div class="container">
-		<h2 class="text-xs-center m-b-2">Discover Loadshift</h2>
 		<div class="row">
 			<div class="col-md-6">
-				<p><img width="100%" src="/assets/img/content/carrier.jpg" alt="Find Transport & Loads Fast"></p>
+				<h2>Find Trucks</h2>
+				<p>Click on a map listing to obtain the current or future location of a carrier. Use the nominated contact details to deal directly.</p>
 			</div>
-			<div class="col-md-6">
-				<p><img width="100%" src="/assets/img/content/shipper.jpg" alt="Find Transport & Loads Fast"></p>
+			<div class="col-md-5 col-md-offset-1">
+				
+
+<iframe class="lv-google-map"
+        width="100%"
+        height="250"
+        frameborder="0"
+        src="https://maps.google.com/maps?hl=en&q=P.O. Box 349Windsor NSW, 2756&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed">
+</iframe>
 			</div>
 		</div>
 	</div>
@@ -161,65 +248,25 @@
 		</div>
 	</div>
 </section>
-<!-- TESTIMONIALS -->
-<section class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>A Word From Our Users...</h2>
 
-                <ul class="carousel">
-                    
-                    <li>
-                        <blockquote class="blockquote">
-                            <p class="m-b-0">One great site! A real credit to you. I was referred to it, got my $14000 tractor delivered to my door.</p>
-                            <footer class="blockquote-footer pull-xs-right">
-                                <div class="text-xs-left">
-                                    <b>Jonno</b><br><cite title="Source Title">(Tractor... VIC to QLD 19/05/15)</cite>
-                                </div>
-                            </footer>
-                        </blockquote>
-                    </li>
-                    
-                    <li>
-                        <blockquote class="blockquote">
-                            <p class="m-b-0">Possit inermis nominati ex eos, vis idque salutatus percipitur ne. Nihil commune no sit, mel id ornatus euripidis, et cetero legimus quo. No suas essent voluptatum usu. Duo altera essent maluisset ex, putant consectetuer nec et. Meis ponderum accusamus ne mei, ea pro nisl accumsan. Ut odio sanctus vis, mel in tritani interpre</p>
-                            <footer class="blockquote-footer pull-xs-right">
-                                <div class="text-xs-left">
-                                    <b>Mark</b><br><cite title="Source Title">(Tractor... VIC to QLD 19/05/15)</cite>
-                                </div>
-                            </footer>
-                        </blockquote>
-                    </li>
-                    
-                    <li>
-                        <blockquote class="blockquote">
-                            <p class="m-b-0">One great site! A real credit to you. I was referred to it, got my $14000 tractor delivered to my door.</p>
-                            <footer class="blockquote-footer pull-xs-right">
-                                <div class="text-xs-left">
-                                    <b>Hannah</b><br><cite title="Source Title">(Tractor... VIC to QLD 19/05/15)</cite>
-                                </div>
-                            </footer>
-                        </blockquote>
-                    </li>
-                    
-                </ul>
-
-            </div>
-            <div class="col-md-5 col-md-offset-1">
-                <div class="text-xs-right">
-                    <p><a href="#"><img width="100%" src="/assets/img/content/find-trucks-feature.jpg" alt=""></a></p>
-                    <p><a href="#"><img width="100%" src="/assets/img/content/get-quotes-feature.jpg" alt=""></a></p>
-                    <p><a href="#"><img width="100%" src="/assets/img/content/get-loads-feature.jpg" alt=""></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- SIMPLE - TRANSPARENT - JOB LEADS -->
+<section class="section section">
+	<div class="container">
+		<p>Note: loadshift.com.au is an online business service that specialises in the heavy load transport industry. It simply delivers your quotation request into transport businesses. Loadshift DOES NOT participate in any quotation, nor does it receive commissions. You deal directly with the transport carriers at all times.</p>
+		<p>Carriers subscribe to this marketplace (on a monthly basis), to receive your quote request as a job lead into their businesses.</p>
+		<br>
+		<div class="container">
+			<ul class="block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through">
+				<li><span class="h2">SIMPLE</span></li>
+				<li><span class="h2">QUICK</span></li>
+				<li><span class="h2">FREE QUOTES</span></li>
+			</ul>
+		</div>
+	</div>
 </section>
+    </div>
 
-
-
-
+</section> <!-- /.stage-header -->
 
           <!-- FOOTER -->
           <footer class="global-footer">
@@ -328,7 +375,7 @@
 
 <ul>
 	
-	<li class=" active "><a href="/" class="top-parent-anchor"><span class="text">Home</span></a></li>
+	<li class=""><a href="/" class="top-parent-anchor"><span class="text">Home</span></a></li>
 
 	
 	
@@ -345,7 +392,7 @@
 	</li>
 	
 	
-	<li class=" has-dropdown  ">
+	<li class=" active  has-dropdown  ">
 
 		
 		
