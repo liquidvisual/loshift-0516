@@ -105,36 +105,19 @@
             </div>
 
             <!-- PREVIEW -->
-            <div data-tool-tab-content="preview" class="lv-context-menu-panel">
+            <div data-tool-tab-content="preview" class="lv-context-menu-panel listo">
                 <ul>
                     {% for item in site.data.sitemap %}
-                        <li><a href="#/preview{{item.url}}">{{ item.title }} <br><small style="color: #1FB5C3;">{{ item.url }}</small></a>
+                        <li><a href="#/preview{{item.url}}">{{ item.title }} <br><small class="listo-light" style="color: #1FB5C3;">{{ item.url }}</small></a>
                             {% if item.children %}
                                 <ul style="margin-left:20px;">
                                     {% for nested_item in item.children %}
-                                        <li><a href>+ {{ nested_item.title }} <br><small style="color: #1FB5C3;">{{ item.url }}</small></a></li>
+                                        <li><a href class="">+ {{ nested_item.title }} <br><small style="color: #1FB5C3;">{{ item.url }}</small></a></li>
                                     {% endfor %}
                                 </ul>
                             {% endif %}
                         </li>
                     {% endfor %}
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
-                    <li><a href="">Hello</a></li>
                 </ul>
             </div>
 

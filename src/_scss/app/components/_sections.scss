@@ -10,6 +10,32 @@
 //-----------------------------------------------------------------
 // Sections
 //-----------------------------------------------------------------
+
+.section {
+	padding: rem-calc(40 0);
+}
+
+.section.inverse {
+	h1, h2, h3, h4, h5, h6, p, a, ul, ol, hr, small { color: white; }
+
+	.btn {
+		background: #70C6EF;
+		color: $brand-primary;
+
+		&:hover {
+			background: lighten(#70C6EF, 15%);
+		}
+	}
+}
+
+.section-dark {
+	background: $brand-primary;
+}
+
+.section-light {
+	background: $brand-tertiary;
+}
+
 //=========================================
 //
 //=========================================

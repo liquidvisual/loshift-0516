@@ -54,12 +54,29 @@ permalink: /manage/
         <div class="lv-page is-loading">
 
             <div id="lv-context-menu" data-include="/builder-app/includes/context_menu.html"></div>
-            <div id="lv-footer" data-include="/builder-app/includes/footer.html"></div>
+            <!-- <div id="lv-footer" data-include="/builder-app/includes/footer.html"></div> -->
             <div id="lv-topbar" data-include="/builder-app/includes/topbar.html"></div>
 
             <div class="lv-stage">
                 <main class="lv-main" data-view></main>
-                <!-- <iframe class="lv-iframe-loader"  src="/docs/"></iframe> -->
+
+                <div class="mobile">
+                <iframe class="lv-iframe-loader"  src="/"></iframe>
+                </div>
+
+                <style type="text/css">
+                    .lv-iframe-loader {
+                        width: 320px;
+                        height: 700px !important;
+                        min-height: 0;
+                        border: 50px solid grey;
+                        margin: 50px;
+                        border-radius: 10px;
+                        border-left: 8px solid grey;
+                        border-right: 8px solid grey;
+                        padding: 0px;
+                    }
+                </style>
             </div>
 
         </div> <!-- /.lv-page -->

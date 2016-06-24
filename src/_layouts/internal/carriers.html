@@ -1,0 +1,78 @@
+---
+layout: internal_landing
+---
+
+{% assign services = site.data.services | sort: "title" %}
+
+<!-- GET LOADS -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Get Loads</h2>
+				<p>Receive and access unlimited transport job loads (monthly). Login to our online load board and start quoting.</p>
+				<p>Don't have internet or smartphone access? No problem... receive your job loads by SMS.</p>
+				<p class="text-xs-center"><img src="http://placehold.it/300x200&t=SMS-Alert-Example"></p>
+			</div>
+			<div class="col-md-5 col-md-offset-1">
+				<img width="100%" src="http://placehold.it/300x200&t=Loadboad-Snapshot">
+			</div>
+		</div>
+		<br>
+		<h2 class="text-xs-center">Build Your Contacts... Build Your Business</h2>
+	</div>
+</section>
+
+<!-- FIND TRUCKS -->
+<section class="section section-dark inverse">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Find Trucks</h2>
+				<p>Let potential customers (Shippers) know where you are. Post a listing (advertising) the current or future location of your truck/trailer.</p>
+				<h2 class="m-y-3 text-xs-center">Be Seen.</h2>
+			</div>
+			<div class="col-md-5 col-md-offset-1">
+				{% include snippets/google_map.html %}
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SIMPLE - TRANSPARENT - JOB LEADS -->
+<section class="section section">
+	<div class="container">
+
+
+		<p>Note: loadshift.com.au is an online business service that specialises in the heavy load transport industry. It simply delivers your quotation request into transport businesses. Loadshift DOES NOT participate in any quotation, nor does it receive commissions. You deal directly with the transport carriers at all times.</p>
+		<p>Carriers subscribe to this marketplace (on a monthly basis), to receive your quote request as a job lead into their businesses.</p>
+		<br>
+
+		<div class="container">
+			<ul class="block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through">
+				<li><span class="h2">SIMPLE</span></li>
+				<li><span class="h2">TRANSPARENT</span></li>
+				<li><span class="h2">JOB LEADS</span></li>
+			</ul>
+		</div>
+
+	</div>
+</section>
+
+<!-- REQUESTED SERVICES -->
+<section class="section section-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 class="m-b-2">Requested Services</h2>
+				<ul class="block-grid-xs-1 block-grid-md-3">
+					{% for item in services %}
+						<li>{{ item.title }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include section_test_drive.html %}

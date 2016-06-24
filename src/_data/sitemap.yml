@@ -4,7 +4,7 @@
   url: /
 
 - title: About Us
-  url: /about-us/
+  url: /text-page/
 
 - title: How It Works
   url: /how-it-works/
@@ -16,10 +16,10 @@
       url: /how-it-works/carriers/
 
 - title: Get Quotes
-  url: /get-quotes/
+  url: /text-page/
 
 - title: Find Trucks
-  url: /find-trucks/
+  url: /text-page/
 
 - title: Membership
   url: /membership/
@@ -31,16 +31,16 @@
   url: /news/
 
 - title: Help
-  url: /help/
+  url: /text-page/
 
 - title: User Philosophy
-  url: /user-philosphy/
+  url: /text-page/
 
 - title: Advertising
-  url: /advertising/
+  url: /text-page/
 
 - title: Escrow Pay Service
-  url: /escrow-pay-service/
+  url: /text-page/
 
 - title: Cargo Categories
   url: /cargo-categories/
@@ -84,14 +84,14 @@
 ##############################
 
 - title: Sitemap
-  url: /sitemap/
+  url: /text-page/
   type: utility
 
 - title: Terms & Conditions
-  url: /terms-and-conditions/
+  url: /text-page/
   type: utility
 
 - title: Privacy Policy
-  url: /privacy-policy/
+  url: /text-page/
   type: utility
 

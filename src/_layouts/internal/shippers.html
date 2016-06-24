@@ -1,0 +1,158 @@
+---
+layout: internal_landing
+---
+
+{% assign services = site.data.services | sort: "title" %}
+
+<style>
+	.quick-fix {
+		background: rgba(255, 255, 255, 0.9);
+		position: relative;
+		top: -110px;
+		padding: 20px 0;
+	}
+</style>
+
+<div class="quick-fix">
+	<div class="container">
+		<ul class="block-grid-md-4 text-xs-center">
+			<li><span class="h2">1. Post a Request</span></li>
+			<li><span class="h2">2. Request Communicated</span></li>
+			<li><span class="h2">3. Receive Quotes</span></li>
+			<li><span class="h2">4. Choose Your Carrier</span></li>
+		</ul>
+	</div>
+</div>
+
+<!-- GET QUOTES -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+
+				<h2>Get Quotes</h2>
+				<p>Receive quotations for transport services by posting your request for quotation.</p>
+				<p>It's as easy as:</p>
+
+				<!-- BOLD -->
+				<h2><span class="circle">1</span> Phoning <a href="tel:1300562374">1300 56 23 74</a></h2>
+				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OR</h2>
+				<h2><span class="circle">2</span> Completing our simple online form</h2>
+
+				<p>Once your quote request has been posted, It is added to the "Loadboard" and then alerted to the loadshift community.</p>
+				<p>Thoes carriers that may be of assistance respond directly to you with quotation (Varing price &amp; Avaliability).</p>
+
+				<h3>You deal with whoever you choose.</h3>
+
+		</div>
+		<div class="col-md-4">
+
+			<!-- IF SUCCESS -->
+			<div class="alert alert-success" hidden>
+			    <h4>Success!</h4>
+			    <p>Your form has been submitted.</p>
+			</div>
+
+			<!-- IF FAILURE -->
+			<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			        <span aria-hidden="true">&times;</span>
+			    </button>
+			    <h4>Oops!</h4>
+			    <p>Something went wrong. Please check your details.</p>
+			</div>
+
+			<form data-toggle="validator">
+
+			    <!-- NAME -->
+			    <fieldset class="form-group">
+			    	<label for="name">Name*</label>
+			    	<input class="form-control" id="name" type="text" placeholder="Name" required>
+			    	<small class="error">Your name is required.</small>
+			    </fieldset>
+
+			    <!-- EMAIL -->
+			    <fieldset class="form-group">
+			    	<label for="email">Email*</label>
+			    	<input class="form-control" id="email" type="email" placeholder="Email" required>
+			    	<small class="error">A valid email is required.</small>
+			    </fieldset>
+
+			    <!-- PHONE -->
+			    <fieldset class="form-group">
+			    	<label for="phone">Phone</label>
+			    	<input class="form-control" id="phone" type="text" placeholder="Phone" required>
+			    	<small class="error">A valid phone number is required.</small>
+			    </fieldset>
+
+			    <!-- MESSAGE -->
+			    <fieldset class="form-group">
+			    	<label for="message">Your Message *</label>
+			    	<textarea class="form-control" id="message" rows="3" placeholder="Message" required></textarea>
+			    	<small class="error">A message is required.</small>
+			    </fieldset>
+
+			    <!-- SUBMIT -->
+			    <div class="text-xs-right">
+			        <button type="submit" class="btn btn-primary">Send</button>
+			    </div>
+
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- FIND TRUCKS -->
+<section class="section section-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Find Trucks</h2>
+				<p>Click on a map listing to obtain the current or future location of a carrier. Use the nominated contact details to deal directly.</p>
+			</div>
+			<div class="col-md-5 col-md-offset-1">
+				{% include snippets/google_map.html %}
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- VIDEO SECTION (repeated in homepage) -->
+<section class="section section-dark inverse">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Loadshift</h2>
+				<h3>The Place Where Transport Does Business!</h3>
+			</div>
+			<div class="col-md-8">
+				<iframe class=""
+				        width="100%"
+				        height="400"
+				        frameborder="0"
+				        src="https://www.youtube.com/embed/TkqLAkNK1vA?rel=0&amp;controls=0&amp;showinfo=1">
+				</iframe>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SIMPLE - TRANSPARENT - JOB LEADS -->
+<section class="section section">
+	<div class="container">
+
+
+		<p>Note: loadshift.com.au is an online business service that specialises in the heavy load transport industry. It simply delivers your quotation request into transport businesses. Loadshift DOES NOT participate in any quotation, nor does it receive commissions. You deal directly with the transport carriers at all times.</p>
+		<p>Carriers subscribe to this marketplace (on a monthly basis), to receive your quote request as a job lead into their businesses.</p>
+		<br>
+
+		<div class="container">
+			<ul class="block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through">
+				<li><span class="h2">SIMPLE</span></li>
+				<li><span class="h2">QUICK</span></li>
+				<li><span class="h2">FREE QUOTES</span></li>
+			</ul>
+		</div>
+
+	</div>
+</section>

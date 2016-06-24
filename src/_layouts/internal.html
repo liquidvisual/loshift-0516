@@ -2,8 +2,20 @@
 layout: master
 ---
 
+{% assign hero = page.hero %}
+
+<!-- HERO -->
+<div class="lv-hero is-alternate has-fixed-height">
+
+    <!-- Hero Item -->
+    <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
+
+    </div>
+
+</div> <!-- /.lv-hero -->
+
 <!-- BREADCRUMBS -->
-<nav class="breadcrumbs {% unless page.breadcrumbs %} invisible {% endunless %}">
+<nav class="lv-breadcrumb m-t-1">
     <div class="container">
         {% include snippets/breadcrumb.html %}
     </div>
@@ -27,4 +39,4 @@ layout: master
         {{ content }}
     </div>
 
-</section>
+</section> <!-- /.stage-header -->

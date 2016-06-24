@@ -11,13 +11,29 @@
 $(document).ready(function() {
     NProgress.start(); // Start preloader bar
     $('input, textarea').placeholder(); // IE9 Patch
+
+    $('.carousel').bxSlider({
+        auto: true,
+        mode: 'horizontal', // fade (much have fixed height or won't work)
+        adaptiveHeight: true,
+        responsive: true,
+        touchEnabled: true,
+        speed: 1000,
+        pause: 8000,
+        slideMargin: 0,
+        minSlides: 1,
+        controls: false,
+        infiniteLoop: true,
+        useCSS: true,
+        pager: true
+    });
 });
 
 $(window).load(function() {
     NProgress.done();
 
     // H5F.setup(document.getElementById("form")); // Patch IE9 for form validation
-    $('.carousel').carousel();
+    // $('.carousel').carousel();
 });
 
 //-----------------------------------------------------------------

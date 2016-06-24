@@ -1,0 +1,23 @@
+---
+layout: master
+---
+
+{% include {{page.hero}} %}
+
+{% comment %}
+<!-- BREADCRUMBS -->
+<nav class="lv-breadcrumb m-t-1">
+    <div class="container">
+        {% include snippets/breadcrumb.html %}
+    </div>
+</nav>
+{% endcomment %}
+
+<!-- STAGE -->
+<section class="stage">
+
+    <div class="main">
+        {{ content }}
+    </div>
+
+</section> <!-- /.stage-header -->

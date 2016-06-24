@@ -37,7 +37,7 @@ html, body {
 
 .container {
 	@include media-breakpoint-up(md) {
-	    // padding: 0 $container-gutter;
+	    padding: 0 $container-gutter;
 	}
 }
 

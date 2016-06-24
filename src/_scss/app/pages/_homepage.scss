@@ -30,10 +30,14 @@
 .feature-panels {
 	.container {
 		background: white;
-		padding: 14px 21px;
+		padding-top: 14px;
 
-		.col-md-4 {
-		    padding: 0 7px;
+		@include media-breakpoint-up(xl) {
+		    padding: 14px 21px;
+
+		    .col-md-4 {
+		        padding: 0 7px;
+		    }
 		}
 	}
 

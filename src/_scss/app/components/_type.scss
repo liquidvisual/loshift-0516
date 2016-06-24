@@ -13,7 +13,7 @@
 
 html {
 	@include media-breakpoint-up(xs) { font-size: $font-size-xs; }
-	@include media-breakpoint-up(sm) { font-size: $font-size-sm; }
+	// @include media-breakpoint-up(sm) { font-size: $font-size-sm; }
 	// @include media-breakpoint-up(md) { font-size: $font-size-md; }
 	@include media-breakpoint-up(lg) { font-size: $font-size-lg; }
 	// @include media-breakpoint-up(xl) { font-size: $font-size-xl; }
@@ -29,7 +29,72 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	// font-variant: small-caps;
-	// text-transform: uppercase;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+//-----------------------------------------------------------------
+// Blockquote
+//-----------------------------------------------------------------
+
+.blockquote {
+	border-left: none;
+	margin-top: 30px;
+
+	p:before {
+		content: "“";
+		line-height: 25px;
+		font-size: 150px;
+		color: #003c71;
+		opacity: 0.5;
+		font-family: "Times New Roman";
+		vertical-align: bottom;
+		-moz-transform: translateY(19px);
+		-ms-transform: translateY(19px);
+		-o-transform: translateY(19px);
+		-webkit-transform: translateY(19px);
+		transform: translateY(19px);
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	p:after {
+		content: "”";
+		line-height: 25px;
+		font-size: 150px;
+		color: #003c71;
+		opacity: 0.5;
+		margin-left: 10px;
+		font-family: "Times New Roman";
+		vertical-align: bottom;
+		-moz-transform: translateY(40px);
+		-ms-transform: translateY(40px);
+		-o-transform: translateY(40px);
+		-webkit-transform: translateY(40px);
+		transform: translateY(40px);
+		display: inline-block;
+	}
+
+	.blockquote-footer:before {
+		display: none;
+	}
+
+	.blockquote-footer {
+		position: relative;
+		margin-top: 30px;
+		font-size: rem-calc(16);
+		color: #222;
+	}
+
+	.blockquote-footer b:before {
+		position: absolute;
+		left: -22px;
+		content: "\2014 \00A0";
+	}
+
+	cite {
+		font-style: normal;
+	}
 }
 
 //-----------------------------------------------------------------

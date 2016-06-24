@@ -46,6 +46,7 @@ $dark-bg-color: $gray-dark;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
 
 	@include media-breakpoint-up(md) {
 	    height: calc(100% - #{$lv-footer-height}); // failsafe
@@ -263,6 +264,55 @@ ul.lv-context-menu-user-tools {
 //-----------------------------------------------------------------
 //
 //-----------------------------------------------------------------
+
+.listo {
+	> ul > li:nth-child(odd) > a {
+		// border-bottom: 1px solid #1E1E24;
+		// background: #2F2F37;
+		border-radius: 4px;
+	}
+
+	> ul > li > a {
+		padding-left: 40px;
+		position: relative;
+
+		&:before {
+			font-family: "FontAwesome";
+			content: "\f110";
+			// content: "\f096";
+			position: absolute;
+			left: 10px;
+			top: 20px;
+			color: $brand-secondary;
+			color: #444950;
+			font-weight: bold;
+		}
+	}
+
+	> ul > li:nth-child(3n+1) > a {
+		&:before {
+			content: "\f046";
+			// content: "\f14a";
+			content: "\f00c";
+			// color: #444950;
+			color: $brand-secondary;
+
+		}
+	}
+
+	> ul > li:nth-child(1) > a {
+		// background: $brand-secondary;
+		background: #2F2F37;
+	}
+
+	.listo-light {
+		color: #535D63 !important;
+	}
+
+	ul > li > ul {
+		display: none;
+	}
+}
 
 //-----------------------------------------------------------------
 //

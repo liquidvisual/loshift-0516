@@ -34,6 +34,7 @@
 
 $brand-primary:             #003C71;
 $brand-secondary:           #01B2DE;
+$brand-tertiary:            #CCCCCC;
 // $brand-success:             #5cb85c !default;
 // $brand-info:                #5bc0de !default;
 // $brand-warning:             #f0ad4e !default;
@@ -186,7 +187,7 @@ $lg-only: "screen and (min-width: #{map-get($grid-breakpoints, lg)}) and (max-wi
 // //
 // // Font, line-height, and color for body text, headings, and more.
 
-// $font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 // $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 // $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 // $font-family-base:           $font-family-sans-serif !default;
@@ -195,9 +196,9 @@ $lg-only: "screen and (min-width: #{map-get($grid-breakpoints, lg)}) and (max-wi
 // $font-size-root:             16px !default;
 
 $font-size-base:             rem-calc(14); //1rem !default;
-$font-size-lg:               rem-calc(14); //1.25rem !default;
-$font-size-sm:               rem-calc(12); //.875rem !default;
-$font-size-xs:               rem-calc(13); //.75rem !default;
+$font-size-lg:               rem-calc(16); //1.25rem !default;
+$font-size-sm:               rem-calc(14); //.875rem !default;
+$font-size-xs:               rem-calc(14); //.75rem !default;
 
 // $font-size-h1:               2.5rem !default;
 // $font-size-h2:               2rem !default;
@@ -219,7 +220,7 @@ $font-size-xs:               rem-calc(13); //.75rem !default;
 // $line-height:                1.5 !default;
 
 // $headings-margin-bottom:     ($spacer / 2) !default;
-// $headings-font-family:          'Jura', sans-serif; //inherit !default;
+$headings-font-family:       'Jura', sans-serif; //inherit !default;
 $headings-font-weight:       500 !default;
 // $headings-line-height:       1.1 !default;
 $headings-color:             $brand-primary; //inherit !default;
@@ -666,12 +667,12 @@ $headings-color:             $brand-primary; //inherit !default;
 // // Breadcrumbs
 
 // $breadcrumb-padding-vertical:   .75rem !default;
-$breadcrumb-padding-horizontal: 0; //1rem !default;
+// $breadcrumb-padding-horizontal: 0; //1rem !default;
 
-$breadcrumb-bg:                 none; //$gray-lighter !default;
+// $breadcrumb-bg:                 $gray-lighter !default;
 // $breadcrumb-divider-color:      $gray-light !default;
 // $breadcrumb-active-color:       $gray-light !default;
-$breadcrumb-divider:            ; //"/" !default;
+// $breadcrumb-divider:            ; //"/" !default;
 
 
 // // Carousel

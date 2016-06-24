@@ -1,8 +1,8 @@
 /*
-    SPECIAL.CSS
+SPECIAL.CSS
 
-    - Last updated: 00.00.00
-    - liquidvisual.com
+- Last updated: 00.00.00
+- liquidvisual.com
 */
 //-----------------------------------------------------------------
 // Variables
@@ -12,16 +12,35 @@
 //-----------------------------------------------------------------
 
 .new-flag:after {
-  content: "NEW";
-  border: 1px solid #c70014;
-  color: #c70014;
-  display: inline-block;
-  -moz-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
-  -ms-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
-  -o-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
-  -webkit-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
-  transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
-  padding: 0 4px;
+	content: "NEW";
+	border: 1px solid #c70014;
+	color: #c70014;
+	display: inline-block;
+	-moz-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+	-ms-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+	-o-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+	-webkit-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+	transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
+	padding: 0 4px;
+}
+
+.long-strike-through {
+	@include media-breakpoint-up(md) {
+	    	&:after {
+	    		content: "";
+	    		position: relative;
+	    		top: -30px;
+	    		width: 100%;
+	    		height: 1px;
+	    		border-top: 1px solid $brand-primary;
+	    		z-index: -1;
+	    }
+
+	    	li > span {
+	    		padding: rem-calc(0 10);
+	    		background: white;
+	    	}
+	}
 }
 
 //=========================================
