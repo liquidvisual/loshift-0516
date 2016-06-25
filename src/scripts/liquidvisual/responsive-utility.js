@@ -1,5 +1,5 @@
 /*
-    RESPONSIVE-UTILITY.JS - Last updated: 17.01.16
+    RESPONSIVE-UTILITY.JS - Last updated: 24.06.16
 
     - Notes: Needs refactor
 */
@@ -98,7 +98,7 @@
     // Display if body has 'dev-mode' attribute
     //-----------------------------------------------------------------
 
-    if ($('body[dev-mode-enabled="true"]').length) {
+    if ($('[dev-mode-enabled="true"]').length) {
 
         // Launch it
         responsiveHelper();

@@ -1,32 +1,44 @@
 {% assign hero = "/img/content/hero-3.jpg" %}
 
-<!-- HERO -->
-<div class="lv-hero lv-hero-homepage">
+<div class="lv-hero-wrapper">
 
-    <!-- Hero Item -->
-    <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
-        <div class="display-table">
-            <div class="display-cell align-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+    <!-- HERO -->
+    <div class="lv-hero is-full-screen">
 
-                            <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
+        <!-- HERO ITEM -->
+        <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
+            <div class="display-table">
+                <div class="display-cell align-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
 
-                                <!-- Mandatory -->
-                                <h1>Access Loadshift<br> from Less Than<br> $2 per Day!</h1>
-                                <br>
-                                <a href="#" class="btn btn-primary btn-lg">New Registration</a>
-                                <span>&nbsp;&nbsp;OR&nbsp;&nbsp;</span>
-                                <a href="#" class="btn btn-primary btn-lg">Existing User</a>
+                                <!-- HERO CAPTION -->
+                                <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
+                                    <h1>Get Quotes <br>&amp; Find Trucks</h1>
+                                    <p>Find Australia Wode Heavy Haulage transport fast.<br> Get quotes by posting a request or find trucks on the location map.</p>
+                                    <a href="/text-page/" class="btn btn-primary btn-lg">Get Quotes</a>
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+    </div> <!-- .lv-hero -->
+
+    <!-- HERO ADDITION -->
+    <div class="hero-addition">
+        <div class="container">
+            <ul class="block-grid-md-4 text-xs-center">
+                <li><span class="h2">1. Post a Request</span></li>
+                <li><span class="h2">2. Request Communicated</span></li>
+                <li><span class="h2">3. Receive Quotes</span></li>
+                <li><span class="h2">4. Choose Your Carrier</span></li>
+            </ul>
+        </div>
     </div>
 
-</div> <!-- .lv-hero -->
+</div> <!-- /.lv-hero-wrapper -->

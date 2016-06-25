@@ -28,7 +28,7 @@
   url: /blog/
 
 - title: News
-  url: /news/
+  url: /blog/
 
 - title: Help
   url: /text-page/
@@ -47,39 +47,39 @@
   include_children_in_nav: true
   children:
     - title: Machinery Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Heavy Haulage
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: General Freight
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Palletised Freight
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Car Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Container Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Truck Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Furniture Removal
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
       status: new
     - title: Boat Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Trailer Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Hay Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Grain Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Portable Buildings
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Livestock Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
     - title: Bulk Tipper Transport
-      url: #/cargo-categories/
+      url: /cargo-categories/cargo-item/
 
 - title: Contact Us
-  url: /contact-us/
+  url: "/text-page/"
 
 ##############################
 

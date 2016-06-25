@@ -27,6 +27,19 @@ $(document).ready(function() {
         useCSS: true,
         pager: true
     });
+
+    key('⌘+shift+m, ctrl+shift+m', function(){
+      function getHashBang() {
+        var hashBang_arr = window.location.hash.split('/');
+        var hashBang = {};
+          hashBang.firstLevel  = hashBang_arr[1];
+          hashBang.secondLevel = hashBang_arr[2];
+          hashBang.thirdLevel  = hashBang_arr[3];
+          return hashBang;
+      }
+
+      window.location = '/manage/';
+    });
 });
 
 $(window).load(function() {
@@ -48,6 +61,12 @@ $('.hamburger').bind('click', function(e) {
     e.preventDefault();
     $offCanvasMenu.trigger('open.mm');
 });
+
+//==================================================
+//
+//==================================================
+
+
 
 //==================================================
 //

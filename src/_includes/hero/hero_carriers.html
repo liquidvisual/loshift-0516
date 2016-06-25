@@ -1,33 +1,36 @@
 {% assign hero = "/img/content/hero-5.jpg" %}
 
-<!-- HERO -->
-<div class="lv-hero lv-hero-homepage">
+<div class="lv-hero-wrapper">
 
-    <!-- Hero Item -->
-    <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
-        <div class="display-table">
-            <div class="display-cell align-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+    <!-- HERO -->
+    <div class="lv-hero is-full-screen">
 
-                            <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
+        <!-- Hero Item -->
+        <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
+            <div class="display-table">
+                <div class="display-cell align-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
 
-                                <!-- Mandatory -->
-                                <h1>Get Loads</h1>
-                                <p class="lead">Let loadshift Deliver more business into your business. Best of all... ZERO commission.</p>
-                                <br>
-                                <a href="#" class="btn btn-primary btn-lg">Register</a>
-                                <span>&nbsp;&nbsp;OR&nbsp;&nbsp;</span>
-                                <a href="#" class="btn btn-primary btn-lg">Login</a>
+                                <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
+
+                                    <!-- Mandatory -->
+                                    <h1>Get Loads</h1>
+                                    <p class="lead">Let loadshift Deliver more business into your business. Best of all... ZERO commission.</p>
+                                    <br>
+                                    <a href="#" class="btn btn-primary btn-lg">Register</a>
+                                    <span>&nbsp;&nbsp;OR&nbsp;&nbsp;</span>
+                                    <a href="#" class="btn btn-primary btn-lg">Login</a>
+
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div> <!-- .lv-hero -->
+    </div> <!-- ./lv-hero -->
+</div> <!-- ./lv-hero-wrapper -->

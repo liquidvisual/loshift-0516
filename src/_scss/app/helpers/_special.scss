@@ -25,6 +25,8 @@ SPECIAL.CSS
 }
 
 .long-strike-through {
+	z-index: 20;
+
 	@include media-breakpoint-up(md) {
 	    	&:after {
 	    		content: "";
@@ -33,13 +35,27 @@ SPECIAL.CSS
 	    		width: 100%;
 	    		height: 1px;
 	    		border-top: 1px solid $brand-primary;
-	    		z-index: -1;
-	    }
+	    	}
 
 	    	li > span {
+	    		position: relative;
 	    		padding: rem-calc(0 10);
 	    		background: white;
+				z-index: 1;
 	    	}
+	}
+}
+
+.section-dark .long-strike-through {
+	@include media-breakpoint-up(md) {
+		&:after {
+			border-top: 1px solid  white;
+		}
+
+	    li > span {
+	    	background: $brand-primary;
+	    	color: white;
+	    }
 	}
 }
 

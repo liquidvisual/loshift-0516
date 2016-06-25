@@ -6,6 +6,7 @@
 future: false
 show_drafts: false
 mode: build
+dev_mode_enabled: false # LV responsive tool
 
 # Used on files that can't be prefixed by CDNify
 # Eg. The Hero images - which are inline (or data urls)

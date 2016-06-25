@@ -666,13 +666,13 @@ $headings-color:             $brand-primary; //inherit !default;
 
 // // Breadcrumbs
 
-// $breadcrumb-padding-vertical:   .75rem !default;
-// $breadcrumb-padding-horizontal: 0; //1rem !default;
+$breadcrumb-padding-vertical:   0; //.75rem !default;
+$breadcrumb-padding-horizontal: 0; //1rem !default;
 
-// $breadcrumb-bg:                 $gray-lighter !default;
+$breadcrumb-bg:                 transparent; //$gray-lighter !default;
 // $breadcrumb-divider-color:      $gray-light !default;
 // $breadcrumb-active-color:       $gray-light !default;
-// $breadcrumb-divider:            ; //"/" !default;
+// $breadcrumb-divider:           "/" !default;
 
 
 // // Carousel

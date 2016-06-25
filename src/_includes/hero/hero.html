@@ -1,71 +1,40 @@
 {% comment %}
     LIQUIDVISUAL-HERO
 
-    - updated: 12.10.15
+    - updated: 24.06.16
     - notes:
         * Multiple items in carousel_slides.yml triggers carousel mode
         * .has-auto-height - caption will detemine height
         * .has-fixed-height - used for internal pages to set a height
 {% endcomment %}
 
-{% assign hero_images = site.data.carousel_slides %}
+{% assign hero = "/img/content/hero-1.jpg" %}
 
 <div class="lv-hero-wrapper">
 
     <!-- HERO -->
-    <div class="lv-hero lv-hero-homepage">
+    <div class="lv-hero is-full-screen">
 
-        {% for hero in hero_images %}
+        <!-- Hero Item -->
+        <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
+            <div class="display-table">
+                <div class="display-cell align-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 col-md-offset-3 col-lg-7 col-lg-offset-5">
 
-            <!-- Hero Item -->
-            <div class="lv-hero-item" style="background-image: url('{{ hero.image | prepend: site.assets }}')" data-background-image="{{ hero.image | prepend: site.assets }}">
-                <div class="display-table">
-                    <div class="display-cell align-top">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-7 col-md-offset-3 col-lg-7 col-lg-offset-5">
-
-                                    <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
-
-                                        <!-- Mandatory -->
-                                        <h1>{{ hero.title }}</h1>
-                                        <h2>{{ hero.subtitle }}</h2>
-
-                                        <!-- Optional -->
-                                        {% if hero.body %}
-                                            <p>{{ hero.body }}</p>
-                                        {% endif %}
-
-                                    </div>
-
+                                <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
+                                    <h1>Australia's Leading Heavy Haulage Transport Marketplace</h1>
+                                    <p class="lead strike-through m-b-0">Connecting Shippers &amp; Carriers</p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        {% endfor %}
+        </div>
 
     </div> <!-- .lv-hero -->
 
-    {% comment %}
-    <!-- Carousel Controls -->
-    <div class="lv-hero-carousel-controls">
-        <div class="container">
-            <span href="#" class="lv-hero-carousel-prev-btn"><i class="fa fa-angle-left"></i></span>
-            <span href="#" class="lv-hero-carousel-next-btn"><i class="fa fa-angle-right"></i></span>
-        </div>
-    </div>
-
-    <!-- Carousel Bullets -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="lv-hero-carousel-bullets"></div>
-            </div>
-        </div>
-    </div>
-    {% endcomment %}
-
-</div>
+</div> <!-- .lv-hero-wrapper -->

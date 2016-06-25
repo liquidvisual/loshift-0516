@@ -1,0 +1,33 @@
+<!-- TESTIMONIALS -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>A Word From Our Users...</h2>
+
+                <ul class="carousel">
+                    {% for item in site.data.testimonials %}
+                    <li>
+                        <blockquote class="blockquote">
+                            <p class="m-b-0">{{ item.body }}</p>
+                            <footer class="blockquote-footer pull-xs-right">
+                                <div class="text-xs-left">
+                                    <b>{{ item.cite }}</b><br><cite title="Source Title">{{ item.cite_subtitle }}</cite>
+                                </div>
+                            </footer>
+                        </blockquote>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <div class="text-xs-right">
+                    <p><a href="#"><img width="100%" src="/img/content/find-trucks-feature.jpg" alt=""></a></p>
+                    <p><a href="#"><img width="100%" src="/img/content/get-quotes-feature.jpg" alt=""></a></p>
+                    <p><a href="#"><img width="100%" src="/img/content/get-loads-feature.jpg" alt=""></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

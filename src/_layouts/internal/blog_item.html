@@ -1,0 +1,34 @@
+---
+layout: internal
+---
+
+{% assign sections = site.data.sitemap[5].children %}
+{% assign news = site.data.articles %}
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <article class="m-b-lg">
+                    <h1 class="h2">{{ page.title }}</h1>
+                    <p><date>12 AUGUST 2015</date></p>
+                    <br>
+                    <p class="img-right"><img width="100%" src="http://placehold.it/350x260" alt="..."></p>
+                    {{ content }}
+                </article>
+
+            </div>
+            <div class="col-lg-4 pad-left-xl">
+                <!-- <h2 class="m-b-md">Other News</h2> -->
+
+                {% for item in news | limit: 3 %}
+                    <div class="card-list">
+                        <!-- { % include components/card_slim.html %} -->
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>

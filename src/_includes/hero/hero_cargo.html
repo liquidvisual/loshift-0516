@@ -1,32 +1,47 @@
-{% assign hero = "/img/content/hero-3.jpg" %}
+{% assign hero = "/img/content/hero-1.jpg" %}
 
-<!-- HERO -->
-<div class="lv-hero lv-hero-homepage">
+<div class="lv-hero-wrapper">
 
-    <!-- Hero Item -->
-    <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
-        <div class="display-table">
-            <div class="display-cell align-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+    <!-- HERO -->
+    <div class="lv-hero is-full-screen">
 
-                            <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
+        <!-- HERO ITEM -->
+        <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
+            <div class="display-table">
+                <div class="display-cell align-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
 
-                                <!-- Mandatory -->
-                                <h1>Access Loadshift<br> from Less Than<br> $2 per Day!</h1>
-                                <br>
-                                <a href="#" class="btn btn-primary btn-lg">New Registration</a>
-                                <span>&nbsp;&nbsp;OR&nbsp;&nbsp;</span>
-                                <a href="#" class="btn btn-primary btn-lg">Existing User</a>
+                                <!-- HERO CAPTION -->
+                                <div class="lv-hero-item-caption animated fadeInLeft">
+                                    <h1>Heavy Haulage Quotes</h1>
+                                    <br>
+                                    {% include form_quote.html %}
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+    </div> <!-- .lv-hero -->
+
+    <!-- HERO ADDITION -->
+    <div class="hero-addition p-y-0">
+        <div class="container">
+
+            <!-- FEATURE ICONS -->
+            <ul class="block-grid-xs-2 block-grid-md-4">
+                <li><img width="100%" src="/img/content/feature-icon-1.png" alt="Find Transport &amp; Loads Fast"></li>
+                <li><img width="100%" src="/img/content/feature-icon-2.png" alt="Australia Wide Coverage"></li>
+                <li><img width="100%" src="/img/content/feature-icon-3.png" alt="0% Commission"></li>
+                <li><img width="100%" src="/img/content/feature-icon-4.png" alt="Cutout the Middleman"></li>
+            </ul>
+
+        </div>
     </div>
 
-</div> <!-- .lv-hero -->
+</div> <!-- /.lv-hero-wrapper -->

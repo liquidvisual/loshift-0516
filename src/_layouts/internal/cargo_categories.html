@@ -1,0 +1,26 @@
+---
+layout: internal
+---
+
+{% assign cargo_categories = site.data.sitemap[12].children %}
+
+<section class="section">
+	<div class="container">
+		<ul class="block-grid-md-3 block-grid-lg-4">
+			{% for item in cargo_categories %}
+				<li>
+					<a href="{{ item.url }}">
+						<div class="card">
+						  <img class="card-img-top" width="100%" src="/img/content/hero-2.jpg" alt="{{ item.title }}">
+						  <div class="card-block">
+						    <h4 class="card-title">{{ item.title }}</h4>
+						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    <span class="btn btn-primary">Continue</span>
+						  </div>
+						</div>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
