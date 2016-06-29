@@ -111,6 +111,22 @@ $hero-carousel-bullet-size:   rem-calc(16);
     width: 100%; /* mobile */
     margin: rem-calc(50 0);
 
+    h1 {
+        font-size: rem-calc(26);
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h1;
+        }
+    }
+
+    .lead {
+        font-size: rem-calc(14);
+
+        @include media-breakpoint-up(md) {
+            font-size: $lead-font-size;
+        }
+    }
+
     @include media-breakpoint-up(md) {
         width: auto;
     }

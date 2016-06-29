@@ -8,10 +8,10 @@ SPECIAL.CSS
 // Variables
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
-// Special
+// Special - in footer
 //-----------------------------------------------------------------
 
-.new-flag:after {
+.new-flag a:after {
 	content: "NEW";
 	border: 1px solid #c70014;
 	color: #c70014;
@@ -22,22 +22,47 @@ SPECIAL.CSS
 	-webkit-transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
 	transform: rotate(5deg) translatex(5px) translateY(-1px) scale(0.75);
 	padding: 0 4px;
+
+	@include media-breakpoint-up(xs) {
+	    display: inline-block;
+	}
+
+	// Hide for medium only - breaks layout
+	@include media-breakpoint-up(md) {
+	    display: none;
+	}
+
+	@include media-breakpoint-up(lg) {
+	    display: inline-block;
+	}
 }
+
+//-----------------------------------------------------------------
+// In sections
+//-----------------------------------------------------------------
 
 .long-strike-through {
 	z-index: 20;
+	position: relative;
+	// text-align: center;
 
 	@include media-breakpoint-up(md) {
 	    	&:after {
 	    		content: "";
-	    		position: relative;
-	    		top: -30px;
-	    		width: 100%;
+	    		position: absolute;
+	    		top: 25px;
+	    		left: 18%;
+	    		width: 60%;
 	    		height: 1px;
 	    		border-top: 1px solid $brand-primary;
+
+	    		@include media-breakpoint-up(lg) {
+	    		    top: 32px;
+	    		}
 	    	}
 
 	    	li > span {
+				background: red;
 	    		position: relative;
 	    		padding: rem-calc(0 10);
 	    		background: white;
@@ -59,6 +84,36 @@ SPECIAL.CSS
 	}
 }
 
+//-----------------------------------------------------------------
+// In Shippers
+//-----------------------------------------------------------------
+
+.number-bullet {
+	display: inline-block;
+	background: $brand-primary;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: white;
+	border-radius: 100%;
+	font-size: rem-calc(25);
+	font-weight: bold;
+}
+
 //=========================================
 //
 //=========================================
+
+.video-embed {
+	width: 100%;
+	height: auto;
+
+	@include media-breakpoint-up(sm) {
+	    height: 260px;
+	}
+
+	@include media-breakpoint-up(lg) {
+	    height: 350px;
+	}
+}

@@ -1,103 +1,91 @@
 ---
 layout: internal/text_page
-title: Component Library - in Progress
-permalink: /component-library/
+title: Component Library
+permalink: /docs/component-library/
 hero: /img/content/hero-2.jpg
 ---
 
+{% assign settings = site.data.settings %}
 {% assign components = site.docs | where: "type", "component" %}
 
-<div class="spacer m-b-2"></div>
+<style>
+	body {
+		background: #F2F2F2;
+	}
+	.section-component {
+		background: white;
+		padding: 15px;
+		margin-bottom: 4rem;
+		box-shadow: 0px 6px 14px 2px rgba(0,0,0,0.1);
+	}
 
-<nav id="component-selector" class="wrap">
-  <select name="section" id="component-select">
-    <option value>Jump to component...</option>
-    {% for item in components %}
-	    <option value="#guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</option>
-	    {% for entry in item.items %}
-	    	<option value="#guide-{{ entry.title | slugify | downcase }}">&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
-	    {% endfor %}
-    {% endfor %}
-  </select>
+	@media (min-width: 768px) {
+		.section-component {
+			background: white;
+			padding: 30px;
+			margin-bottom: 4rem;
+			box-shadow: 0px 6px 14px 2px rgba(0,0,0,0.1);
+		}
+	}
+
+	.component-desc {
+		background: #FAF7F2;
+		padding: 15px;
+		border-radius: 5px;
+	}
+</style>
+
+<p class="lead">A handy reusable collection of UI patterns, modules and components used across {{ settings.title }}.</p>
+
+<!-- COMPONENT SELECTOR -->
+<nav class="m-t-2 m-b-3">
+	<select class="c-select" name="Select Components" id="component-select">
+		<option value>Jump to component...</option>
+			{% for item in components %}
+				<option value="#guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</option>
+				{% for entry in item.items %}
+				<option value="#guide-{{ entry.title | slugify | downcase }}">&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
+			{% endfor %}
+		{% endfor %}
+	</select>
 </nav>
 
-<!-- component selector option list -->
+<!-- COMPONENT SELECTOR: JAVASCRIPT -->
 <script>
   (function (document, undefined) {
-    // component selector
-    document.getElementById('component-select').onchange = function() {
-      //document.location=this.options[this.selectedIndex].value;
-      var val = this.value;
-      if (val !== "") {
-        window.location = val;
-      }
+  	document.getElementById('component-select').onchange = function() {
+    	var val = this.value;
+      	if (val !== "") window.location = val;
     }
   })(document);
 </script>
 
-<div class="spacer m-t-3"></div>
-
+<!-- COMPONENTS -->
 {% for item in components %}
+	<section class="section-component">
+		<header>
+			<h2 id="guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</h2>
 
-	<header>
-		<h2 id="guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</h2>
-		{% if item.usage %}
-			<p><strong>Usage:</strong> {{ item.usage }}</p>
-		{% endif %}
-		{% if item.module %}
-			<p><strong>Include partial:</strong> <a href="{{ site.owner.github-repo }}{{ item.module }}">{{ item.module }}</a></p>
-		{% endif %}
-		{% if item.scss %}
-			<p class="item--last"><strong>SCSS partial:</strong> <a href="{{ site.owner.github-repo }}{{ item.scss }}">{{ item.scss }}</a></p>
-		{% endif %}
-	</header>
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				{% if item.usage %}
+					<p><strong>Usage:</strong> {{ item.usage }}</p>
+				{% endif %}
+				{% if item.scss %}
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="{{ settings.github_repo }}{{ item.scss }}">{{ item.scss }}</a></p>
+				{% endif %}
+			</div>
+		</header>
 
-	<br>
-	<br>
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			{{ item.content }}
+		</div>
 
-	<div class="component-rendered">
-		{{ item.content }}
-	</div>
-
-	<br><br>
-
-	<strong>The HTML:</strong>
-
-<div class="component-code">
-{% highlight html %}{{ item.content }}{% endhighlight %}
-</div>
-
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			{% highlight html %}{{ item.content }}{% endhighlight %}
+		</div>
+	</section>
 {% endfor %}
-
-<!-- SASS EXPERIMENT -->
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-{% highlight scss %}
-.highlight {
-    background-color: $bg-color; color: $body;
-    font-weight: 600;
-    font-size: 14px;
-    border-radius: 10px;
-
-    // padding: rem-calc(20 10 20 20);
-
-    pre {
-        padding: rem-calc(30);
-    }
-
-    span {
-        font-family: 'Source Code Pro', serif;
-    }
-{% endhighlight %}

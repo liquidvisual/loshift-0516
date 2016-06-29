@@ -1,8 +1,8 @@
 /*
-    BLOCK-GRID.CSS
+BLOCK-GRID.CSS
 
-    - updated: 28.01.16
-    - liquidvisual.com
+- updated: 28.06.16
+- liquidvisual.com
 */
 //-----------------------------------------------------------------
 // Variables
@@ -19,21 +19,21 @@
 // Converted to SCSS by Rasmus Jürs (https://github.com/Jursdotme)
 
 [class*="block-grid-"] {
-  @include clearfix();
-  display: block;
-  margin: -($grid-gutter-width/2);
-  padding: 0;
-  list-style: none;
-  overflow: hidden; // fixes issue with IE
+	@include clearfix();
+	display: block;
+	margin: -($grid-gutter-width/2);
+	padding: 0;
+	list-style: none;
+	overflow: hidden; // fixes issue with IE
 }
 
 [class*="block-grid-"] > li,
 .block-grid-item {
-  display: inline;
-  margin: 0;
-  padding: ($grid-gutter-width/2);
-  height: auto;
-  float: left;
+	display: inline;
+	margin: 0;
+	padding: ($grid-gutter-width/2);
+	height: auto;
+	float: left;
 }
 
 // // IE9 HACK
@@ -53,14 +53,13 @@
 //=========================================
 
 @mixin block-grid ($per-row) {
-  & > li,
-  & > .block-grid-item {
-    width: (100%/$per-row);
-
-    $nth-equation: (#{$per-row}n) + '+' +1;
-    &:nth-of-type(n) { clear: none; }
-    &:nth-of-type(#{$nth-equation}) { clear: both; }
-  }
+	& > li,
+	& > .block-grid-item {
+		width: (100%/$per-row);
+		$nth-equation: (#{$per-row}n) + '+' +1;
+		&:nth-of-type(n) { clear: none; }
+		&:nth-of-type(#{$nth-equation}) { clear: both; }
+	}
 }
 
 //=========================================
@@ -68,7 +67,8 @@
 //=========================================
 
 @mixin set-margins($unit) {
-  margin: $unit;
+	margin-top: $unit; // fixed!
+	margin-bottom: $unit;
 }
 
 //=========================================
@@ -76,18 +76,18 @@
 //=========================================
 
 @mixin block-grids($size) {
-  .block-grid-#{$size}-1  { @include block-grid(1); @include set-margins(0) }
-  .block-grid-#{$size}-2  { @include block-grid(2);  }
-  .block-grid-#{$size}-3  { @include block-grid(3);  }
-  .block-grid-#{$size}-4  { @include block-grid(4);  }
-  .block-grid-#{$size}-5  { @include block-grid(5);  }
-  .block-grid-#{$size}-6  { @include block-grid(6);  }
-  .block-grid-#{$size}-7  { @include block-grid(7);  }
-  .block-grid-#{$size}-8  { @include block-grid(8);  }
-  .block-grid-#{$size}-9  { @include block-grid(9);  }
-  .block-grid-#{$size}-10 { @include block-grid(10); }
-  .block-grid-#{$size}-11 { @include block-grid(11); }
-  .block-grid-#{$size}-12 { @include block-grid(12); }
+	.block-grid-#{$size}-1  { @include block-grid(1); @include set-margins(0) }
+	.block-grid-#{$size}-2  { @include block-grid(2);  }
+	.block-grid-#{$size}-3  { @include block-grid(3);  }
+	.block-grid-#{$size}-4  { @include block-grid(4);  }
+	.block-grid-#{$size}-5  { @include block-grid(5);  }
+	.block-grid-#{$size}-6  { @include block-grid(6);  }
+	.block-grid-#{$size}-7  { @include block-grid(7);  }
+	.block-grid-#{$size}-8  { @include block-grid(8);  }
+	.block-grid-#{$size}-9  { @include block-grid(9);  }
+	.block-grid-#{$size}-10 { @include block-grid(10); }
+	.block-grid-#{$size}-11 { @include block-grid(11); }
+	.block-grid-#{$size}-12 { @include block-grid(12); }
 }
 
 @include block-grids(xs);

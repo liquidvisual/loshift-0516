@@ -1,26 +1,43 @@
 {% assign settings = site.data.settings %}
-{% assign logo = "/img/content/logo-white.svg" %}
+{% assign logo = "/img/content/logo-white.png" %}
+{% assign counter = "198001" %}
 
 <div class="container">
     <div class="display-table">
         <div class="display-cell">
 
-            <!-- Logo -->
+            <!-- LOGO -->
             <a class="logo" href="/" title="{{ settings.seo_title }}" itemprop="url">
                 <img src="{{ logo }}" alt="{{ settings.company_title }}" itemprop="logo">
             </a>
 
-            <!-- Counter -->
+            <!-- COUNTER -->
             <div class="counter hidden-md-down">
-                <span class="number">198,001</span>
+                <span class="number" id="dynamic-counter"></span>
                 <span class="km">km</span>
                 <span class="text">of requested transport added in the last 24hrs.</span>
             </div>
 
-            <!-- Menu -->
+            <!-- DYNAMIC COUNTING EFFECT -->
+            <script>
+                $(window).load(function() {
+                   var options = {
+                     useEasing : true,
+                     useGrouping : true,
+                     separator : ',',
+                     decimal : '.',
+                     prefix : '',
+                     suffix : ''
+                   };
+                   var countUp = new CountUp("dynamic-counter", 0, {{ counter }}, 0, 1.5, options);
+                   countUp.start();
+                });
+            </script>
+
+            <!-- MENU -->
             <div class="global-menu">
                 <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
-                <a class="global-menu-btn" data-toggle="modal" data-target="#myModal"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
+                <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
             </div>
 
         </div>

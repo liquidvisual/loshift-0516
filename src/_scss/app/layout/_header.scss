@@ -100,33 +100,16 @@ $header-height-lg: 220px !default;
 	top: 0;
 	display: inline-block;
 
-	@include media-breakpoint-up(md) {
-	    top: 0;
-	}
-
-	@include media-breakpoint-up(lg) {
-	    top: 0;
-	}
-
-	@include media-breakpoint-up(xl) {
-	    top: 0;
-	}
-
 	img {
-		// width: auto;
-		width: 120px;
-		height: $header-height-sm;
+		width: 150px;
 		padding: rem-calc(5 0);
 
 		@include media-breakpoint-up(md) {
-			width: 250px;
-		    height: $header-height-md;
+			width: 300px;
 		    padding: rem-calc(15 0);
 		}
 
 		@include media-breakpoint-up(xl) {
-			width: 300px;
-		    height: auto;
 		    padding: none;
 		}
 	}
@@ -138,15 +121,11 @@ $header-height-lg: 220px !default;
 
 .global-header .counter {
 	position: relative;
-	top: 12px;
+	top: 3px;
 	display: inline-block;
 	color: white;
 	padding-right: 200px;
 	float: right;
-
-	@include media-breakpoint-up(xl) {
-	    top: 3px;
-	}
 
 	.number,
 	.km {
@@ -173,10 +152,14 @@ $header-height-lg: 220px !default;
 .global-menu {
 	position: absolute;
 	right: 15px;
-	top: calc(50% - 34px/2); // 34=height of buttons
+	top: 14px;
 	display: block;
 	overflow: hidden;
 	text-transform: uppercase;
+
+	@include media-breakpoint-up(md) {
+	    top: 22px;
+	}
 
 	.hamburger {
 		float: right;

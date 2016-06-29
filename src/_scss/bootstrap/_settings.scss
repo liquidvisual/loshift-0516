@@ -180,7 +180,7 @@ $lg-only: "screen and (min-width: #{map-get($grid-breakpoints, lg)}) and (max-wi
 // // Set the number of columns and specify the width of the gutters.
 
 // $grid-columns:               12 !default;
-// $grid-gutter-width:          1.875rem !default; // 30px
+$grid-gutter-width:          1.875rem !default; // 30px
 
 
 // // Typography
@@ -195,7 +195,7 @@ $font-family-sans-serif:     "Open Sans", "Helvetica Neue", Helvetica, Arial, sa
 // // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 // $font-size-root:             16px !default;
 
-$font-size-base:             rem-calc(14); //1rem !default;
+$font-size-base:             rem-calc(14);//1rem !default;
 $font-size-lg:               rem-calc(16); //1.25rem !default;
 $font-size-sm:               rem-calc(14); //.875rem !default;
 $font-size-xs:               rem-calc(14); //.75rem !default;
@@ -207,15 +207,15 @@ $font-size-xs:               rem-calc(14); //.75rem !default;
 // $font-size-h5:               1.25rem !default;
 // $font-size-h6:               1rem !default;
 
-// $display1-size:               6rem !default;
-// $display2-size:               5.5rem !default;
-// $display3-size:               4.5rem !default;
-// $display4-size:               3.5rem !default;
+$display1-size:               4rem !default;
+$display2-size:               3.5rem !default;
+$display3-size:               2.5rem !default;
+$display4-size:               1.5rem !default;
 
-// $display1-weight:             300 !default;
-// $display2-weight:             300 !default;
-// $display3-weight:             300 !default;
-// $display4-weight:             300 !default;
+$display1-weight:             600 !default;
+$display2-weight:             600 !default;
+$display3-weight:             600 !default;
+$display4-weight:             600 !default;
 
 // $line-height:                1.5 !default;
 

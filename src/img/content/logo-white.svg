@@ -11,7 +11,7 @@
 	<clipPath id="SVGID_2_">
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
-	
+
 		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-26.1381" y1="810.4803" x2="-25.1381" y2="810.4803" gradientTransform="matrix(0 66.7111 66.7111 0 -54038.1328 1740.8152)">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="0.1959" style="stop-color:#7BCDF3"/>
@@ -28,7 +28,7 @@
 	<clipPath id="SVGID_5_">
 		<use xlink:href="#SVGID_4_"  overflow="visible"/>
 	</clipPath>
-	
+
 		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-28.0851" y1="810.1288" x2="-27.0851" y2="810.1288" gradientTransform="matrix(0 41.1691 41.1691 0 -33345.75 1169.3796)">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="0.1959" style="stop-color:#7BCDF3"/>
@@ -45,7 +45,7 @@
 	<clipPath id="SVGID_8_">
 		<use xlink:href="#SVGID_7_"  overflow="visible"/>
 	</clipPath>
-	
+
 		<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-28.8807" y1="809.9852" x2="-27.8807" y2="809.9852" gradientTransform="matrix(0 35.5991 35.5991 0 -28698.6074 1020.2198)">
 		<stop  offset="0" style="stop-color:#C6CDD1"/>
 		<stop  offset="0.2555" style="stop-color:#9FA9B1"/>
@@ -67,7 +67,7 @@
 	<path clip-path="url(#SVGID_11_)" fill="#FFFFFF" d="M216.997,7.707h8.544l0.672-2.449h-13.028c-1.459,0-2.793,0.41-4.003,1.234
 		c-1.211,0.823-1.973,1.791-2.282,2.909l-0.46,1.683l-0.002,0.008h-4.322l-0.657,2.449h4.325l-3.854,14.427h9.656l3.866-14.427h6.02
 		l0.672-2.449h-6.036l0.002-0.008L216.997,7.707z"/>
-	<polygon clip-path="url(#SVGID_11_)" fill="#FFFFFF" points="244.199,11.092 239.819,11.092 241.376,5.258 231.81,5.258 
+	<polygon clip-path="url(#SVGID_11_)" fill="#FFFFFF" points="244.199,11.092 239.819,11.092 241.376,5.258 231.81,5.258
 		230.245,11.092 224.628,11.092 223.969,13.541 229.588,13.541 225.72,27.968 235.318,27.968 239.166,13.541 243.527,13.541 	"/>
 	<polygon clip-path="url(#SVGID_11_)" fill="#FFFFFF" points="194.742,27.968 185.087,27.968 189.602,11.095 199.271,11.095 	"/>
 	<path clip-path="url(#SVGID_11_)" fill="#FFFFFF" d="M184.791,14.348c0-0.958-0.394-1.738-1.182-2.34

@@ -1,13 +1,12 @@
 /*
     FOOTER.CSS
 
-    - Last updated: 21.10.15
+    - Last updated: 28.06.16
     - liquidvisual.com
 */
 //-----------------------------------------------------------------
 // Variables
 //-----------------------------------------------------------------
-
 //-----------------------------------------------------------------
 // Footer Bottom
 //-----------------------------------------------------------------
@@ -27,8 +26,9 @@
 	    padding: ($spacer-y * 3) 0;
 	}
 
-	ul li {
-		padding: 0;
+	ul li { // Reset block-grid
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 }
 
@@ -38,7 +38,6 @@
 
 .global-footer-bottom {
 	font-size: rem-calc(11);
-
 	padding-bottom: $spacer;
 }
 

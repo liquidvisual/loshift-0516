@@ -1,18 +1,23 @@
 /*
     HERO.CSS
 
-    - Last updated: 00.00.00
+    - Last updated: 28.06.16
     - liquidvisual.com
 */
 //-----------------------------------------------------------------
 // Variables
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
-// Hero
+// Hero Overrides
 //-----------------------------------------------------------------
 
+.lv-hero-wrapper {
+	@include media-breakpoint-up(md) {
+	    margin-bottom: $spacer-y;
+	}
+}
+
 .lv-hero {
-	margin-bottom: $spacer-y;
 
 	&.is-full-screen {
 		@include media-breakpoint-up(xl) {
@@ -22,9 +27,6 @@
 	}
 
 	.lv-hero-item {
-	    // background-position: center center;
-	    // background-size: auto !important;
-
 	    padding: $header-height-sm/2 0 0 0;
 
 	    @include media-breakpoint-up(md) {
@@ -38,7 +40,7 @@
 }
 
 //-----------------------------------------------------------------
-// Hero Addition
+// Hero Addition (Sticky to bottom)
 //-----------------------------------------------------------------
 
 .hero-addition {
@@ -47,25 +49,36 @@
 	    bottom: 0;
 	    width: 100%;
 	    padding: rem-calc(20 0);
-	    background: rgba(white, 0.9);
+	    background: rgba(white, 0.8);
 	}
 }
 
 //-----------------------------------------------------------------
-// Hero
+// Hero Caption
 //-----------------------------------------------------------------
 
 .lv-hero .lv-hero-item-caption {
-	background: rgba(black, 0.3);
+	width: 100%;
+	padding: rem-calc(20);
+	margin-bottom: $spacer-y; // override lv
+	background: rgba(black, 0.5);
 	color: white;
-	padding: rem-calc(20 20 20 20);
 
 	@include media-breakpoint-down(sm) {
-	    margin-top: 50px;
+	    // margin-top: 50px;
+	}
+
+	@include media-breakpoint-up(md) {
+	    background: rgba(black, 0.3);
 	}
 
 	@include media-breakpoint-up(xl) {
 	    margin-top: calc(100vh/8); // responsive shifting vertical
+	}
+
+	.lead {
+		// color: $brand-primary;
+		font-weight: 500;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -81,7 +94,7 @@
 }
 
 //-----------------------------------------------------------------
-// Strike Through - only on homepage hero
+// Strike Through - Only on homepage hero
 //-----------------------------------------------------------------
 
 .strike-through {
@@ -90,7 +103,7 @@
 
 	&:before,
 	&:after {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 		    content: " ";
 		    display: inline-block;
 		    width: 70px;
@@ -99,7 +112,7 @@
 	}
 
 	&:before {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 		    -moz-transform: translateX(-6px) translateY(-6px);
 		    -ms-transform: translateX(-6px) translateY(-6px);
 		    -o-transform: translateX(-6px) translateY(-6px);
@@ -115,7 +128,7 @@
 	}
 
 	&:after {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 		    -moz-transform: translateX(6px) translateY(-6px);
 		    -ms-transform: translateX(6px) translateY(-6px);
 		    -o-transform: translateX(6px) translateY(-6px);

@@ -2,13 +2,13 @@
 {% assign sitemap = site.data.sitemap %}
 {% assign cargo_categories = sitemap[12].children %}
 
-<!-- Footer Body -->
+<!-- FOOTER BODY -->
 <section class="global-footer-body">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
 
-                <!-- Hardcoded Links -->
+                <!-- ** Hardcoded Links ** -->
                 <h3>Company</h3>
                 <ul class="block-grid-xs-1">
                     <li><a href="/text-page/">About Us</a></li>
@@ -29,9 +29,9 @@
                 <h3>Categories</h3>
                 <ul class="block-grid-xs-1 block-grid-md-2">
                     {% for item in cargo_categories %}
-                        <li class="{% if item.status == 'new' %}new-flag{% endif %}"><a href="#">{{ item.title }}</a></li>
+                        <li class="{% if item.status == 'new' %}new-flag{% endif %}"><a href="{{ item.url }}">{{ item.title }}</a></li>
                     {% endfor %}
-                    <li><a href="#">And More...</a></li>
+                    <li><a href="/cargo-categories/">And More...</a></li>
                 </ul>
 
                 <div class="spacer m-b-1 hidden-md-up"></div>
@@ -49,7 +49,7 @@
     </div>
 </section>
 
-<!-- Footer Bottom -->
+<!-- FOOTER BOTTOM -->
 <section class="global-footer-bottom">
     <div class="container text-xs-center">
         <p>
