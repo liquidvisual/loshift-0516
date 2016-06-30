@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]>       <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>          <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html class="no-js"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<title>Loadshift</title>
+
+	<!-- CDN -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700|Jura:400,500,600">
+
+	<!-- Fav Icons -->
+	<link rel="shortcut icon" href="/assets/favicon.ico">
+
+	<link rel="stylesheet" href="/assets/css/minified.css">
+
+  <!-- Priority Scripts -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+</head>
+<body class="" dev-mode-enabled="false">
+    <div class="lv-super">
+        <div class="lv-page">
+
+	        <!-- HEADER -->
+	        <header class="global-header FixedTop">
+	          
+
+
+
+<div class="container">
+    <div class="display-table">
+        <div class="display-cell">
+
+            <!-- LOGO -->
+            <a class="logo" href="/" title="Loadshift" itemprop="url">
+                <img src="/assets/img/content/logo-white.png" alt="" itemprop="logo">
+            </a>
+
+            <!-- COUNTER -->
+            <div class="counter hidden-md-down">
+                <span class="number" id="dynamic-counter"></span>
+                <span class="km">km</span>
+                <span class="text">of requested transport added in the last 24hrs.</span>
+            </div>
+
+            <!-- DYNAMIC COUNTING EFFECT -->
+            <script>
+                $(window).load(function() {
+                   var options = {
+                     useEasing : true,
+                     useGrouping : true,
+                     separator : ',',
+                     decimal : '.',
+                     prefix : '',
+                     suffix : ''
+                   };
+                   var countUp = new CountUp("dynamic-counter", 0, 198001, 0, 1.5, options);
+                   countUp.start();
+                });
+            </script>
+
+            <!-- MENU -->
+            <div class="global-menu">
+                <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
+                <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+	        </header>
+
+          
+
+<!-- HERO -->
+<div class="lv-hero is-alternate has-auto-height">
+
+    <!-- Hero Item -->
+    <div class="lv-hero-item" style="background-image: url('/assets/img/content/hero-2.jpg')" data-background-image="/assets/img/content/hero-2.jpg">
+
+        <!-- STAGE HEADER -->
+        <header class="stage-header">
+            <div class="container">
+                
+                    <h1>Component Library</h1>
+                
+            </div>
+        </header>
+
+    </div>
+</div> <!-- /.lv-hero -->
+
+<!-- BREADCRUMBS -->
+<nav class="lv-breadcrumb m-t-1">
+    <div class="container">
+        
+
+
+
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    
+        
+            <li><a href="/docs/">docs</a></li>
+        
+    
+        
+            <li class="active">component library</li>
+        
+    
+</ol>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<section class="section p-t-0">
+    <div class="container">
+	<div class="row">
+		<div class="col-lg-7">
+			
+
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+<style>
+	body {
+		background: #F2F2F2;
+	}
+	.section-component {
+		background: white;
+		padding: 15px;
+		margin-bottom: 4rem;
+		box-shadow: 0px 6px 14px 2px rgba(0,0,0,0.1);
+	}
+
+	@media (min-width: 768px) {
+		.section-component {
+			background: white;
+			padding: 30px;
+			margin-bottom: 4rem;
+			box-shadow: 0px 6px 14px 2px rgba(0,0,0,0.1);
+		}
+	}
+
+	.component-desc {
+		background: #FAF7F2;
+		padding: 15px;
+		border-radius: 5px;
+	}
+</style>
+
+<p class="lead">A handy reusable collection of UI patterns, modules and components used across Loadshift.</p>
+
+<!-- COMPONENT SELECTOR -->
+<nav class="m-t-2 m-b-3">
+	<select class="c-select" name="Select Components" id="component-select">
+		<option value>Jump to component...</option>
+			
+				<option value="#guide-accordion">Accordion</option>
+				
+		
+				<option value="#guide-button-promo">Button promo</option>
+				
+		
+				<option value="#guide-card-feature">Card feature</option>
+				
+		
+				<option value="#guide-basic-form">Basic form</option>
+				
+		
+				<option value="#guide-form-quotes">Form quotes</option>
+				
+		
+				<option value="#guide-strike-through">Strike through</option>
+				
+		
+	</select>
+</nav>
+
+<!-- COMPONENT SELECTOR: JAVASCRIPT -->
+<script>
+  (function (document, undefined) {
+  	document.getElementById('component-select').onchange = function() {
+    	var val = this.value;
+      	if (val !== "") window.location = val;
+    }
+  })(document);
+</script>
+
+<!-- COMPONENTS -->
+
+	<section class="section-component">
+		<header>
+			<h2 id="guide-accordion">Accordion</h2>
+
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				
+					<p><strong>Usage:</strong> A simple accordion</p>
+				
+				
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="https://github.com/liquidvisual/loshift-0516/blob/master/src/_scss/app/components/_accordion.scss">src/_scss/app/components/_accordion.scss</a></p>
+				
+			</div>
+		</header>
+
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			<div class="accordion" role="tablist" aria-multiselectable="true">
+    
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-1">
+            <h2 class="h4 panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent=".accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                Collapsible Group Item long name #1
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </h2>
+        </div>
+        <div aria-expanded="false" id="collapse-1" class="panel-body panel-collapse collapse" role="tabpanel" aria-labelledby="heading-1">
+            <div class="panel-body-inner">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+    
+</div>
+		</div>
+
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"accordion"</span> <span class="na">role=</span><span class="s">"tablist"</span> <span class="na">aria-multiselectable=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">id=</span><span class="s">"heading-1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4 panel-title"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapsed"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">".accordion"</span> <span class="na">href=</span><span class="s">"#collapse-1"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"collapse-1"</span><span class="nt">&gt;</span>
+                Collapsible Group Item long name #1
+                <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-angle-up"</span><span class="nt">&gt;&lt;/i&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">id=</span><span class="s">"collapse-1"</span> <span class="na">class=</span><span class="s">"panel-body panel-collapse collapse"</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">aria-labelledby=</span><span class="s">"heading-1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body-inner"</span><span class="nt">&gt;</span>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+		</div>
+	</section>
+
+	<section class="section-component">
+		<header>
+			<h2 id="guide-button-promo">Button promo</h2>
+
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				
+					<p><strong>Usage:</strong> A responsive button with a CSS background and possible moving internal parts. Also designed to have a a fixed height.</p>
+				
+				
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="https://github.com/liquidvisual/loshift-0516/blob/master/src/_scss/app/components/_buttons.scss">src/_scss/app/components/_buttons.scss</a></p>
+				
+			</div>
+		</header>
+
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			<a class="btn-promo" href="#">
+    <span class="btn-promo-bg" style="background-image: url(/img/content/carrier-i.jpg);"></span>
+    <div class="btn-promo-fill">
+        <h3 class="btn-promo-header">
+            <span class="text">Get<br> Quotes</span>
+        </h3>
+    </div>
+</a>
+		</div>
+
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn-promo"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"btn-promo-bg"</span> <span class="na">style=</span><span class="s">"background-image: url(/img/content/carrier-i.jpg);"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-promo-fill"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"btn-promo-header"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>Get<span class="nt">&lt;br&gt;</span> Quotes<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+		</div>
+	</section>
+
+	<section class="section-component">
+		<header>
+			<h2 id="guide-card-feature">Card feature</h2>
+
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				
+					<p><strong>Usage:</strong> A bolder more prominent card for drawing attention.</p>
+				
+				
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="https://github.com/liquidvisual/loshift-0516/blob/master/src/_scss/app/components/_cards.scss">src/_scss/app/components/_cards.scss</a></p>
+				
+			</div>
+		</header>
+
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			<a href="/how-it-works/carriers/">
+    <div class="card">
+        <img class="card-img-top" width="100%" src="/assets/img/content/carrier-i.jpg" alt="Carrier">
+        <div class="card-block text-xs-center">
+            <h3 class="h2 card-title m-b-0">Carrier</h3>
+            <p class="card-text lead">Get Loads.</p>
+            <span class="btn btn-primary btn-lg">Click here</span>
+        </div>
+    </div>
+</a>
+		</div>
+
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/how-it-works/carriers/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"card-img-top"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">src=</span><span class="s">"/img/content/carrier-i.jpg"</span> <span class="na">alt=</span><span class="s">"Carrier"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-block text-xs-center"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"h2 card-title m-b-0"</span><span class="nt">&gt;</span>Carrier<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"card-text lead"</span><span class="nt">&gt;</span>Get Loads.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-lg"</span><span class="nt">&gt;</span>Click here<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+		</div>
+	</section>
+
+	<section class="section-component">
+		<header>
+			<h2 id="guide-basic-form">Basic form</h2>
+
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				
+					<p><strong>Usage:</strong> A simple contact form</p>
+				
+				
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="https://github.com/liquidvisual/loshift-0516/blob/master/src/_scss/app/components/_forms.scss">src/_scss/app/components/_forms.scss</a></p>
+				
+			</div>
+		</header>
+
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			<!-- IF SUCCESS -->
+<div class="alert alert-success" hidden>
+	<h4>Success!</h4>
+	<p>Your form has been submitted.</p>
+</div>
+
+<!-- IF FAILURE -->
+<div class="alert alert-danger alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4>Oops!</h4>
+    <p>Something went wrong. Please check your details.</p>
+</div>
+
+<form data-toggle="validator">
+    <fieldset>
+
+    	<!-- NAME -->
+    	<div class="form-group">
+            <label for="name">Name*</label>
+            <input class="form-control" id="name" name="Name" type="text" placeholder="Name" required>
+            <small class="error">Your name is required.</small>
+    	</div>
+
+    	<!-- EMAIL -->
+    	<div class="form-group">
+            <label for="email">Email*</label>
+            <input class="form-control" id="email" name="Email" type="email" placeholder="Email" required>
+            <small class="error">A valid email is required.</small>
+    	</div>
+
+    	<!-- PHONE -->
+    	<div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" id="phone" name="Phone" type="text" placeholder="Phone" required>
+            <small class="error">A valid phone number is required.</small>
+    	</div>
+
+    	<!-- MESSAGE -->
+    	<div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea class="form-control" id="message" name="Message" rows="3" placeholder="Message" required></textarea>
+            <small class="error">A message is required.</small>
+    	</div>
+
+    	<!-- SUBMIT -->
+    	<div class="text-xs-right">
+            <button type="submit" class="btn btn-primary">Send</button>
+    	</div>
+
+    </fieldset>
+</form>
+		</div>
+
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- IF SUCCESS --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-success"</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;h4&gt;</span>Success!<span class="nt">&lt;/h4&gt;</span>
+	<span class="nt">&lt;p&gt;</span>Your form has been submitted.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- IF FAILURE --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger alert-dismissible fade in"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>Oops!<span class="nt">&lt;/h4&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Something went wrong. Please check your details.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">data-toggle=</span><span class="s">"validator"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset&gt;</span>
+
+    	<span class="c">&lt;!-- NAME --&gt;</span>
+    	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name*<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">name=</span><span class="s">"Name"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Name"</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>Your name is required.<span class="nt">&lt;/small&gt;</span>
+    	<span class="nt">&lt;/div&gt;</span>
+
+    	<span class="c">&lt;!-- EMAIL --&gt;</span>
+    	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email*<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"Email"</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>A valid email is required.<span class="nt">&lt;/small&gt;</span>
+    	<span class="nt">&lt;/div&gt;</span>
+
+    	<span class="c">&lt;!-- PHONE --&gt;</span>
+    	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"phone"</span><span class="nt">&gt;</span>Phone<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"phone"</span> <span class="na">name=</span><span class="s">"Phone"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Phone"</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>A valid phone number is required.<span class="nt">&lt;/small&gt;</span>
+    	<span class="nt">&lt;/div&gt;</span>
+
+    	<span class="c">&lt;!-- MESSAGE --&gt;</span>
+    	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"message"</span><span class="nt">&gt;</span>Your Message *<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"message"</span> <span class="na">name=</span><span class="s">"Message"</span> <span class="na">rows=</span><span class="s">"3"</span> <span class="na">placeholder=</span><span class="s">"Message"</span> <span class="na">required</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>A message is required.<span class="nt">&lt;/small&gt;</span>
+    	<span class="nt">&lt;/div&gt;</span>
+
+    	<span class="c">&lt;!-- SUBMIT --&gt;</span>
+    	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-xs-right"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Send<span class="nt">&lt;/button&gt;</span>
+    	<span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+		</div>
+	</section>
+
+	<section class="section-component">
+		<header>
+			<h2 id="guide-form-quotes">Form quotes</h2>
+
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				
+					<p><strong>Usage:</strong> A more elaborate form for quotes</p>
+				
+				
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="https://github.com/liquidvisual/loshift-0516/blob/master/src/_scss/app/components/_forms.scss">src/_scss/app/components/_forms.scss</a></p>
+				
+			</div>
+		</header>
+
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			<!-- IF SUCCESS -->
+<div class="alert alert-success" hidden>
+    <h4>Success!</h4>
+    <p>Your form has been submitted.</p>
+</div>
+
+<!-- IF FAILURE -->
+<div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4>Oops!</h4>
+    <p>Something went wrong. Please check your details.</p>
+</div>
+
+<form class="form-quote form-quote-outlined" data-toggle="validator">
+    <fieldset>
+
+        <!-- PICKUP SUBURB -->
+        <div class="form-group row">
+            <label for="pickup-suburb" class="col-lg-4 form-control-label">Pickup Suburb</label>
+
+            <div class="col-lg-5">
+                <input class="form-control" id="pickup-suburb" name="pickup-suburb" type="text" placeholder="" required>
+            </div>
+
+            <!-- STATE -->
+            <div class="col-lg-3 end">
+                <select class="form-control c-select" name="pickup-state" id="pickup-state">
+                    <option selected>ACT</option>
+                    <option>NSW</option>
+                    <option>QLD</option>
+                    <option>SA</option>
+                    <option>TAS</option>
+                    <option>VIC</option>
+                    <option>WA</option>
+                </select>
+            </div>
+            <small class="error">Pickup suburb is required.</small>
+        </div>
+
+        <!-- DELIVERY SUBURB -->
+        <div class="form-group row">
+            <label for="delivery-suburb" class="col-lg-4 form-control-label">Delivery Suburb</label>
+
+            <div class="col-lg-5">
+                <input class="form-control" id="delivery-suburb" name="delivery-suburb" type="text" placeholder="" required>
+            </div>
+
+            <!-- STATE -->
+            <div class="col-lg-3 end">
+                <select class="form-control c-select" id="delivery-state" name="delivery-state">
+                    <option selected>ACT</option>
+                    <option>NSW</option>
+                    <option>QLD</option>
+                    <option>SA</option>
+                    <option>TAS</option>
+                    <option>VIC</option>
+                    <option>WA</option>
+                </select>
+            </div>
+            <small class="error">Delivery suburb is required.</small>
+        </div>
+
+        <!-- CARGO DESC -->
+        <div class="form-group row">
+            <label for="cargo-desc" class="col-lg-5 form-control-label">Cargo Description*</label>
+            <div class="col-lg-7">
+                <input class="form-control" id="cargo-desc" name="cargo-desc" type="text" placeholder="" required>
+            </div>
+            <small class="error">Your cargo description is required.</small>
+        </div>
+
+        <!-- CARGO CATEGORY -->
+        <div class="form-group row">
+            <label for="cargo-category" class="col-lg-5 form-control-label">Cargo Category*</label>
+            <div class="col-lg-7">
+                <select class="form-control c-select" id="cargo-category" name="cargo-category">
+                    <option disabled selected>Please Select</option>
+                        <option value="1">Machinery / Equipment</option>
+                        <option value="32">Vehicles</option>
+                        <option value="64">Trucks</option>
+                        <option value="8192">Trailers (to be carried)</option>
+                        <option value="16384">Trailers (to be towed)</option>
+                        <option value="4">Bulk Product (tipper)</option>
+                        <option value="8">General (full load)</option>
+                        <option value="4096">General (part load)</option>
+                        <option value="16">Boat</option>
+                        <option value="128">Livestock</option>
+                        <option value="256">Shipping Containers</option>
+                        <option value="512">hotshot</option>
+                        <option value="1024">Pilot / Escort</option>
+                        <option value="2048">Portable Building</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- NAME -->
+        <div class="form-group row">
+            <label for="name" class="col-lg-4 form-control-label">Name*</label>
+            <div class="col-lg-8">
+                <input class="form-control" id="name" name="name" type="text" placeholder="" required>
+            </div>
+            <small class="error">Your name is required.</small>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group row">
+            <label for="email" class="col-lg-4 form-control-label">Email*</label>
+            <div class="col-lg-8">
+                <input class="form-control" id="email" name="email" type="email" placeholder="" required>
+            </div>
+            <small class="error">A valid email is required.</small>
+        </div>
+
+        <!-- PHONE -->
+        <div class="form-group row">
+            <label for="phone" class="col-lg-4 form-control-label">Phone*</label>
+            <div class="col-lg-8">
+                <input class="form-control" id="phone" name="phone" type="text" placeholder="" required>
+            </div>
+            <small class="error">A valid phone number is required.</small>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="text-xs-right">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </div>
+
+    </fieldset>
+</form>
+		</div>
+
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- IF SUCCESS --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-success"</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>Success!<span class="nt">&lt;/h4&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Your form has been submitted.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- IF FAILURE --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger alert-dismissible fade in"</span> <span class="na">role=</span><span class="s">"alert"</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>Oops!<span class="nt">&lt;/h4&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Something went wrong. Please check your details.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-quote form-quote-outlined"</span> <span class="na">data-toggle=</span><span class="s">"validator"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset&gt;</span>
+
+        <span class="c">&lt;!-- PICKUP SUBURB --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"pickup-suburb"</span> <span class="na">class=</span><span class="s">"col-lg-4 form-control-label"</span><span class="nt">&gt;</span>Pickup Suburb<span class="nt">&lt;/label&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-5"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"pickup-suburb"</span> <span class="na">name=</span><span class="s">"pickup-suburb"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">""</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+            <span class="c">&lt;!-- STATE --&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-3 end"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control c-select"</span> <span class="na">name=</span><span class="s">"pickup-state"</span> <span class="na">id=</span><span class="s">"pickup-state"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span>ACT<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>NSW<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>QLD<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>SA<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>TAS<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>VIC<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>WA<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;/select&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>Pickup suburb is required.<span class="nt">&lt;/small&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="c">&lt;!-- DELIVERY SUBURB --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"delivery-suburb"</span> <span class="na">class=</span><span class="s">"col-lg-4 form-control-label"</span><span class="nt">&gt;</span>Delivery Suburb<span class="nt">&lt;/label&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-5"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"delivery-suburb"</span> <span class="na">name=</span><span class="s">"delivery-suburb"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">""</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+            <span class="c">&lt;!-- STATE --&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-3 end"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control c-select"</span> <span class="na">id=</span><span class="s">"delivery-state"</span> <span class="na">name=</span><span class="s">"delivery-state"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span>ACT<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>NSW<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>QLD<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>SA<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>TAS<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>VIC<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option&gt;</span>WA<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;/select&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>Delivery suburb is required.<span class="nt">&lt;/small&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="c">&lt;!-- CARGO DESC --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"cargo-desc"</span> <span class="na">class=</span><span class="s">"col-lg-5 form-control-label"</span><span class="nt">&gt;</span>Cargo Description*<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-7"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"cargo-desc"</span> <span class="na">name=</span><span class="s">"cargo-desc"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">""</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>Your cargo description is required.<span class="nt">&lt;/small&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="c">&lt;!-- CARGO CATEGORY --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"cargo-category"</span> <span class="na">class=</span><span class="s">"col-lg-5 form-control-label"</span><span class="nt">&gt;</span>Cargo Category*<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-7"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control c-select"</span> <span class="na">id=</span><span class="s">"cargo-category"</span> <span class="na">name=</span><span class="s">"cargo-category"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>Please Select<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>Machinery / Equipment<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"32"</span><span class="nt">&gt;</span>Vehicles<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"64"</span><span class="nt">&gt;</span>Trucks<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8192"</span><span class="nt">&gt;</span>Trailers (to be carried)<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"16384"</span><span class="nt">&gt;</span>Trailers (to be towed)<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"4"</span><span class="nt">&gt;</span>Bulk Product (tipper)<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8"</span><span class="nt">&gt;</span>General (full load)<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"4096"</span><span class="nt">&gt;</span>General (part load)<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"16"</span><span class="nt">&gt;</span>Boat<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"128"</span><span class="nt">&gt;</span>Livestock<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"256"</span><span class="nt">&gt;</span>Shipping Containers<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"512"</span><span class="nt">&gt;</span>hotshot<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1024"</span><span class="nt">&gt;</span>Pilot / Escort<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2048"</span><span class="nt">&gt;</span>Portable Building<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;/select&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="c">&lt;!-- NAME --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span> <span class="na">class=</span><span class="s">"col-lg-4 form-control-label"</span><span class="nt">&gt;</span>Name*<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-8"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">""</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>Your name is required.<span class="nt">&lt;/small&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="c">&lt;!-- EMAIL --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"col-lg-4 form-control-label"</span><span class="nt">&gt;</span>Email*<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-8"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">""</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>A valid email is required.<span class="nt">&lt;/small&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="c">&lt;!-- PHONE --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"phone"</span> <span class="na">class=</span><span class="s">"col-lg-4 form-control-label"</span><span class="nt">&gt;</span>Phone*<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-8"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"phone"</span> <span class="na">name=</span><span class="s">"phone"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">""</span> <span class="na">required</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>A valid phone number is required.<span class="nt">&lt;/small&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="c">&lt;!-- SUBMIT --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-xs-right"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Submit Request<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+		</div>
+	</section>
+
+	<section class="section-component">
+		<header>
+			<h2 id="guide-strike-through">Strike through</h2>
+
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				
+					<p><strong>Usage:</strong> A simple accordion</p>
+				
+				
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="https://github.com/liquidvisual/loshift-0516/blob/master/src/_scss/app/helpers/_special.scss">src/_scss/app/helpers/_special.scss</a></p>
+				
+			</div>
+		</header>
+
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			<div class="container">
+    <ul class="block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through">
+    	<li><span class="h2">SIMPLE</span></li>
+    	<li><span class="h2">QUICK</span></li>
+    	<li><span class="h2">FREE QUOTES</span></li>
+    </ul>
+</div>
+		</div>
+
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through"</span><span class="nt">&gt;</span>
+    	<span class="nt">&lt;li&gt;&lt;span</span> <span class="na">class=</span><span class="s">"h2"</span><span class="nt">&gt;</span>SIMPLE<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+    	<span class="nt">&lt;li&gt;&lt;span</span> <span class="na">class=</span><span class="s">"h2"</span><span class="nt">&gt;</span>QUICK<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+    	<span class="nt">&lt;li&gt;&lt;span</span> <span class="na">class=</span><span class="s">"h2"</span><span class="nt">&gt;</span>FREE QUOTES<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+		</div>
+	</section>
+
+		</div>
+		<div class="col-lg-4 col-lg-offset-1">
+			<p><img width="100%" src="http://placehold.it/500x400"></p>
+		</div>
+	</div>
+</div>
+</section>
+
+          <!-- FOOTER -->
+          <footer class="global-footer">
+              
+
+
+
+<!-- FOOTER BODY -->
+<section class="global-footer-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <!-- ** Hardcoded Links ** -->
+                <h3>Company</h3>
+                <ul class="block-grid-xs-1">
+                    <li><a href="/text-page/">About Us</a></li>
+                    <li><a href="/text-page/">History</a></li>
+                    <li><a href="/how-it-works/shippers/">Shippers</a></li>
+                    <li><a href="/how-it-works/carriers/">Carriers</a></li>
+                    <li><a href="text-page/">FAQ</a></li>
+                    <li><a href="/text-page/">User Philosophy</a></li>
+                    <li><a href="/text-page/">Advertising</a></li>
+                    <li><a href="/contact-us/">Contact Us</a></li>
+                </ul>
+
+                <div class="spacer m-b-1 hidden-md-up"></div>
+
+            </div>
+            <div class="col-md-6">
+
+                <h3>Categories</h3>
+                <ul class="block-grid-xs-1 block-grid-md-2">
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Machinery Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Heavy Haulage</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">General Freight</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Palletised Freight</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Car Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Container Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Truck Transport</a></li>
+                    
+                        <li class="new-flag"><a href="/cargo-categories/cargo-item/">Furniture Removal</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Boat Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Trailer Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Hay Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Grain Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Portable Buildings</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Livestock Transport</a></li>
+                    
+                        <li class=""><a href="/cargo-categories/cargo-item/">Bulk Tipper Transport</a></li>
+                    
+                    <li><a href="/cargo-categories/">And More...</a></li>
+                </ul>
+
+                <div class="spacer m-b-1 hidden-md-up"></div>
+
+            </div>
+            <div class="col-md-3">
+                <h3>Connect</h3>
+                <ul class="social-media">
+                    <li class="facebook"><a href="https://www.facebook.com/loadshift/"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li class="youtube"><a href="https://www.youtube.com/user/terex4066"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER BOTTOM -->
+<section class="global-footer-bottom">
+    <div class="container text-xs-center">
+        <p>
+            <a href="/text-page/">Sitemap</a>&nbsp;
+            <a href="/docs/">Docs</a><br>
+            &copy; 2016 Loadshift Transport System<br>
+            All Rights Reserved.<br>
+            Use of this website consitutes acceptance of loadshift's <a href="/text-page/">Terms &amp; Conditions</a> and <a href="/text-page/">Privacy Policy</a>.
+        </p>
+    </div>
+</section>
+          </footer>
+
+      </div> <!-- /.lv-page -->
+  </div> <!-- /.lv-super -->
+
+  <!-- OFF-CANVAS MENU -->
+  <nav class="off-canvas-menu" data-off-canvas-menu aria-hidden="true">
+      
+
+
+
+
+<ul>
+	
+	<li class=""><a href="/" class="top-parent-anchor"><span class="text">Home</span></a></li>
+
+	
+	
+	
+	<li class=" ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">About Us</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class=" has-dropdown  ">
+
+		
+		
+			<a class="top-parent-anchor" href="/how-it-works/"><span class="text">How It Works</span></a>
+		
+
+		
+		
+		<ul class="dropdown">
+			
+			<li class="">
+				<a href="/how-it-works/shippers/"><span class="text">Shippers</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/how-it-works/carriers/"><span class="text">Carriers</span></a>
+
+				
+				
+
+			</li>
+			
+		</ul>
+		
+	</li>
+	
+	
+	<li class=" ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Get Quotes</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Find Trucks</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/membership/"><span class="text">Membership</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/blog/"><span class="text">Blog</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/blog/"><span class="text">News</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Help</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">User Philosophy</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Advertising</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Escrow Pay Service</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class=" has-dropdown   right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/cargo-categories/"><span class="text">Cargo Categories</span></a>
+		
+
+		
+		
+		<ul class="dropdown">
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Machinery Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Heavy Haulage</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">General Freight</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Palletised Freight</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Car Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Container Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Truck Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Furniture Removal</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Boat Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Trailer Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Hay Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Grain Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Portable Buildings</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Livestock Transport</span></a>
+
+				
+				
+
+			</li>
+			
+			<li class="">
+				<a href="/cargo-categories/cargo-item/"><span class="text">Bulk Tipper Transport</span></a>
+
+				
+				
+
+			</li>
+			
+		</ul>
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/contact-us/"><span class="text">Contact Us</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Sitemap</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Terms & Conditions</span></a>
+		
+
+		
+		
+	</li>
+	
+	
+	<li class="  right-align ">
+
+		
+		
+			<a class="top-parent-anchor" href="/text-page/"><span class="text">Privacy Policy</span></a>
+		
+
+		
+		
+	</li>
+	
+
+	<!-- Contact Info -->
+	<li class="mm-nolist mm-subtitle hidden-lg-up">
+	    <!-- { % include search_top.html %} -->
+	</li>
+
+	
+</ul>
+  </nav>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">Members Login</h4>
+			</div>
+			<div class="modal-body">
+
+				<section class="login-panel text-xs-center animated fadeInDown p-y-3">
+
+					<!-- IF SUCCESS -->
+					<div class="alert alert-success" hidden>
+						<h4>Success!</h4>
+						<p>Your form has been submitted.</p>
+					</div>
+
+					<!-- IF FAILURE -->
+					<div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4>Oops!</h4>
+						<p>Something went wrong. Please check your details.</p>
+					</div>
+
+					<form data-toggle="validatorX" class="modal-login">
+
+						<!-- NAME -->
+						<fieldset class="form-group">
+							<label for="name"><i class="fa fa-user"></i> Username*</label>
+							<input class="form-control" id="name" type="text" placeholder="" maxlength="255" autocapitalize="off" required>
+							<small class="error" hidden>Your name is required.</small>
+						</fieldset>
+
+						<!-- PASSWORD -->
+						<fieldset class="form-group">
+							<label for="password"><i class="fa fa-key"></i> Password*</label>
+							<input class="form-control" id="password" type="password" placeholder="" required>
+							<small class="error" hidden>A valid password is required.</small>
+						</fieldset>
+
+						<!-- FORGOT LOGIN -->
+						<p class="text-xs-right"><a class="forgot-password" href="#password-reset">Forgot login?</a></p>
+
+						<!-- REMEMBER ME -->
+						<div class="remember-me text-xs-left">
+							<input id="remember-me" name="remember-me" type="checkbox">&nbsp; <label for="remember-me">Remember me</label>
+						</div>
+					</form>
+
+			</div>
+			<div class="modal-footer">
+
+				<!-- SUBMIT -->
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Proceed</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <!--[if lt IE 9]>
+      <div class="lv-alert-bar">
+          <p>You're using an outdated browser. Please <a title="Click me, you know you want to." href="http://outdatedbrowser.com">upgrade your browser</a> to improve your experience.</p>
+          <span class="lv-alert-bar-close-btn">&times;</span>
+      </div>
+  <![endif]-->
+
+<!-- **** JAVASCRIPT **** -->
+
+<script src="/assets/scripts/minified.js"></script>
+
+
+
+<!-- No Javascript Warning -->
+<noscript>
+    <div class="lv-alert-bar">
+        <p>Your browser has Javascript disabled. Some features may be limited.</p>
+    </div>
+</noscript>
+
+</body>
+</html>

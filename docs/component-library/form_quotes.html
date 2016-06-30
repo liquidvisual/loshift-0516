@@ -1,0 +1,131 @@
+<!-- IF SUCCESS -->
+<div class="alert alert-success" hidden>
+    <h4>Success!</h4>
+    <p>Your form has been submitted.</p>
+</div>
+
+<!-- IF FAILURE -->
+<div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4>Oops!</h4>
+    <p>Something went wrong. Please check your details.</p>
+</div>
+
+<form class="form-quote form-quote-outlined" data-toggle="validator">
+    <fieldset>
+
+        <!-- PICKUP SUBURB -->
+        <div class="form-group row">
+            <label for="pickup-suburb" class="col-lg-4 form-control-label">Pickup Suburb</label>
+
+            <div class="col-lg-5">
+                <input class="form-control" id="pickup-suburb" name="pickup-suburb" type="text" placeholder="" required>
+            </div>
+
+            <!-- STATE -->
+            <div class="col-lg-3 end">
+                <select class="form-control c-select" name="pickup-state" id="pickup-state">
+                    <option selected>ACT</option>
+                    <option>NSW</option>
+                    <option>QLD</option>
+                    <option>SA</option>
+                    <option>TAS</option>
+                    <option>VIC</option>
+                    <option>WA</option>
+                </select>
+            </div>
+            <small class="error">Pickup suburb is required.</small>
+        </div>
+
+        <!-- DELIVERY SUBURB -->
+        <div class="form-group row">
+            <label for="delivery-suburb" class="col-lg-4 form-control-label">Delivery Suburb</label>
+
+            <div class="col-lg-5">
+                <input class="form-control" id="delivery-suburb" name="delivery-suburb" type="text" placeholder="" required>
+            </div>
+
+            <!-- STATE -->
+            <div class="col-lg-3 end">
+                <select class="form-control c-select" id="delivery-state" name="delivery-state">
+                    <option selected>ACT</option>
+                    <option>NSW</option>
+                    <option>QLD</option>
+                    <option>SA</option>
+                    <option>TAS</option>
+                    <option>VIC</option>
+                    <option>WA</option>
+                </select>
+            </div>
+            <small class="error">Delivery suburb is required.</small>
+        </div>
+
+        <!-- CARGO DESC -->
+        <div class="form-group row">
+            <label for="cargo-desc" class="col-lg-5 form-control-label">Cargo Description*</label>
+            <div class="col-lg-7">
+                <input class="form-control" id="cargo-desc" name="cargo-desc" type="text" placeholder="" required>
+            </div>
+            <small class="error">Your cargo description is required.</small>
+        </div>
+
+        <!-- CARGO CATEGORY -->
+        <div class="form-group row">
+            <label for="cargo-category" class="col-lg-5 form-control-label">Cargo Category*</label>
+            <div class="col-lg-7">
+                <select class="form-control c-select" id="cargo-category" name="cargo-category">
+                    <option disabled selected>Please Select</option>
+                        <option value="1">Machinery / Equipment</option>
+                        <option value="32">Vehicles</option>
+                        <option value="64">Trucks</option>
+                        <option value="8192">Trailers (to be carried)</option>
+                        <option value="16384">Trailers (to be towed)</option>
+                        <option value="4">Bulk Product (tipper)</option>
+                        <option value="8">General (full load)</option>
+                        <option value="4096">General (part load)</option>
+                        <option value="16">Boat</option>
+                        <option value="128">Livestock</option>
+                        <option value="256">Shipping Containers</option>
+                        <option value="512">hotshot</option>
+                        <option value="1024">Pilot / Escort</option>
+                        <option value="2048">Portable Building</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- NAME -->
+        <div class="form-group row">
+            <label for="name" class="col-lg-4 form-control-label">Name*</label>
+            <div class="col-lg-8">
+                <input class="form-control" id="name" name="name" type="text" placeholder="" required>
+            </div>
+            <small class="error">Your name is required.</small>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group row">
+            <label for="email" class="col-lg-4 form-control-label">Email*</label>
+            <div class="col-lg-8">
+                <input class="form-control" id="email" name="email" type="email" placeholder="" required>
+            </div>
+            <small class="error">A valid email is required.</small>
+        </div>
+
+        <!-- PHONE -->
+        <div class="form-group row">
+            <label for="phone" class="col-lg-4 form-control-label">Phone*</label>
+            <div class="col-lg-8">
+                <input class="form-control" id="phone" name="phone" type="text" placeholder="" required>
+            </div>
+            <small class="error">A valid phone number is required.</small>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="text-xs-right">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </div>
+
+    </fieldset>
+</form>

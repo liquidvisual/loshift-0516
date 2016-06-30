@@ -8,23 +8,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="">
-	<title>
-
-
-    Carriers · 
-</title>
+	<title>Loadshift</title>
 
 	<!-- CDN -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700|Jura:400,500,600">
 
 	<!-- Fav Icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/apple-touch-icon-144-precomposed.png">
 	<link rel="shortcut icon" href="/assets/favicon.ico">
 
 	<link rel="stylesheet" href="/assets/css/minified.css">
 
+  <!-- Priority Scripts -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 </head>
-<body class="" dev-mode-enabled="true">
+<body class="" dev-mode-enabled="false">
     <div class="lv-super">
         <div class="lv-page">
 
@@ -33,26 +31,43 @@
 	          
 
 
+
 <div class="container">
     <div class="display-table">
         <div class="display-cell">
 
-            <!-- Logo -->
+            <!-- LOGO -->
             <a class="logo" href="/" title="Loadshift" itemprop="url">
-                <img src="/assets/img/content/logo-white.svg" alt="" itemprop="logo">
+                <img src="/assets/img/content/logo-white.png" alt="" itemprop="logo">
             </a>
 
-            <!-- Counter -->
+            <!-- COUNTER -->
             <div class="counter hidden-md-down">
-                <span class="number">198,001</span>
+                <span class="number" id="dynamic-counter"></span>
                 <span class="km">km</span>
                 <span class="text">of requested transport added in the last 24hrs.</span>
             </div>
 
-            <!-- Menu -->
+            <!-- DYNAMIC COUNTING EFFECT -->
+            <script>
+                $(window).load(function() {
+                   var options = {
+                     useEasing : true,
+                     useGrouping : true,
+                     separator : ',',
+                     decimal : '.',
+                     prefix : '',
+                     suffix : ''
+                   };
+                   var countUp = new CountUp("dynamic-counter", 0, 198001, 0, 1.5, options);
+                   countUp.start();
+                });
+            </script>
+
+            <!-- MENU -->
             <div class="global-menu">
                 <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
-                <a class="global-menu-btn" data-toggle="modal" data-target="#myModal"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
+                <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
             </div>
 
         </div>
@@ -68,23 +83,21 @@
     <div class="lv-hero is-full-screen">
 
         <!-- Hero Item -->
-        <div class="lv-hero-item" style="background-image: url('/assets/img/content/hero-5.jpg')" data-background-image="/assets/img/content/hero-5.jpg">
+        <div class="lv-hero-item" style="background-image: url('/assets/img/content/hero-2.jpg')" data-background-image="/assets/img/content/hero-2.jpg">
             <div class="display-table">
                 <div class="display-cell align-top">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
 
+                                <!-- HERO CAPTION -->
                                 <div class="lv-hero-item-caption animated fadeInLeft text-xs-center">
-
-                                    <!-- Mandatory -->
                                     <h1>Get Loads</h1>
-                                    <p class="lead">Let loadshift Deliver more business into your business. Best of all... ZERO commission.</p>
+                                    <p class="lead">Loadshift delivers more business into your business. Best of all... ZERO commission.</p>
                                     <br>
                                     <a href="#" class="btn btn-primary btn-lg">Register</a>
                                     <span>&nbsp;&nbsp;OR&nbsp;&nbsp;</span>
                                     <a href="#" class="btn btn-primary btn-lg">Login</a>
-
                                 </div>
 
                             </div>
@@ -113,14 +126,14 @@
 				<h2>Get Loads</h2>
 				<p>Receive and access unlimited transport job loads (monthly). Login to our online load board and start quoting.</p>
 				<p>Don't have internet or smartphone access? No problem... receive your job loads by SMS.</p>
-				<p class="text-xs-center"><img src="http://placehold.it/300x200&t=SMS-Alert-Example"></p>
+				<p class="text-xs-center"><img width="100%" src="/assets/img/content/sms-alert.png"></p>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-				<img width="100%" src="http://placehold.it/300x200&t=Loadboad-Snapshot">
+				<p><img width="100%" src="/assets/img/content/load-board.jpg" alt="Load Board"></p>
 			</div>
 		</div>
 		<br>
-		<h2 class="text-xs-center">Build Your Contacts... Build Your Business</h2>
+		<h2 class="text-xs-center">Build Your Contacts... Build Your Business.</h2>
 	</div>
 </section>
 
@@ -150,12 +163,9 @@
 <!-- SIMPLE - TRANSPARENT - JOB LEADS -->
 <section class="section section">
 	<div class="container">
-
-
 		<p>Note: loadshift.com.au is an online business service that specialises in the heavy load transport industry. It simply delivers your quotation request into transport businesses. Loadshift DOES NOT participate in any quotation, nor does it receive commissions. You deal directly with the transport carriers at all times.</p>
 		<p>Carriers subscribe to this marketplace (on a monthly basis), to receive your quote request as a job lead into their businesses.</p>
 		<br>
-
 		<div class="container">
 			<ul class="block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through">
 				<li><span class="h2">SIMPLE</span></li>
@@ -163,7 +173,6 @@
 				<li><span class="h2">JOB LEADS</span></li>
 			</ul>
 		</div>
-
 	</div>
 </section>
 
@@ -171,9 +180,9 @@
 <section class="section section-light">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<h2 class="m-b-2">Requested Services</h2>
-				<ul class="block-grid-xs-1 block-grid-md-3">
+				<ul class="block-grid-xs-2 block-grid-md-4 block-grid-list">
 					
 						<li>B Double</li>
 					
@@ -243,7 +252,16 @@
 <section class="section section-dark inverse">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 text-xs-center">
+            <div class="col-md-6 col-md-push-6 text-xs-center">
+
+                <!-- Control IMG size with cols -->
+                <div class="col-lg-9 col-xl-7">
+                    <img width="100%" src="/assets/img/content/7-day-trial-white-trimmed.png" alt="7 Day Free Test Drive">
+                    <div class="spacer m-b-2 hidden-md-up"></div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-md-pull-6 text-xs-center">
                 <h2>Never Used Loadshift Before?</h2>
                 <br>
                 <h3 class="h4">Take the Test Drive - Obligation Free</h3>
@@ -251,9 +269,6 @@
                 <p><a href="#" class="btn btn-primary btn-lg p-x-2">REGISTER NOW</a></p>
                 <br>
                 <small>*This offer is only available to transport carriers who are registering for the first time.</small>
-            </div>
-            <div class="col-md-3 col-md-offset-1 text-xs-center">
-                <img width="100%" src="/assets/img/content/7-day-trial-white-trimmed.png">
             </div>
         </div>
     </div>
@@ -268,13 +283,13 @@
 
 
 
-<!-- Footer Body -->
+<!-- FOOTER BODY -->
 <section class="global-footer-body">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
 
-                <!-- Hardcoded Links -->
+                <!-- ** Hardcoded Links ** -->
                 <h3>Company</h3>
                 <ul class="block-grid-xs-1">
                     <li><a href="/text-page/">About Us</a></li>
@@ -295,37 +310,37 @@
                 <h3>Categories</h3>
                 <ul class="block-grid-xs-1 block-grid-md-2">
                     
-                        <li class=""><a href="#">Machinery Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Machinery Transport</a></li>
                     
-                        <li class=""><a href="#">Heavy Haulage</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Heavy Haulage</a></li>
                     
-                        <li class=""><a href="#">General Freight</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">General Freight</a></li>
                     
-                        <li class=""><a href="#">Palletised Freight</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Palletised Freight</a></li>
                     
-                        <li class=""><a href="#">Car Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Car Transport</a></li>
                     
-                        <li class=""><a href="#">Container Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Container Transport</a></li>
                     
-                        <li class=""><a href="#">Truck Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Truck Transport</a></li>
                     
-                        <li class="new-flag"><a href="#">Furniture Removal</a></li>
+                        <li class="new-flag"><a href="/cargo-categories/cargo-item/">Furniture Removal</a></li>
                     
-                        <li class=""><a href="#">Boat Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Boat Transport</a></li>
                     
-                        <li class=""><a href="#">Trailer Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Trailer Transport</a></li>
                     
-                        <li class=""><a href="#">Hay Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Hay Transport</a></li>
                     
-                        <li class=""><a href="#">Grain Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Grain Transport</a></li>
                     
-                        <li class=""><a href="#">Portable Buildings</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Portable Buildings</a></li>
                     
-                        <li class=""><a href="#">Livestock Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Livestock Transport</a></li>
                     
-                        <li class=""><a href="#">Bulk Tipper Transport</a></li>
+                        <li class=""><a href="/cargo-categories/cargo-item/">Bulk Tipper Transport</a></li>
                     
-                    <li><a href="#">And More...</a></li>
+                    <li><a href="/cargo-categories/">And More...</a></li>
                 </ul>
 
                 <div class="spacer m-b-1 hidden-md-up"></div>
@@ -343,7 +358,7 @@
     </div>
 </section>
 
-<!-- Footer Bottom -->
+<!-- FOOTER BOTTOM -->
 <section class="global-footer-bottom">
     <div class="container text-xs-center">
         <p>
@@ -666,7 +681,7 @@
 
 		
 		
-			<a class="top-parent-anchor" href="/text-page/"><span class="text">Contact Us</span></a>
+			<a class="top-parent-anchor" href="/contact-us/"><span class="text">Contact Us</span></a>
 		
 
 		
@@ -719,90 +734,69 @@
 </ul>
   </nav>
 
-  <!-- MODAL -->
-  <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button> -->
+  <!-- LOGIN MODAL -->
+  <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">Members Login</h4>
+			</div>
+			<div class="modal-body">
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Members Login</h4>
-      </div>
-      <div class="modal-body">
+				<section class="login-panel text-xs-center animated fadeInDown p-y-3">
 
+					<!-- IF SUCCESS -->
+					<div class="alert alert-success" hidden>
+						<h4>Success!</h4>
+						<p>Your form has been submitted.</p>
+					</div>
 
+					<!-- IF FAILURE -->
+					<div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4>Oops!</h4>
+						<p>Something went wrong. Please check your details.</p>
+					</div>
 
-      <section class="login-panel text-xs-center animated fadeInDown p-a-3">
+					<form data-toggle="validatorX" class="modal-login">
 
-        <!-- HEADER -->
-        <header class="lv-login-header">
-          <!-- <img width="50" src="/img/content/"> -->
-          <!-- <h1 class="subheader">Login</h1><br><br> -->
-        </header>
+						<!-- NAME -->
+						<fieldset class="form-group">
+							<label for="name"><i class="fa fa-user"></i> Username*</label>
+							<input class="form-control" id="name" type="text" placeholder="" maxlength="255" autocapitalize="off" required>
+							<small class="error" hidden>Your name is required.</small>
+						</fieldset>
 
-        <!-- IF SUCCESS -->
-        <div class="alert alert-success" hidden>
-            <h4>Success!</h4>
-            <p>Your form has been submitted.</p>
-        </div>
+						<!-- PASSWORD -->
+						<fieldset class="form-group">
+							<label for="password"><i class="fa fa-key"></i> Password*</label>
+							<input class="form-control" id="password" type="password" placeholder="" required>
+							<small class="error" hidden>A valid password is required.</small>
+						</fieldset>
 
-        <!-- IF FAILURE -->
-        <div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <h4>Oops!</h4>
-            <p>Something went wrong. Please check your details.</p>
-        </div>
+						<!-- FORGOT LOGIN -->
+						<p class="text-xs-right"><a class="forgot-password" href="#password-reset">Forgot login?</a></p>
 
-        <form data-toggle="validatorX" class="lv-login-panel">
+						<!-- REMEMBER ME -->
+						<div class="remember-me text-xs-left">
+							<input id="remember-me" name="remember-me" type="checkbox">&nbsp; <label for="remember-me">Remember me</label>
+						</div>
+					</form>
 
-            <!-- NAME -->
-            <fieldset class="form-group">
-              <label for="name"><i class="fa fa-user"></i> Username*</label>
-              <input class="form-control" id="name" type="text" placeholder="" maxlength="255" autocapitalize="off" required>
-              <small class="error" hidden>Your name is required.</small>
-            </fieldset>
+			</div>
+			<div class="modal-footer">
 
-            <!-- PASSWORD -->
-            <fieldset class="form-group">
-              <label for="password"><i class="fa fa-key"></i> Password*</label>
-              <input class="form-control" id="password" type="password" placeholder="" required>
-              <small class="error" hidden>A valid password is required.</small>
-            </fieldset>
-
-            <div class="text-xs-right">
-              <a class="forgot-password" href="#password-reset">Forgot?</a>
-            </div>
-
-            <!-- Remember Me -->
-            <div class="remember-me text-xs-left">
-              <input id="remember-me" name="remember-me" type="checkbox">&nbsp; <label for="remember-me">Remember Me</label>
-            </div>
-
-            <!-- SUBMIT -->
-           <!--  <div class="m-b-2">
-                <button data-login type="submit" class="btn btn-primary btn-block btn-lg">Send</button>
-                <a data-login class="btn btn-primary btn-block btn-lg">Send</a href="/">
-            </div> -->
-
-        </form>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Proceed</button>
-      </div>
-    </div>
-  </div>
+				<!-- SUBMIT -->
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Proceed</button>
+			</div>
+		</div>
+	</div>
 </div>
 
   <!--[if lt IE 9]>
