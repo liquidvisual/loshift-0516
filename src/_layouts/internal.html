@@ -5,13 +5,23 @@ layout: master
 {% assign hero = page.hero %}
 
 <!-- HERO -->
-<div class="lv-hero is-alternate has-fixed-height">
+<div class="lv-hero is-alternate has-auto-height">
 
     <!-- Hero Item -->
     <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
 
-    </div>
+        <!-- STAGE HEADER -->
+        <header class="stage-header">
+            <div class="container">
+                {% if page.title_override %}
+                    <h2 class="h1">{{ page.title_override }}</h2>
+                {% else %}
+                    <h1>{{ page.title }}</h1>
+                {% endif %}
+            </div>
+        </header>
 
+    </div>
 </div> <!-- /.lv-hero -->
 
 <!-- BREADCRUMBS -->
@@ -21,22 +31,7 @@ layout: master
     </div>
 </nav>
 
-<!-- STAGE -->
-<section class="stage">
-
-    <!-- STAGE HEADER -->
-    <header class="stage-header">
-        <div class="container">
-            {% if page.title_override %}
-                <h2 class="h1">{{ page.title_override }}</h2>
-            {% else %}
-                <h1>{{ page.title }}</h1>
-            {% endif %}
-        </div>
-    </header>
-
-    <div class="main">
-        {{ content }}
-    </div>
-
-</section> <!-- /.stage-header -->
+<!-- CONTENT -->
+<section class="section p-t-0">
+    {{ content }}
+</section>

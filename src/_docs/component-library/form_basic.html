@@ -2,13 +2,13 @@
 title: Basic Form
 type: component
 scss: src/_scss/app/components/_forms.scss
-usage: A simple accordion
+usage: A simple contact form
 ---
 
 <!-- IF SUCCESS -->
 <div class="alert alert-success" hidden>
-    <h4>Success!</h4>
-    <p>Your form has been submitted.</p>
+	<h4>Success!</h4>
+	<p>Your form has been submitted.</p>
 </div>
 
 <!-- IF FAILURE -->
@@ -21,38 +21,40 @@ usage: A simple accordion
 </div>
 
 <form data-toggle="validator">
+    <fieldset>
 
-    <!-- NAME -->
-    <fieldset class="form-group">
-    	<label for="name">Name*</label>
-    	<input class="form-control" id="name" type="text" placeholder="Name" required>
-    	<small class="error">Your name is required.</small>
+    	<!-- NAME -->
+    	<div class="form-group">
+            <label for="name">Name*</label>
+            <input class="form-control" id="name" name="Name" type="text" placeholder="Name" required>
+            <small class="error">Your name is required.</small>
+    	</div>
+
+    	<!-- EMAIL -->
+    	<div class="form-group">
+            <label for="email">Email*</label>
+            <input class="form-control" id="email" name="Email" type="email" placeholder="Email" required>
+            <small class="error">A valid email is required.</small>
+    	</div>
+
+    	<!-- PHONE -->
+    	<div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" id="phone" name="Phone" type="text" placeholder="Phone" required>
+            <small class="error">A valid phone number is required.</small>
+    	</div>
+
+    	<!-- MESSAGE -->
+    	<div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea class="form-control" id="message" name="Message" rows="3" placeholder="Message" required></textarea>
+            <small class="error">A message is required.</small>
+    	</div>
+
+    	<!-- SUBMIT -->
+    	<div class="text-xs-right">
+            <button type="submit" class="btn btn-primary">Send</button>
+    	</div>
+
     </fieldset>
-
-    <!-- EMAIL -->
-    <fieldset class="form-group">
-    	<label for="email">Email*</label>
-    	<input class="form-control" id="email" type="email" placeholder="Email" required>
-    	<small class="error">A valid email is required.</small>
-    </fieldset>
-
-    <!-- PHONE -->
-    <fieldset class="form-group">
-    	<label for="phone">Phone</label>
-    	<input class="form-control" id="phone" type="text" placeholder="Phone" required>
-    	<small class="error">A valid phone number is required.</small>
-    </fieldset>
-
-    <!-- MESSAGE -->
-    <fieldset class="form-group">
-    	<label for="message">Your Message *</label>
-    	<textarea class="form-control" id="message" rows="3" placeholder="Message" required></textarea>
-    	<small class="error">A message is required.</small>
-    </fieldset>
-
-    <!-- SUBMIT -->
-    <div class="text-xs-right">
-        <button type="submit" class="btn btn-primary">Send</button>
-    </div>
-
 </form>

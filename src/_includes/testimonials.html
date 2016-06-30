@@ -4,7 +4,6 @@
         <div class="row">
             <div class="col-md-6">
                 <h2>A Word From Our Users...</h2>
-
                 <ul class="carousel">
                     {% for item in site.data.testimonials %}
                     <li>
@@ -19,13 +18,40 @@
                     </li>
                     {% endfor %}
                 </ul>
-
             </div>
-            <div class="col-md-5 col-md-offset-1">
+            <div class="col-md-5 col-md-offset-1 hidden-sm-down">
                 <div class="text-xs-right">
-                    <p><a href="#"><img width="100%" src="/img/content/find-trucks-feature.jpg" alt=""></a></p>
-                    <p><a href="#"><img width="100%" src="/img/content/get-quotes-feature.jpg" alt=""></a></p>
-                    <p><a href="#"><img width="100%" src="/img/content/get-loads-feature.jpg" alt=""></a></p>
+
+                    <!-- GET QUOTES BTN -->
+                    <a class="btn-promo m-b-1" href="/text-page/">
+                        <span class="btn-promo-bg" style="background-image: url(/img/content/find-trucks-feature.jpg);"></span>
+                        <div class="btn-promo-fill">
+                            <h3 class="btn-promo-header">
+                                <span class="text">Get<br> Quotes</span>
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- GET QUOTES -->
+                    <a class="btn-promo m-b-1" href="/text-page/">
+                        <span class="btn-promo-bg" style="background-image: url(/img/content/get-quotes-feature.jpg);"></span>
+                        <div class="btn-promo-fill">
+                            <h3 class="btn-promo-header">
+                                <span class="text">Find<br> Trucks</span>
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- GET LOADS -->
+                    <a class="btn-promo m-b-1" href="/text-page/">
+                        <span class="btn-promo-bg" style="background-image: url(/img/content/get-loads-feature.jpg);"></span>
+                        <div class="btn-promo-fill">
+                            <h3 class="btn-promo-header">
+                                <span class="text">Get<br> Loads</span>
+                            </h3>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </div>

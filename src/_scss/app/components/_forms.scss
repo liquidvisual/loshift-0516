@@ -28,8 +28,11 @@ form[data-toggle="validator"] .error {
 	display: none;
 	width: 100%;
 	padding: rem-calc(5 10);
-	background: $brand-danger;
-	color: white;
+	// background: $brand-danger;
+	// color: white;
+	color: $brand-danger;
+	font-weight: bold;
+	clear: both;
 }
 
 form[data-toggle="validator"] .has-error > .form-control {
@@ -39,6 +42,37 @@ form[data-toggle="validator"] .has-error > .form-control {
 
 form[data-toggle="validator"] .has-error > .error {
 	display: block;
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+.form-quote {
+
+	.error {
+		text-align: right;
+	}
+
+	&.form-quote-outlined {
+		fieldset {
+			box-shadow: 0px 6px 14px 2px rgba(0,0,0,0.1);
+			border: 1px solid #ccc;
+			padding: $spacer;
+		}
+	}
+
+	label {
+		// font-size: rem-calc(12);
+	}
+
+	.end {
+		padding-top: $spacer-y;
+		@include media-breakpoint-up(lg) {
+			padding-top: 0;
+		    padding-left: 0;
+		}
+	}
 }
 
 //-----------------------------------------------------------------

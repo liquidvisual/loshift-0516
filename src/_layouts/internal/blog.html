@@ -5,38 +5,40 @@ layout: internal
 {% assign settings = site.data.settings %}
 {% assign articles = site.data.articles %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8">
-            <ul class="block-list">
-            	{% for item in site.data.articles limit: 3 %}
-            		<li>
-            			<div class="media media-entry">
-                            <div class="media-left hidden-md-down">
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <ul class="block-list">
+                	{% for item in site.data.articles limit: 3 %}
+                		<li>
+                			<div class="media media-entry">
+                                <div class="media-left hidden-md-down">
 
-                                <a href="/blog/blog-item/"><img class="media-object" width="130" src="/img/ui/placeholder.png" alt="Thumbnail"></a>
+                                    <a href="/blog/blog-item/"><img class="media-object" width="130" src="/img/ui/placeholder.png" alt="Thumbnail"></a>
 
-                            </div>
-                            <div class="media-body">
-
-                                <h3 class="media-heading card-title h4">
-                                    <a href="/blog/blog-item/">{{ item.title }}</a>
-                                </h3>
-
-                                <div class="m-b-1">
-                                    <date class="text-muted">{{ item.date | date: "%d %B %Y" | upcase }}</date>
                                 </div>
+                                <div class="media-body">
 
-                                <!-- TRUNCATE (410 max chars) -->
-                                <p class="m-b-0">{{ item.body | truncate: 410 }}
-                                <a href="/blog/blog-item/">Read more <i class="fa fa-angle-right"></i></a></p>
+                                    <h3 class="media-heading card-title h4">
+                                        <a href="/blog/blog-item/">{{ item.title }}</a>
+                                    </h3>
+
+                                    <div class="m-b-1">
+                                        <date class="text-muted">{{ item.date | date: "%d %B %Y" | upcase }}</date>
+                                    </div>
+
+                                    <!-- TRUNCATE (410 max chars) -->
+                                    <p class="m-b-0">{{ item.body | truncate: 410 }}
+                                    <a href="/blog/blog-item/">Read more <i class="fa fa-angle-right"></i></a></p>
+                                </div>
                             </div>
-                        </div>
-            		</li>
-            	{% endfor %}
-            </ul>
-            {% include snippets/pagination.html %}
-        </div>
+                		</li>
+                	{% endfor %}
+                </ul>
+                {% include snippets/pagination.html %}
+            </div>
 
+        </div>
     </div>
-</div>
+</section>

@@ -6,21 +6,40 @@ layout: master
 {% assign featured = site.data.sitemap[3].children | where: "featured", true %}
 
 {% include hero/hero.html %}
-{% comment %}
-
 
 <section class="feature-panels-wrapper">
 	<div class="feature-panels">
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-md-4">
-	                <a href="#"><img src="/img/content/find-trucks-feature.jpg" alt=""></a>
+	                <a class="btn-promo" href="/text-page/">
+	                    <span class="btn-promo-bg" style="background-image: url(/img/content/find-trucks-feature.jpg);"></span>
+	                    <div class="btn-promo-fill">
+	                        <h3 class="btn-promo-header">
+	                            <span class="text">Get<br> Quotes</span>
+	                        </h3>
+	                    </div>
+	                </a>
 	            </div>
 	            <div class="col-md-4">
-	                <a href="#"><img src="/img/content/get-quotes-feature.jpg" alt=""></a>
+	                <a class="btn-promo" href="/text-page/">
+	                    <span class="btn-promo-bg" style="background-image: url(/img/content/get-quotes-feature.jpg);"></span>
+	                    <div class="btn-promo-fill">
+	                        <h3 class="btn-promo-header">
+	                            <span class="text">Find<br> Trucks</span>
+	                        </h3>
+	                    </div>
+	                </a>
 	            </div>
 	            <div class="col-md-4">
-	                <a href="#"><img src="/img/content/get-loads-feature.jpg" alt=""></a>
+	                <a class="btn-promo" href="/text-page/">
+	                    <span class="btn-promo-bg" style="background-image: url(/img/content/get-loads-feature.jpg);"></span>
+	                    <div class="btn-promo-fill">
+	                        <h3 class="btn-promo-header">
+	                            <span class="text">Get<br> Loads</span>
+	                        </h3>
+	                    </div>
+	                </a>
 	            </div>
 	        </div>
 	    </div>
@@ -40,16 +59,38 @@ layout: master
 	</div>
 </section>
 
-<!-- CARDS SECTION -->
+<!-- DISCOVER LOADSHIFT -->
 <section class="section section-light">
-	<div class="container">
-		<h2 class="text-xs-center m-b-2">Discover Loadshift</h2>
+	<div class="container" style="max-width: 900px;">
+		<h2 class="text-xs-center m-b-2 display-3">Discover Loadshift</h2>
 		<div class="row">
 			<div class="col-md-6">
-				<p><img width="100%" src="/img/content/carrier.jpg" alt="Find Transport & Loads Fast"></p>
+
+				<!-- CARRIER -->
+				<a href="/how-it-works/carriers/">
+					<div class="card card-feature">
+						<img class="card-img-top" width="100%" src="/img/content/carrier-i.jpg" alt="Carrier">
+						<div class="card-block text-xs-center">
+							<h3 class="h2 card-title m-b-0">Carriers</h3>
+							<p class="card-text lead">Get Loads.</p>
+							<span class="btn btn-primary btn-lg">Click here</span>
+						</div>
+					</div>
+				</a>
 			</div>
 			<div class="col-md-6">
-				<p><img width="100%" src="/img/content/shipper.jpg" alt="Find Transport & Loads Fast"></p>
+
+				<!-- SHIPPER -->
+				<a href="/how-it-works/shippers/">
+					<div class="card card-feature">
+						<img class="card-img-top" width="100%" src="/img/content/shipper-i.jpg" alt="Shipper">
+						<div class="card-block text-xs-center">
+							<h3 class="h2 card-title m-b-0">Shippers</h3>
+							<p class="card-text lead">Get quotes &amp; find trucks.</p>
+							<span class="btn btn-primary btn-lg">Click here</span>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -57,25 +98,3 @@ layout: master
 
 {% include section_intro_video.html %}
 {% include testimonials.html %}
-
-{% comment %}
-
-<!-- STAGE -->
-<section class="stage">
-	<div class="container">
-		<div class="row">
-		<div class="spacer m-b-3"></div>
-	</div>
-</section>
-
-<div class="jumbotron jumbotron-fluid m-b-0">
-  <div class="container">
-    <h1 class="display-3">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-  </div>
-</div>
-
-
-{% endcomment %}
-
-{% endcomment %}

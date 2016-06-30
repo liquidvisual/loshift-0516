@@ -1,7 +1,7 @@
 /*
     BUTTONS.CSS
 
-    - Last updated: 00.00.00
+    - Last updated: 29.06.16
     - liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -10,6 +10,90 @@
 //-----------------------------------------------------------------
 // Buttons
 //-----------------------------------------------------------------
+
+.btn-promo {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 120px;
+	padding: rem-calc(30);
+	overflow: hidden;
+	z-index: 1;
+
+	@include media-breakpoint-up(md) {
+	    height: 150px;
+	}
+
+	.btn-promo-bg {
+		@include transition('scale');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+
+	.btn-promo-bg,
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	//=========================================
+	// Tint overlay on BG
+	//=========================================
+
+	&:before {
+		@include transition('background');
+		content: "";
+		background: rgba(black, 0.3);
+		z-index: 1;
+	}
+
+	//=========================================
+	// Fill - vertical alignment of contents
+	//=========================================
+
+	.btn-promo-fill {
+		display: table;
+		width: 100%;
+		height: 100%;
+
+		.btn-promo-header {
+			position: relative;
+			vertical-align: middle;
+			display: table-cell;
+			color: white;
+			text-align: center;
+			z-index: 1;
+
+			@include media-breakpoint-up(lg) {
+			    text-align: right;
+			}
+
+			.text  {
+				display: inline-block;
+				text-align: center;
+			}
+		}
+	}
+
+	//=========================================
+	// Hover Effects
+	//=========================================
+
+	&:hover {
+		&:before { // fade tint
+			background: rgba(black, 0.5);
+		}
+
+		.btn-promo-bg {
+			transform: scale(1.1);
+		}
+	}
+}
+
 //=========================================
 //
 //=========================================

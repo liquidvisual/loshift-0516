@@ -4,40 +4,19 @@ layout: internal_landing
 
 {% assign services = site.data.services | sort: "title" %}
 
-<!-- GET QUOTES -->
-<section class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				<h2>Get Quotes</h2>
-				<p>Receive quotations for transport services by posting your request for quotation.</p>
-				<p>It's as easy as:</p>
-				<p class="h4"><span class="number-bullet">1</span>&nbsp; Phoning <a href="tel:1300562374">1300 56 23 74</a></p>
-				<p class="h4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>OR</b></p>
-				<p class="h4"><span class="number-bullet">2</span>&nbsp; Completing our simple online form</p>
-				<br>
-				<p>Once your quote request has been posted, It is added to the "Loadboard" and then alerted to the loadshift community.</p>
-				<p>Thoes carriers that may be of assistance respond directly to you with quotation (Varing price &amp; Avaliability).</p>
-				<br>
-				<h3>You deal with whoever you choose.</h3>
-			</div>
-			<div class="col-md-4">
-				{% include form_quote.html %}
-			</div>
-		</div>
-	</div>
-</section>
+{% include section_get_quotes.html %}
 
 <!-- FIND TRUCKS -->
 <section class="section section-light">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-lg-6">
 				<h2>Find Trucks</h2>
 				<p>Click on a map listing to obtain the current or future location of a carrier.<br>
 				Use the nominated contact details to deal directly.</p>
+				<div class="spacer m-b-1 hidden-lg-up"></div>
 			</div>
-			<div class="col-md-5 col-md-offset-1">
+			<div class="col-lg-5 col-lg-offset-1">
 				{% include snippets/google_map.html %}
 			</div>
 		</div>

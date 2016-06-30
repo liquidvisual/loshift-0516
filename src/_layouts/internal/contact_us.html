@@ -1,0 +1,29 @@
+---
+layout: internal
+---
+
+{% assign settings = site.data.settings %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			{{ content }}
+			<br>
+			{% include form_basic.html %}
+			<div class="spacer m-b-2"></div>
+		</div>
+		<div class="col-md-4 col-md-offset-1">
+			<h3 class="m-b-2">Contact Details</h3>
+			<p>
+				<b>Loadshift Transport System</b>
+				<br>
+				{{ settings.offices[0].address }}
+				<br><br>
+				<b>ABN:</b> {{ settings.abn }} <br><br>
+				<b>Phone:</b> {{ settings.phone }}<br>
+				<b>Fax:</b> {{ settings.fax }}<br>
+				<b>Text (SMS):</b> {{ settings.sms }}
+			</p>
+		</div>
+	</div>
+</div>

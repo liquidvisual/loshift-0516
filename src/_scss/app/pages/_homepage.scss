@@ -17,7 +17,7 @@
 	.feature-panels {
 		@include media-breakpoint-up(lg) {
 		    position: absolute;
-		    bottom: 0;
+		    bottom: 6px;
 		    width: 100%;
 		}
 	}

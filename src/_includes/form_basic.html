@@ -1,0 +1,68 @@
+<!-- IF SUCCESS -->
+<div class="alert alert-success" hidden>
+    <h4>Success!</h4>
+    <p>Your form has been submitted.</p>
+</div>
+
+<!-- IF FAILURE -->
+<div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4>Oops!</h4>
+    <p>Something went wrong. Please check your details.</p>
+</div>
+
+<form class="form-quote form-quote-outlined" data-toggle="validator">
+    <fieldset>
+
+        <!-- FULL NAME -->
+        <div class="form-group">
+            <label for="name">Full Name*</label>
+            <input class="form-control" id="name" name="Full Name" type="text" placeholder="Name" required>
+            <small class="error">Your name is required.</small>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label for="email">Email*</label>
+            <input class="form-control" id="email" name="Email" type="email" placeholder="Email" required>
+            <small class="error">A valid email is required.</small>
+        </div>
+
+        <!-- PHONE -->
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" id="phone" name="Phone" type="text" placeholder="Phone">
+            <small class="error">A valid phone number is required.</small>
+        </div>
+
+        <!-- STATE -->
+        <div class="form-group">
+            <label for="state" class="form-control-label">State</label>
+            <select class="form-control c-select" name="State" id="state">
+                <option selected disabled>Please Select</option>
+                <option>ACT</option>
+                <option>NSW</option>
+                <option>QLD</option>
+                <option>SA</option>
+                <option>TAS</option>
+                <option>VIC</option>
+                <option>WA</option>
+            </select>
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea class="form-control" id="message" name="Message" rows="6" placeholder="Message" required></textarea>
+            <small class="error">A message is required.</small>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="text-xs-right">
+            <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+
+    </fieldset>
+</form>
