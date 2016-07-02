@@ -32,7 +32,7 @@ button, .btn {
     position: relative;
     min-height: 100vh; // fixes scrollbars
     padding-top: $lv-topbar-height-small; // see below
-    background: $gray-light;
+    // background: $gray-light;
     // overflow: hidden;
     z-index: 50;
 
@@ -82,12 +82,13 @@ button, .btn {
 
 .lv-topbar,
 .lv-stage {
-    transform: translate(0, 0);
+    // transform: translate(0, 0);
 }
 
 .menu-is-open .lv-topbar,
 .menu-is-open .lv-stage {
     // transform: translate(0,0);
+    transform: translate($app-menu-width-medium, $lv-stage-top-offset);
 
     @include media-breakpoint-up(md) {
         transform: translate($app-menu-width-medium, $lv-stage-top-offset);
