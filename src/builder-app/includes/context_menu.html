@@ -2,54 +2,55 @@
 ---
 
 <nav class="lv-context-menu">
+
+    <!-- HEADER -->
+    <header class="lv-context-menu-header">
+        <h3 data-tool-tab-title class="subheader"></h3>
+        <!-- <span class="lv-context-menu-close-btn"></span> -->
+    </header>
+
+    <!-- TOOLBAR (LEFT) -->
+    <div class="lv-context-menu-toolbar">
+        <ul class="lv-context-menu-site-tools">
+            <!-- Logo -->
+            <li>
+                <a data-logout href="/manage/" class="lv-context-menu-user-logo">
+                    <!-- <img width="32" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200" alt="..."> -->
+                    <img class="gravitar" width="32" src="..." alt="Gravitar">
+                    <script>
+                        var grav = "https://www.gravatar.com/avatar/";
+                        var gravURI = MD5("{{ site.data.settings.email | remove: ' ' | strip_newlines | downcase }}");
+                        $('.gravitar').attr("src", grav + gravURI);
+                    </script>
+                </a>
+            </li>
+
+            <!-- ADHOC  -->
+            <script>
+                $('[data-logout]').click(function(){
+                    localStorage.setItem("loggedIn", "");
+                    $(window).trigger('hashchange');
+                    console.log(localStorage.getItem("loggedIn"));
+                });
+            </script>
+
+            <!-- Links -->
+            <li data-tool-tab="dashboard"><a  href="#/dashboard/"><i class="fa fa-dashboard"></i></a></li>
+            <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li>
+            <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li>
+            <li data-tool-tab="development"><a href="#/development/"><i class="fa fa-code"></i></a></li>
+            <li data-tool-tab="preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
+        </ul>
+
+        <!-- Ignore these for now -->
+        <ul class="lv-context-menu-user-tools">
+            <li><a data-tool-tab="alert" href="#/alert/"><i class="fa fa-bell-o"></i></a></li>
+            <li><a data-tool-tab="discuss" href="#/discuss/"><i class="fa fa-comment-o"></i></a></li>
+            <!-- <li><a data-tool-tab="user" href="#/user/"><i class="fa fa-user"></i></a></li> -->
+        </ul>
+    </div>
+
     <div class="lv-context-menu-scroller">
-
-        <!-- HEADER -->
-        <header class="lv-context-menu-header">
-            <h3 data-tool-tab-title class="subheader"></h3>
-            <span class="lv-context-menu-close-btn"></span>
-        </header>
-
-        <!-- TOOLBAR (LEFT) -->
-        <div class="lv-context-menu-toolbar">
-            <ul class="lv-context-menu-site-tools">
-                <!-- Logo -->
-                <li>
-                    <a data-logout href="/manage/" class="lv-context-menu-user-logo">
-                        <!-- <img width="32" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200" alt="..."> -->
-                        <img class="gravitar" width="32" src="..." alt="Gravitar">
-                        <script>
-                            var grav = "https://www.gravatar.com/avatar/";
-                            var gravURI = MD5("{{ site.data.settings.email | remove: ' ' | strip_newlines | downcase }}");
-                            $('.gravitar').attr("src", grav + gravURI);
-                        </script>
-                    </a>
-                </li>
-
-                <!-- ADHOC  -->
-                <script>
-                    $('[data-logout]').click(function(){
-                        localStorage.setItem("loggedIn", "");
-                        $(window).trigger('hashchange');
-                        console.log(localStorage.getItem("loggedIn"));
-                    });
-                </script>
-
-                <!-- Links -->
-                <li data-tool-tab="dashboard"><a  href="#/dashboard/"><i class="fa fa-dashboard"></i></a></li>
-                <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li>
-                <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li>
-                <li data-tool-tab="development"><a href="#/development/"><i class="fa fa-code"></i></a></li>
-                <li data-tool-tab="preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
-            </ul>
-
-            <!-- Ignore these for now -->
-            <ul class="lv-context-menu-user-tools">
-                <li><a data-tool-tab="alert" href="#/alert/"><i class="fa fa-bell-o"></i></a></li>
-                <li><a data-tool-tab="discuss" href="#/discuss/"><i class="fa fa-comment-o"></i></a></li>
-                <!-- <li><a data-tool-tab="user" href="#/user/"><i class="fa fa-user"></i></a></li> -->
-            </ul>
-        </div>
 
         <!-- BODY -->
         <div class="lv-context-menu-body">
@@ -122,19 +123,19 @@
             </div>
 
             <!-- DISCUSS (IGNORE FOR NOW) -->
-            <div data-tool-tab-content="alert" class="lv-context-menu-panel">
+            <!-- <div data-tool-tab-content="alert" class="lv-context-menu-panel">
                 <p>Content to be decided</p>
-            </div>
+            </div> -->
 
             <!-- DISCUSS (IGNORE FOR NOW) -->
-            <div data-tool-tab-content="discuss" class="lv-context-menu-panel">
+            <!-- <div data-tool-tab-content="discuss" class="lv-context-menu-panel">
                 <p>Content to be decided</p>
-            </div>
+            </div> -->
 
             <!-- USER (IGNORE FOR NOW) -->
-            <div data-tool-tab-content="user" class="lv-context-menu-panel">
+            <!-- <div data-tool-tab-content="user" class="lv-context-menu-panel">
                 <p>Content to be decided</p>
-            </div>
+            </div> -->
 
         </div>
 

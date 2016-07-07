@@ -51,9 +51,7 @@ $lv-topbar-height-medium: 75px !default;
 //-----------------------------------------------------------------
 
 .menu-is-open .lv-topbar {
-    @include media-breakpoint-up(md) {
-        border-radius: 6px 0 0 0;
-    }
+    border-radius: 6px 0 0 0;
 }
 
 //-----------------------------------------------------------------
@@ -157,6 +155,8 @@ $lv-topbar-height-medium: 75px !default;
         }
     }
 }
+
+
 
 //-----------------------------------------------------------------
 //

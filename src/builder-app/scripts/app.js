@@ -126,9 +126,14 @@ function getHashBang() {
 function initToolButtons() {
 
 	// Menu Button
-	$('.lv-tool-button').bind('click', function(e){
+	$('.lv-tool-menu-btn').bind('click', function(e){
 		e.preventDefault();
 		$('body').toggleClass('menu-is-open');
+
+
+		// var isAnimating = $(".lv-context-menu").is(':animated');
+
+
 
 		// var body = $('body');
 
@@ -138,6 +143,8 @@ function initToolButtons() {
 		// 	body.addClass('menu-is-open');
 		// }
 	});
+
+	// come back here
 }
 
 //-----------------------------------------------------------------

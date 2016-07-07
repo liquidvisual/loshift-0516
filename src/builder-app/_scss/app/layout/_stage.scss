@@ -17,7 +17,11 @@ html {
 }
 
 html, body {
-    height: 100%; // removes all flickers at bottom - eg body color
+    // height: 100%; // removes all flickers at bottom - eg body color
+}
+
+.lv-page {
+    overflow: hidden; // prevents transforms busting out of scrolled containers
 }
 
 button, .btn {
@@ -29,15 +33,17 @@ button, .btn {
 //-----------------------------------------------------------------
 
 .lv-stage {
-    position: relative;
+    position: relative; // locked for z-index unless absolute
     min-height: 100vh; // fixes scrollbars
+
     padding-top: $lv-topbar-height-small; // see below
-    // background: $gray-light;
-    // overflow: hidden;
+    // background: rgba(orange, 0.5); //$gray-light;
+    background: $gray-light;
     z-index: 50;
 
     // Keep padding unaffected by menu state
     @include media-breakpoint-up(md) {
+        // min-height: 100vh; // fixes scrollbars - used to be mobile only?
         padding-top: $lv-topbar-height-medium;
         padding-bottom: 44px;
     }
@@ -50,7 +56,21 @@ button, .btn {
 .menu-is-open .lv-stage {
     @include media-breakpoint-up(md) {
         width: calc(100% - #{$app-menu-width-medium}); // animation too heavy
-        min-height: calc(100vh - #{$lv-stage-top-offset} - #{$lv-footer-height}); // fixes scrollbars
+        // min-height: calc(100vh - #{$lv-stage-top-offset} - #{$lv-footer-height}); // fixes scrollbars
+    }
+}
+
+//-----------------------------------------------------------------
+// Main
+//-----------------------------------------------------------------
+
+.lv-main {
+    padding: rem-calc(0 15);
+    overflow: hidden;
+    // min-height: 100vh;
+
+    @include media-breakpoint-up(md) {
+        padding: rem-calc(20 60);
     }
 }
 
@@ -82,13 +102,13 @@ button, .btn {
 
 .lv-topbar,
 .lv-stage {
-    // transform: translate(0, 0);
+    transform: translate(0, 0);
 }
 
 .menu-is-open .lv-topbar,
 .menu-is-open .lv-stage {
-    // transform: translate(0,0);
-    transform: translate($app-menu-width-medium, $lv-stage-top-offset);
+    // transform: translate(0,0); // commented out
+    transform: translate($app-menu-width-small, $lv-stage-top-offset);
 
     @include media-breakpoint-up(md) {
         transform: translate($app-menu-width-medium, $lv-stage-top-offset);

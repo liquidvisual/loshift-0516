@@ -7,7 +7,7 @@ name: liquidvisual-boilerplate
 dev_mode_enabled: true # LV responsive tool
 
 # Grunt handles images and assets.
-exclude: ['img', 'css', 'scripts', 'fonts',
+exclude: ['img', 'css', 'scripts', 'builder-app/scripts', 'fonts',
           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
 
 include: ['.htaccess', '_pages']

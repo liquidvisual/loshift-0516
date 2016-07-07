@@ -8,7 +8,7 @@
 // Variables
 //-----------------------------------------------------------------
 
-$app-menu-toolbar-width: 60px !default;
+$app-menu-toolbar-width: 55px !default;
 $dark-bg-color: $gray-dark;
 
 //-----------------------------------------------------------------
@@ -18,16 +18,13 @@ $dark-bg-color: $gray-dark;
 .lv-context-menu {
 	position: fixed;
 	top: 0;
-	width: $app-menu-width-small;
-	// height: 100%;
-
 	left: 0;
 	bottom: 0;
-	height: 100vh;
-
-
+	width: $app-menu-width-small;
+	height: 100%;
+	// height: 100vh;
 	background: $dark-bg-color;
-	z-index: 10;
+	// z-index: 10;
 
 	@include media-breakpoint-up(md) {
 	    width: $app-menu-width-medium;
@@ -40,24 +37,28 @@ $dark-bg-color: $gray-dark;
 
 .lv-context-menu-scroller {
 	position: absolute;
-	top: 0;
+	top: $lv-topbar-height-medium + $lv-stage-top-offset;
 	left: 0;
-	bottom: 0; // failsafe
+	bottom: $app-menu-toolbar-width;
 	width: 100%;
-	height: 100%;
-	overflow: hidden;
+	overflow: auto; // iOS needs reliable scroll focus
 	-webkit-overflow-scrolling: touch;
 
 	@include media-breakpoint-up(md) {
+		bottom: 0; // failsafe
 	    height: calc(100% - #{$lv-footer-height}); // failsafe
 	}
 
+	@include media-breakpoint-up(xl) {
+		overflow: hidden; // make scrollbars prettier on desktop only
+	}
+
 	&:hover {
-		@include media-breakpoint-up(md) {
-		    overflow: auto;
-		}
+		overflow: auto;
 	}
 }
+
+// .menu-is-open
 
 //-----------------------------------------------------------------
 // Header
@@ -112,6 +113,11 @@ $dark-bg-color: $gray-dark;
 		text-align: center;
 		padding: rem-calc(5 0);
 		color: lighten($dark-bg-color, 15%);
+
+		@include media-breakpoint-down(sm) {
+		    line-height: $app-menu-toolbar-width;
+		    padding: 0;
+		}
 
 		&:hover {
 			color: lighten($dark-bg-color, 30%);
@@ -180,9 +186,10 @@ ul.lv-context-menu-user-tools {
 //-----------------------------------------------------------------
 
 .lv-context-menu-body {
+	padding: rem-calc(20 0);
+
 	@include media-breakpoint-up(md) {
 	    margin-left: $app-menu-toolbar-width; // locked
-	    padding: rem-calc(20 0);
 	}
 
 	//=========================================
@@ -248,17 +255,23 @@ ul.lv-context-menu-user-tools {
 
 .lv-context-menu-toolbar {
     transition: transform 300ms ease-out;
-    transform: translate(50px);
+    // transform: translate(50px); // extras
 }
 
 .lv-context-menu {
-    transition: transform 300ms ease-out;
-    transform: translate(-50px);
+    transition: transform 300ms ease-out, visibility 300ms linear;
+    // transform: translate(-50px); // extras
+    visibility: hidden;
 }
 
+// ANIMATE
 .menu-is-open .lv-context-menu-toolbar,
 .menu-is-open .lv-context-menu {
     transform: translate(0, 0);
+}
+
+.menu-is-open .lv-context-menu {
+	visibility: visible; // Clever - reduce scrolling focus bugs with visibility cooldown
 }
 
 //-----------------------------------------------------------------
