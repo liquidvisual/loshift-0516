@@ -96,7 +96,7 @@ $body-color:                 #555; //$gray-dark !default;
 // //
 // // Style anchor elements.
 
-// $link-color:                 $brand-primary !default;
+$link-color:                 $brand-secondary !default;
 // $link-decoration:            none !default;
 // $link-hover-color:           darken($link-color, 15%) !default;
 $link-hover-decoration:      none; //underline !default;
@@ -290,7 +290,7 @@ $border-radius-sm:       rem-calc(4); //.2rem !default;
 // $btn-font-weight:                normal !default;
 
 // $btn-primary-color:              #fff !default;
-// $btn-primary-bg:                 $brand-primary !default;
+$btn-primary-bg:                 $brand-secondary; //$brand-primary !default;
 // $btn-primary-border:             $btn-primary-bg !default;
 
 // $btn-secondary-color:            $gray-dark !default;

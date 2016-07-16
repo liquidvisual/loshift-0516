@@ -6,26 +6,60 @@
 <!-- Feel free to copy styles directly below if easier -->
 
 <style>
-body {
-	background: #27272F; //#EFF1F4;
-}
 
-.stage {
-	padding: 0;
-	margin: 0;
-}
-	.login-panel {
+	html,
+	body,
+	.lv-stage {
 		background: white;
-		padding: 40px;
-		border-radius: 16px;
-		box-shadow: 0px 0px 50px 2px rgba(0,0,0,0.1);
+		padding: 0;
+		background: #EFF1F4;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	@media (min-width: 641px) {
+		html,
+		body,
+		.lv-stage {
+			background: #27272F;
+		}
+	}
+
+	.login-panel {
+		padding: 10px;
 	}
 
 	@media (min-width: 641px) {
 		.login-panel {
-			width: 450px;
-			margin: 20px auto 0 auto;
+			/*background: white;*/
+			width: 390px;
+			padding: 40px;
+			margin: 0 auto;
+			/*box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.1);*/
+			border-radius: 16px;
 		}
+	}
+
+	.login-panel input:not(:checked) {
+		padding: 15px 20px;
+		display: block;
+		border: 0;
+		border-radius: 5px;
+		background: #E0E4EA;
+		margin-bottom: 15px;
+	}
+
+	.login-panel input[type="password"] {
+		margin-bottom: 10px;
+	}
+
+	.form-group {
+		margin-bottom: 0;
+	}
+
+	.login-panel h1 {
+		font-family: "Permanent Marker", Georgia, Cambria, "Times New Roman", Times, serif;
 	}
 
 	.forgot-password {
@@ -39,20 +73,18 @@ body {
 	}
 </style>
 
-<!-- LOGIN PANEL -->
-
 <section class="login-panel text-xs-center animated fadeInDown">
 
 	<!-- HEADER -->
 	<header class="lv-login-header">
-		<img width="50" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200">
-		<h1 class="subheader">Login</h1>
+		<img width="75" class="m-b-1" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200">
+		<h1 class="subheader h4">HELLO!</h1>
 	</header>
 
 	<!-- IF SUCCESS -->
 	<div class="alert alert-success" hidden>
-	    <h4>Success!</h4>
-	    <p>Your form has been submitted.</p>
+		<h4>Success!</h4>
+		<p>Your form has been submitted.</p>
 	</div>
 
 	<!-- IF FAILURE -->
@@ -64,58 +96,36 @@ body {
 	    <p>Something went wrong. Please check your details.</p>
 	</div>
 
-	<form data-toggle="validatorX" class="lv-login-panel">
+	<form data-toggle="validator" class="lv-login-panel">
 
-	    <!-- NAME -->
-	    <fieldset class="form-group">
-	    	<label for="name"><i class="fa fa-user"></i> Username*</label>
-	    	<input class="form-control" id="name" type="text" placeholder="Name" maxlength="255" autocapitalize="off" required>
-	    	<small class="error" hidden>Your name is required.</small>
-	    </fieldset>
+    	<!-- USERNAME -->
+    	<div class="form-group">
+    		<!-- <label for="username"><i class="fa fa-user"></i> Username*</label> -->
+    		<input class="form-control" id="username" type="text" placeholder="" maxlength="255" autocapitalize="off" value="admin" required>
+    		<small class="error" hidden>Your name is required.</small>
+    	</div>
 
-	    <!-- PASSWORD -->
-	    <fieldset class="form-group">
-	    	<label for="password"><i class="fa fa-key"></i> Password*</label>
-	    	<input class="form-control" id="password" type="password" placeholder="" required>
-	    	<small class="error" hidden>A valid password is required.</small>
-	    </fieldset>
+    	<!-- PASSWORD -->
+    	<div class="form-group">
+    		<!-- <label for="password"><i class="fa fa-key"></i> Password*</label> -->
+    		<input class="form-control" id="password" type="password" placeholder="" value="admin" required>
+    		<small class="error" hidden>A valid password is required.</small>
+    	</div>
 
-	    <div class="text-xs-right">
-	    	<a class="forgot-password" href="#password-reset">Forgot?</a>
-	    </div>
-
-	    <!-- Remember Me -->
-	    <div class="remember-me text-xs-left">
-	    	<input id="remember-me" name="remember-me" type="checkbox">&nbsp; <label for="remember-me">Remember Me</label>
-	    </div>
-
-	    <!-- SUBMIT -->
-	    <div class="m-b-2">
-	        <!-- <button data-login type="submit" class="btn btn-primary btn-block btn-lg">Send</button> -->
-	        <a data-login class="btn btn-primary btn-block btn-lg">Send</a href="/">
-	    </div>
-
-	</form>
-
-	<!-- FOOTER -->
-	<footer class="lv-login-footer">
-		<div class="row">
-			<div class="columns text-center">
-				<p><small><span class="text-muted">&copy; liquidvisual 1999-2020</span><br> <strong>Phone</strong> <a href="{{ settings.phone }}">{{ settings.phone }}</a>&nbsp; <strong>Email</strong> <a href="{{ settings.email }}">{{ settings.email }}</a></small></p>
-			</div>
+		<!-- FORGOT? -->
+		<div class="text-xs-right">
+			<a class="forgot-password" href="#password-reset">Forgot?</a>
 		</div>
-	</footer>
 
+		<!-- REMEMBER ME -->
+		<div class="remember-me text-xs-left m-b-1">
+			<input id="remember-me" name="remember-me" type="checkbox" checked>&nbsp; <label for="remember-me">Remember me</label>
+		</div>
+
+		<!-- SUBMIT -->
+		<div>
+		    <button data-login type="submit" class="btn btn-primary btn-block btn-lg">Enter</button>
+		    <!-- <a data-login class="btn btn-primary btn-block btn-lg">Enter</a> -->
+		</div>
+	</form>
 </section> <!-- /.lv-login -->
-
-<!-- ADHOC  -->
-<script>
-	$('[data-login]').click(function(e){
-		e.preventDefault();
-		localStorage.setItem("loggedIn", true);
-		// loadIncludes();	// start process
-		window.location.replace('#/dashboard/option-1/');
-		location.reload();
-		console.log(localStorage.getItem("loggedIn"));
-	});
-</script>

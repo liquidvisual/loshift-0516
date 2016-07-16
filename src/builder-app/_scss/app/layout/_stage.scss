@@ -36,15 +36,16 @@ button, .btn {
     position: relative; // locked for z-index unless absolute
     min-height: 100vh; // fixes scrollbars
 
-    padding-top: $lv-topbar-height-small; // see below
+    padding-top: $lv-topbar-height-small + 20; // see below
     // background: rgba(orange, 0.5); //$gray-light;
     background: $gray-light;
+    // background: darken($gray-light, 12%);
     z-index: 50;
 
     // Keep padding unaffected by menu state
     @include media-breakpoint-up(md) {
         // min-height: 100vh; // fixes scrollbars - used to be mobile only?
-        padding-top: $lv-topbar-height-medium;
+        padding-top: $lv-topbar-height-medium + 30;
         padding-bottom: 44px;
     }
 }
@@ -70,7 +71,7 @@ button, .btn {
     // min-height: 100vh;
 
     @include media-breakpoint-up(md) {
-        padding: rem-calc(20 60);
+        padding: rem-calc(20 70);
     }
 }
 

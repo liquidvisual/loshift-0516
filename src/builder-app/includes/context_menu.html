@@ -6,7 +6,6 @@
     <!-- HEADER -->
     <header class="lv-context-menu-header">
         <h3 data-tool-tab-title class="subheader"></h3>
-        <!-- <span class="lv-context-menu-close-btn"></span> -->
     </header>
 
     <!-- TOOLBAR (LEFT) -->
@@ -35,19 +34,19 @@
             </script>
 
             <!-- Links -->
-            <li data-tool-tab="dashboard"><a  href="#/dashboard/"><i class="fa fa-dashboard"></i></a></li>
+            <li data-tool-tab="overview"><a href="#/overview/"><i class="fa fa-dashboard"></i></a></li>
             <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li>
             <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li>
-            <li data-tool-tab="development"><a href="#/development/"><i class="fa fa-code"></i></a></li>
+            <li data-tool-tab="development"><a href="#/development/site/"><i class="fa fa-code"></i></a></li>
             <li data-tool-tab="preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
         </ul>
 
         <!-- Ignore these for now -->
-        <ul class="lv-context-menu-user-tools">
-            <li><a data-tool-tab="alert" href="#/alert/"><i class="fa fa-bell-o"></i></a></li>
-            <li><a data-tool-tab="discuss" href="#/discuss/"><i class="fa fa-comment-o"></i></a></li>
+        <!-- <ul class="lv-context-menu-user-tools"> -->
+            <!-- <li><a data-tool-tab="alert" href="#/alert/"><i class="fa fa-bell-o"></i></a></li> -->
+            <!-- <li><a data-tool-tab="discuss" href="#/discuss/"><i class="fa fa-comment-o"></i></a></li> -->
             <!-- <li><a data-tool-tab="user" href="#/user/"><i class="fa fa-user"></i></a></li> -->
-        </ul>
+        <!-- </ul> -->
     </div>
 
     <div class="lv-context-menu-scroller">
@@ -56,11 +55,11 @@
         <div class="lv-context-menu-body">
 
             <!-- DASHBOARD -->
-            <div data-tool-tab-content="dashboard" class="lv-context-menu-panel">
+            <div data-tool-tab-content="overview" class="lv-context-menu-panel">
                 <ul>
-                    <li><a href="#/dashboard/option-1/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
-                    <li><a href="#/dashboard/option-2/"><span class="lv-context-menu-digit">02</span>Quote</a></li>
-                    <!-- <li><a href="#/dashboard/option-3/"><span class="lv-context-menu-digit">03</span>Price Breakdown</a></li> -->
+                    <li><a href="#/overview/welcome/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
+                    <li><a href="#/overview/quote/"><span class="lv-context-menu-digit">02</span>Quote</a></li>
+                    <!-- <li><a href="#/overview/option-3/"><span class="lv-context-menu-digit">03</span>Dashboard</a></li> -->
                 </ul>
             </div>
 
@@ -88,26 +87,39 @@
 
             <!-- DEVELOPMENT -->
             <div data-tool-tab-content="development" class="lv-context-menu-panel">
-                <ul data-tool-tab-nested class="lv-context-menu-panel-tab">
-                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Site</a></li>
-                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Layout</a></li>
-                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Docs</a></li>
+
+                <ul data-tool-tablist class="lv-context-menu-panel-tablist">
+                    <li><a href="#/development/site/">Site</a></li>
+                    <li><a href="#/development/docs/">Docs</a></li>
                 </ul>
+
                 <div class="lv-context-menu-panel-tab-content">
-                    options 1...
-                    <a href="https://github.com/liquidvisual/liquidvisual-builder/commits/master">Updated</a>
+                    <ul>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Changelog</a></li>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Download Assets</a></li>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Compiled Branch</a></li>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Github Repo</a></li>
+                    </ul>
                 </div>
-                <div>
-                    options 2...
-                </div>
-                <div>
-                    options 3...
+
+                <div class="lv-context-menu-panel-tab-content">
+                    <nav class="lv-context-menu-panel" aria-hidden="true">
+                        <h3>Getting Started</h3>
+                        <ul>
+                            <li class="active"><a href="/docs/">Welcome</a></li>
+                            <li><a href="/docs/getting-started/installation-and-setup/">Installation &amp; Setup</a></li>
+                            <li><a href="/docs/getting-started/basic-usage/">Basic Usage</a></li>
+                            <li><a href="/docs/getting-started/directory-structure/">Directory Structure</a></li>
+                            <li><a href="/docs/getting-started/compatibility/">Compatibility</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
 
             <!-- PREVIEW -->
             <div data-tool-tab-content="preview" class="lv-context-menu-panel listo">
                 <ul>
+                    {% comment %}
                     {% for item in site.data.sitemap %}
                         <li><a href="#/preview{{item.url}}">{{ item.title }} <br><small class="listo-light" style="color: #1FB5C3;">{{ item.url }}</small></a>
                             {% if item.children %}
@@ -119,6 +131,19 @@
                             {% endif %}
                         </li>
                     {% endfor %}
+                    {% endcomment %}
+
+                    <li><a href="#/preview/">Home <br><small class="listo-light" style="color: #1FB5C3;">/</small></a></li>
+
+                    {% assign pages = site.pages | sort: 'title' %}
+
+                    {% for item in pages | offset: 1 %}
+                    {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" %}
+                      <li><a href="#/preview/{{item.url}}">{{ item.title }} <br><small class="listo-light" style="color: #1FB5C3;">{{ item.url }}</small></a></li>
+                    {% endunless %}
+                    {% endfor %}
+
+                    <li><a href="#/404/">404 - Page Not Found<br><small class="listo-light" style="color: #1FB5C3;">/404/</small></a></li>
                 </ul>
             </div>
 
