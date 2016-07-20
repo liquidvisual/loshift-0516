@@ -126,7 +126,7 @@ As a general rule of thumb; if variables are in the front-matter, they're page v
 
 ### The Quick Way
 
-When updates need to be made, I'm just an email away. Cosmetic changes can be updated the easiest by just replacing your **/assets** folder with the one in the [gh-pages](https://github.com/liquidvisual/loshift-0516/tree/gh-pages] repo. Remember the assets folder contains everything that isn't HTML (images, fonts, JavaScript, CSS).
+When updates need to be made, I'm just an email away. Cosmetic changes can be updated the easiest by just replacing your **/assets** folder with the one in the [gh-pages](https://github.com/liquidvisual/loshift-0516/tree/gh-pages) repo. Remember the assets folder contains everything that isn't HTML (images, fonts, JavaScript, CSS).
 
 ### Manually
 
