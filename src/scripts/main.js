@@ -22,10 +22,12 @@ $(document).ready(function() {
         pause: 8000,
         slideMargin: 0,
         minSlides: 1,
-        controls: false,
+        controls: true,
+        nextText: "&#xf105;",
+        prevText: "&#xf104;",
         infiniteLoop: true,
         useCSS: true,
-        pager: true
+        pager: false
     });
 
     key('⌘+shift+m, ctrl+shift+m', function(){

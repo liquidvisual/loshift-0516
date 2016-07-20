@@ -15,7 +15,7 @@ layout: internal_landing
 				<p class="text-xs-center"><img width="100%" src="/img/content/sms-alert.png"></p>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-				<p><img width="100%" src="/img/content/load-board.jpg" alt="Load Board"></p>
+				<p><img width="100%" src="/img/content/load-board@2x.jpg" alt="Load Board"></p>
 			</div>
 		</div>
 		<br>
@@ -33,7 +33,23 @@ layout: internal_landing
 				<h2 class="m-y-3 text-xs-center">Be Seen.</h2>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-				{% include snippets/google_map.html %}
+				<p><img width="100%" src="/img/content/truck-register@2x.jpg" alt="Truck Availability Register"></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- REQUESTED SERVICES -->
+<section class="section section-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="m-b-2">Requested Services</h2>
+				<ul class="block-grid-xs-2 block-grid-md-4 block-grid-list">
+					{% for item in services %}
+						<li>{{ item.title }}</li>
+					{% endfor %}
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -51,22 +67,6 @@ layout: internal_landing
 				<li><span class="h2">TRANSPARENT</span></li>
 				<li><span class="h2">JOB LEADS</span></li>
 			</ul>
-		</div>
-	</div>
-</section>
-
-<!-- REQUESTED SERVICES -->
-<section class="section section-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="m-b-2">Requested Services</h2>
-				<ul class="block-grid-xs-2 block-grid-md-4 block-grid-list">
-					{% for item in services %}
-						<li>{{ item.title }}</li>
-					{% endfor %}
-				</ul>
-			</div>
 		</div>
 	</div>
 </section>

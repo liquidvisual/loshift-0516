@@ -4,7 +4,7 @@ title: That's Pie Country. They Do a Lot of Baking Up There.
 title_override: Blog
 permalink: /blog/blog-item/
 back_breadcrumb: /blog/
-hero: "/img/content/hero-3.jpg"
+hero: "/img/content/hero/iStock_11752432_LARGE_CountryTripleRoadTrain.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lectus et nisl eleifend fringilla eleifend id lacus. In fermentum maximus fringilla. Nam non nulla eu nisl ullamcorper tempor. Quisque dolor sapien, ornare eget feugiat in, eleifend sit amet augue. Nunc blandit maximus erat, non posuere nibh posuere ut. Maecenas vitae laoreet quam. Nam eu dui quis nunc aliquet sollicitudin a ut felis. Etiam non erat metus. Nulla facilisi. Cras pharetra rutrum lobortis. Cras efficitur orci erat, a interdum enim pulvinar eu.

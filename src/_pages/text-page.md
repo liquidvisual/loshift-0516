@@ -2,7 +2,7 @@
 layout: internal/text_page
 title: Basic Text Page
 permalink: /text-page/
-hero: "/img/content/hero-2.jpg"
+hero: '/img/content/hero/Loadshift_Big_Pipe_Mass_Energy_1.jpg'
 ---
 
 ## Heading 2

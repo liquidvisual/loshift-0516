@@ -24,6 +24,26 @@
 			border-color: $brand-primary;
 		}
 	}
+
+	.bx-prev,
+	.bx-next {
+		display: inline-block;
+		font-family: 'FontAwesome';
+		font-size: rem-calc(25);
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		background: #eee;
+		border-radius: 4px;
+		margin: 0 4px 0 0;
+
+		@include media-breakpoint-up(lg) {
+		    &:hover {
+		    	background: darken(#eee, 4%);
+		    }
+		}
+	}
 }
 
 //-----------------------------------------------------------------

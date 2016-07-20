@@ -35,7 +35,7 @@ function authenticate() {
 
 function init(){
 	setToolTab();
-	setlevel2();
+	setLevel2();
 	initToolButtons();
 	loadMainView();
 }
@@ -115,13 +115,13 @@ function loadMainView() {
 }
 
 //-----------------------------------------------------------------
-// INIT TOOL BUTTONS
+// INIT TOOL BUTTONS - make this only fire once
 //-----------------------------------------------------------------
 
 function initToolButtons() {
-
+console.log('binding buttons');
 	// Menu Button
-	$('.lv-tool-menu-btn').bind('click', function(e){
+	$('.lv-tool-menu-btn').unbind('click').bind('click', function(e){
 		e.preventDefault();
 		console.log('Menu button is triggering.');
 		$('body').toggleClass('menu-is-open');
@@ -138,35 +138,24 @@ function initToolButtons() {
 function setToolTab() {
 	var toolTabTitle = $('[data-tool-tab-title]');
 	var toolTabContent = $('[data-tool-tab-content]');
-		toolTabContent.attr('hidden', true);
-		$('[data-tool-tab]').removeClass('active');
+		toolTabContent.attr('hidden', true); // hide all
+		$('[data-tool-tab]').removeClass('active'); // reset active
 
 		// loop all tab content
 		toolTabContent.each(function(){
 			var $this = $(this);
-			var stringId = $this.attr('data-tool-tab-content');
+			var stringId = $this.attr('data-tool-tab-content'); // Eg. 'design', 'development' etc
 
 			// Choose Tab based on URL Hashbang
 			if (stringId == getHashBang().level1) {
-				$this.removeAttr('hidden');
-				$('[data-tool-tab="'+stringId+'"]').addClass('active');
-				// toolTabTitle.text(stringId);
-
-				setTimeout(function() {
-					console.log('YES');
-
-					$("[data-tool-tab-title]").pxgradient({
-					  step: 10, // Step Color. The smaller the number, the greater the load. Default: 10
-					  colors: ["#F12D66","#20B5C3"],
-					  dir: "x"
-					});
-
-				applyGradientHeader();
-				}, 1000);
+				$this.removeAttr('hidden'); // show selected
+				$('[data-tool-tab="'+stringId+'"]').addClass('active'); // mark active
+				toolTabTitle.text(stringId);
 			}
 		});
 
-		// toolTabTitle.pxgradient({ step: 10, colors: ["#F12D66","#20B5C3"], dir: "x" });
+		// Funky gradient on header
+		applyGradientHeader();
 }
 
 //-----------------------------------------------------------------
@@ -181,13 +170,27 @@ function onLoadComplete() {
 // SET LEVEL 2
 //-----------------------------------------------------------------
 
-function setlevel2() {
+function setLevel2() {
 	var level2 = getHashBang().level2;
 	$('.lv-context-menu-panel a').parent().removeClass('active');
 
 	// If second level exists in the hashbang
 	if (level2) {
 		$('.lv-context-menu-panel a[href*="'+level2+'"]').parent().addClass('active');
+	}
+}
+
+//-----------------------------------------------------------------
+// SET LEVEL 3 ----> DEV PANEL (COME BACK TO)
+//-----------------------------------------------------------------
+
+function setLevel3() {
+	// var level3 = getHashBang().level3;
+	// $('.lv-context-menu-panel a').parent().removeClass('active');
+
+	// If second level exists in the hashbang
+	if (level3) {
+		// $('.lv-context-menu-panel a[href*="'+level3+'"]').parent().addClass('active');
 	}
 }
 
@@ -215,13 +218,15 @@ function getHashBang() {
 //-----------------------------------------------------------------
 
 function applyGradientHeader() {
-
-	$("h1.subheader, h2.subheader, h3.subheader").pxgradient({
+	console.log('Applying header gradient');
+	$(".subheader").removeClass('sn-pxg').pxgradient({
 	  step: 10, // Step Color. The smaller the number, the greater the load. Default: 10
 	  colors: ["#F12D66","#20B5C3"],
 	  dir: "x"
 	});
 }
+
+// setTimeout(applyGradientHeader, 10);
 
 // $(window).load(function() {
 // 	applyGradientHeader();

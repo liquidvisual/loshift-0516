@@ -63,23 +63,32 @@ $dark-bg-color: $gray-dark;
 //-----------------------------------------------------------------
 
 .lv-context-menu-header {
+	display: table;
+	width: 100%;
 	background: darken($dark-bg-color, 4%);
 	text-align: center;
-	padding: rem-calc(0 20); // failsafe
-	overflow: hidden; // failsafe
-	height: $lv-topbar-height-medium + $lv-stage-top-offset;
+	// padding: rem-calc(0 20); // failsafe
+	// overflow: hidden; // failsafe
+	// height: $lv-topbar-height-medium + $lv-stage-top-offset;
 
 	@include media-breakpoint-up(md) {
-	    margin-left: $app-menu-toolbar-width;
+	    // margin-left: $app-menu-toolbar-width;
+	    padding-left: $app-menu-toolbar-width;
 	}
 
 	h3 {
+		display: table-cell;
+		vertical-align: middle;
 		margin: 0; // failsafe
 		padding: 0; // failsafe
 		font-family: $font-family-serif;
 		font-size: rem-calc(20);
 		font-weight: normal;
-		line-height: $lv-topbar-height-medium + $lv-stage-top-offset;
+		height: $lv-topbar-height-medium + $lv-stage-top-offset;
+		// line-height: 1;
+
+		// background: red;
+		// line-height: $lv-topbar-height-medium + $lv-stage-top-offset;
 		color: $brand-primary;
 	}
 }

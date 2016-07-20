@@ -22,6 +22,13 @@ $(window).load(function() {
 		// $(window).trigger('hashchange'); // wtf
 		location.reload();
 	});
+
+	$('[data-logout]').click(function(e){
+		// e.preventDefault();
+	    localStorage.setItem("loggedIn", "");
+	    $(window).trigger('hashchange');
+	    console.log(localStorage.getItem("loggedIn"));
+	});
 });
 
 //-----------------------------------------------------------------

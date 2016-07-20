@@ -1,6 +1,6 @@
 {% assign settings = site.data.settings %}
 {% assign logo = "/img/content/logo-white.png" %}
-{% assign counter = "198001" %}
+{% assign counter = 198001 %}
 
 <div class="container">
     <div class="display-table">
@@ -18,26 +18,44 @@
                 <span class="text">of requested transport added in the last 24hrs.</span>
             </div>
 
-            <!-- DYNAMIC COUNTING EFFECT -->
-            <script>
-                $(window).load(function() {
-                   var options = {
-                     useEasing : true,
-                     useGrouping : true,
-                     separator : ',',
-                     decimal : '.',
-                     prefix : '',
-                     suffix : ''
-                   };
-                   var countUp = new CountUp("dynamic-counter", 0, {{ counter }}, 0, 1.5, options);
-                   countUp.start();
-                });
-            </script>
+            {% if page.url == "/" %}
+
+                <!-- DYNAMIC COUNTING EFFECT - HOMEPAGE ONLY -->
+                <script>
+                    $(window).load(function() {
+                     var options = {
+                       useEasing : true,
+                       useGrouping : true,
+                       separator : ',',
+                       decimal : '.',
+                       prefix : '',
+                       suffix : ''
+                     };
+                     var countUp = new CountUp("dynamic-counter", 0, {{ counter }}, 0, 1.5, options);
+                     countUp.start();
+                    });
+                </script>
+
+            {% else %}
+
+                <!-- ALL OTHER PAGES -->
+                <script>
+                    $(window).load(function() {
+                        $.fn.digits = function(){
+                            return this.each(function(){
+                                $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+                            })
+                        }
+                        $('#dynamic-counter').text({{ counter }}).digits();
+                    });
+                </script>
+
+            {% endif %}
 
             <!-- MENU -->
             <div class="global-menu">
-                <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
-                <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
+            <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
+            <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
             </div>
 
         </div>
