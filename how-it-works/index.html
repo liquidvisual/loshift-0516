@@ -48,26 +48,26 @@
                 <span class="text">of requested transport added in the last 24hrs.</span>
             </div>
 
-            <!-- DYNAMIC COUNTING EFFECT -->
-            <script>
-                $(window).load(function() {
-                   var options = {
-                     useEasing : true,
-                     useGrouping : true,
-                     separator : ',',
-                     decimal : '.',
-                     prefix : '',
-                     suffix : ''
-                   };
-                   var countUp = new CountUp("dynamic-counter", 0, 198001, 0, 1.5, options);
-                   countUp.start();
-                });
-            </script>
+            
+
+                <!-- ALL OTHER PAGES -->
+                <script>
+                    $(window).load(function() {
+                        $.fn.digits = function(){
+                            return this.each(function(){
+                                $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+                            })
+                        }
+                        $('#dynamic-counter').text(198001).digits();
+                    });
+                </script>
+
+            
 
             <!-- MENU -->
             <div class="global-menu">
-                <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
-                <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
+            <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
+            <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
             </div>
 
         </div>
@@ -127,7 +127,7 @@
 			<div class="col-md-6">
 				<h3>FIND TRUCKS – Availability Register</h3>
 				<p>This is the venue to “post” (Advertise) your current or future truck/trailer location and availability. Let Shippers know in advance, the next destination that you will be available to load out of.</p>
-				<p><img width="100%" src="/assets/img/content/load-board.jpg"></p>
+				<p><img width="100%" src="/assets/img/content/truck-register@2x.jpg" alt="Truck Availability Register"></p>
 				<div class="spacer m-b-2"></div>
 			</div>
 			<div class="col-md-6">

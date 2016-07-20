@@ -1,62 +1,53 @@
 <nav class="lv-context-menu">
+
+    <!-- HEADER -->
+    <header class="lv-context-menu-header">
+        <h3 data-tool-tab-title class="subheader"></h3>
+    </header>
+
+    <!-- TOOLBAR (LEFT) -->
+    <div class="lv-context-menu-toolbar">
+        <ul class="lv-context-menu-site-tools">
+            <!-- Logo -->
+            <li>
+                <a data-logout href="/manage/" class="lv-context-menu-user-logo">
+                    <img width="32" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200" alt="...">
+                    <!-- <img class="gravitar" width="32" src="" alt="Gravitar"> -->
+                    <script>
+                        var grav = "https://www.gravatar.com/avatar/";
+                        var gravURI = MD5("contact@loadshift.com.au");
+                        $('.gravitar').attr("src", grav + gravURI);
+                    </script>
+                </a>
+            </li>
+
+            <!-- Links -->
+            <li data-tool-tab="overview"><a href="#/overview/"><i class="fa fa-dashboard"></i></a></li>
+            <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li>
+            <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li>
+            <li data-tool-tab="development"><a href="#/development/site/"><i class="fa fa-code"></i></a></li>
+            <li data-tool-tab="preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
+        </ul>
+
+        <!-- Ignore these for now -->
+        <!-- <ul class="lv-context-menu-user-tools"> -->
+            <!-- <li><a data-tool-tab="alert" href="#/alert/"><i class="fa fa-bell-o"></i></a></li> -->
+            <!-- <li><a data-tool-tab="discuss" href="#/discuss/"><i class="fa fa-comment-o"></i></a></li> -->
+            <!-- <li><a data-tool-tab="user" href="#/user/"><i class="fa fa-user"></i></a></li> -->
+        <!-- </ul> -->
+    </div>
+
     <div class="lv-context-menu-scroller">
-
-        <!-- HEADER -->
-        <header class="lv-context-menu-header">
-            <h3 data-tool-tab-title class="subheader"></h3>
-            <span class="lv-context-menu-close-btn"></span>
-        </header>
-
-        <!-- TOOLBAR (LEFT) -->
-        <div class="lv-context-menu-toolbar">
-            <ul class="lv-context-menu-site-tools">
-                <!-- Logo -->
-                <li>
-                    <a data-logout href="/manage/" class="lv-context-menu-user-logo">
-                        <!-- <img width="32" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200" alt="..."> -->
-                        <img class="gravitar" width="32" src="..." alt="Gravitar">
-                        <script>
-                            var grav = "https://www.gravatar.com/avatar/";
-                            var gravURI = MD5("contact@loadshift.com.au");
-                            $('.gravitar').attr("src", grav + gravURI);
-                        </script>
-                    </a>
-                </li>
-
-                <!-- ADHOC  -->
-                <script>
-                    $('[data-logout]').click(function(){
-                        localStorage.setItem("loggedIn", "");
-                        $(window).trigger('hashchange');
-                        console.log(localStorage.getItem("loggedIn"));
-                    });
-                </script>
-
-                <!-- Links -->
-                <li data-tool-tab="dashboard"><a  href="#/dashboard/"><i class="fa fa-dashboard"></i></a></li>
-                <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li>
-                <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li>
-                <li data-tool-tab="development"><a href="#/development/"><i class="fa fa-code"></i></a></li>
-                <li data-tool-tab="preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
-            </ul>
-
-            <!-- Ignore these for now -->
-            <ul class="lv-context-menu-user-tools">
-                <li><a data-tool-tab="alert" href="#/alert/"><i class="fa fa-bell-o"></i></a></li>
-                <li><a data-tool-tab="discuss" href="#/discuss/"><i class="fa fa-comment-o"></i></a></li>
-                <!-- <li><a data-tool-tab="user" href="#/user/"><i class="fa fa-user"></i></a></li> -->
-            </ul>
-        </div>
 
         <!-- BODY -->
         <div class="lv-context-menu-body">
 
             <!-- DASHBOARD -->
-            <div data-tool-tab-content="dashboard" class="lv-context-menu-panel">
+            <div data-tool-tab-content="overview" class="lv-context-menu-panel">
                 <ul>
-                    <li><a href="#/dashboard/option-1/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
-                    <li><a href="#/dashboard/option-2/"><span class="lv-context-menu-digit">02</span>Quote</a></li>
-                    <!-- <li><a href="#/dashboard/option-3/"><span class="lv-context-menu-digit">03</span>Price Breakdown</a></li> -->
+                    <li><a href="#/overview/welcome/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
+                    <li><a href="#/overview/quote/"><span class="lv-context-menu-digit">02</span>Quote</a></li>
+                    <!-- <li><a href="#/overview/option-3/"><span class="lv-context-menu-digit">03</span>Dashboard</a></li> -->
                 </ul>
             </div>
 
@@ -84,154 +75,129 @@
 
             <!-- DEVELOPMENT -->
             <div data-tool-tab-content="development" class="lv-context-menu-panel">
-                <ul data-tool-tab-nested class="lv-context-menu-panel-tab">
-                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Site</a></li>
-                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Layout</a></li>
-                    <li><a href="#"><span class="lv-context-menu-digit">01</span>Docs</a></li>
+
+                <ul data-tool-tablist class="lv-context-menu-panel-tablist">
+                    <li><a href="#/development/site/">Site</a></li>
+                    <li><a href="#/development/docs/">Docs</a></li>
                 </ul>
+
                 <div class="lv-context-menu-panel-tab-content">
-                    options 1...
-                    <a href="https://github.com/liquidvisual/liquidvisual-builder/commits/master">Updated</a>
+                    <ul>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Changelog</a></li>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Download Assets</a></li>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Compiled Branch</a></li>
+                        <li><a href="#launch-remote-url"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Github Repo</a></li>
+                    </ul>
                 </div>
-                <div>
-                    options 2...
-                </div>
-                <div>
-                    options 3...
+
+                <div class="lv-context-menu-panel-tab-content">
+                    <nav class="lv-context-menu-panel" aria-hidden="true">
+                        <h3>Getting Started</h3>
+                        <ul>
+                            <li class="active"><a href="/docs/">Welcome</a></li>
+                            <li><a href="/docs/getting-started/installation-and-setup/">Installation &amp; Setup</a></li>
+                            <li><a href="/docs/getting-started/basic-usage/">Basic Usage</a></li>
+                            <li><a href="/docs/getting-started/directory-structure/">Directory Structure</a></li>
+                            <li><a href="/docs/getting-started/compatibility/">Compatibility</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
 
             <!-- PREVIEW -->
             <div data-tool-tab-content="preview" class="lv-context-menu-panel listo">
                 <ul>
+                    <li><a href="#/preview/">Home <br><small class="listo-light" style="color: #1FB5C3;">/</small></a></li>
                     
-                        <li><a href="#/preview/">Home <br><small class="listo-light" style="color: #1FB5C3;">/</small></a>
-                            
-                        </li>
                     
-                        <li><a href="#/preview/text-page/">About Us <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/how-it-works/">How It Works <br><small class="listo-light" style="color: #1FB5C3;">/how-it-works/</small></a>
-                            
-                                <ul style="margin-left:20px;">
-                                    
-                                        <li><a href class="">+ Shippers <br><small style="color: #1FB5C3;">/how-it-works/</small></a></li>
-                                    
-                                        <li><a href class="">+ Carriers <br><small style="color: #1FB5C3;">/how-it-works/</small></a></li>
-                                    
-                                </ul>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Get Quotes <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Find Trucks <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/membership/">Membership <br><small class="listo-light" style="color: #1FB5C3;">/membership/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/blog/">Blog <br><small class="listo-light" style="color: #1FB5C3;">/blog/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/blog/">News <br><small class="listo-light" style="color: #1FB5C3;">/blog/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Help <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/text-page/">User Philosophy <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Advertising <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Escrow Pay Service <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/cargo-categories/">Cargo Categories <br><small class="listo-light" style="color: #1FB5C3;">/cargo-categories/</small></a>
-                            
-                                <ul style="margin-left:20px;">
-                                    
-                                        <li><a href class="">+ Machinery Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Heavy Haulage <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ General Freight <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Palletised Freight <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Car Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Container Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Truck Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Furniture Removal <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Boat Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Trailer Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Hay Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Grain Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Portable Buildings <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Livestock Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                        <li><a href class="">+ Bulk Tipper Transport <br><small style="color: #1FB5C3;">/cargo-categories/</small></a></li>
-                                    
-                                </ul>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/contact-us/">Contact Us <br><small class="listo-light" style="color: #1FB5C3;">/contact-us/</small></a>
-                            
-                        </li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Sitemap <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
+                          <li><a href="#/preview//text-page/">Basic Text Page <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a></li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Terms & Conditions <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
+                          <li><a href="#/preview//blog/">Blog <br><small class="listo-light" style="color: #1FB5C3;">/blog/</small></a></li>
+                        
                     
-                        <li><a href="#/preview/text-page/">Privacy Policy <br><small class="listo-light" style="color: #1FB5C3;">/text-page/</small></a>
-                            
-                        </li>
+                        
                     
+                        
+                          <li><a href="#/preview//cargo-categories/">Cargo Categories <br><small class="listo-light" style="color: #1FB5C3;">/cargo-categories/</small></a></li>
+                        
+                    
+                        
+                          <li><a href="#/preview//how-it-works/carriers/">Carriers <br><small class="listo-light" style="color: #1FB5C3;">/how-it-works/carriers/</small></a></li>
+                        
+                    
+                        
+                          <li><a href="#/preview//contact-us/">Contact Us <br><small class="listo-light" style="color: #1FB5C3;">/contact-us/</small></a></li>
+                        
+                    
+                        
+                          <li><a href="#/preview//cargo-categories/cargo-item/">Heavy Haulage <br><small class="listo-light" style="color: #1FB5C3;">/cargo-categories/cargo-item/</small></a></li>
+                        
+                    
+                        
+                    
+                        
+                          <li><a href="#/preview//how-it-works/">How It Works <br><small class="listo-light" style="color: #1FB5C3;">/how-it-works/</small></a></li>
+                        
+                    
+                        
+                          <li><a href="#/preview//membership/">Membership <br><small class="listo-light" style="color: #1FB5C3;">/membership/</small></a></li>
+                        
+                    
+                        
+                          <li><a href="#/preview//how-it-works/shippers/">Shippers <br><small class="listo-light" style="color: #1FB5C3;">/how-it-works/shippers/</small></a></li>
+                        
+                    
+                        
+                          <li><a href="#/preview//blog/blog-item/">That's Pie Country. They Do a Lot of Baking Up There. <br><small class="listo-light" style="color: #1FB5C3;">/blog/blog-item/</small></a></li>
+                        
+                    
+                    <li><a href="#/404/">404 - Page Not Found<br><small class="listo-light" style="color: #1FB5C3;">/404/</small></a></li>
                 </ul>
             </div>
 
             <!-- DISCUSS (IGNORE FOR NOW) -->
-            <div data-tool-tab-content="alert" class="lv-context-menu-panel">
+            <!-- <div data-tool-tab-content="alert" class="lv-context-menu-panel">
                 <p>Content to be decided</p>
-            </div>
+            </div> -->
 
             <!-- DISCUSS (IGNORE FOR NOW) -->
-            <div data-tool-tab-content="discuss" class="lv-context-menu-panel">
+            <!-- <div data-tool-tab-content="discuss" class="lv-context-menu-panel">
                 <p>Content to be decided</p>
-            </div>
+            </div> -->
 
             <!-- USER (IGNORE FOR NOW) -->
-            <div data-tool-tab-content="user" class="lv-context-menu-panel">
+            <!-- <div data-tool-tab-content="user" class="lv-context-menu-panel">
                 <p>Content to be decided</p>
-            </div>
+            </div> -->
 
         </div>
 

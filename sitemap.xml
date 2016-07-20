@@ -25,10 +25,10 @@
 <loc>/cargo-categories/cargo-item/</loc>
 </url>
 <url>
-<loc>/builder-app/views/design/component-library.html</loc>
+<loc>/builder-app/docs/component-library.html</loc>
 </url>
 <url>
-<loc>/builder-app/docs/component-library.html</loc>
+<loc>/builder-app/views/design/component-library.html</loc>
 </url>
 <url>
 <loc>/contact-us/</loc>
@@ -71,6 +71,9 @@
 </url>
 <url>
 <loc>/builder-app/includes/topbar.html</loc>
+</url>
+<url>
+<loc>/builder-app/views/overview/welcome.html</loc>
 </url>
 <url>
 <loc>/docs/component-library/accordion.html</loc>

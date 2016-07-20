@@ -48,26 +48,26 @@
                 <span class="text">of requested transport added in the last 24hrs.</span>
             </div>
 
-            <!-- DYNAMIC COUNTING EFFECT -->
-            <script>
-                $(window).load(function() {
-                   var options = {
-                     useEasing : true,
-                     useGrouping : true,
-                     separator : ',',
-                     decimal : '.',
-                     prefix : '',
-                     suffix : ''
-                   };
-                   var countUp = new CountUp("dynamic-counter", 0, 198001, 0, 1.5, options);
-                   countUp.start();
-                });
-            </script>
+            
+
+                <!-- ALL OTHER PAGES -->
+                <script>
+                    $(window).load(function() {
+                        $.fn.digits = function(){
+                            return this.each(function(){
+                                $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+                            })
+                        }
+                        $('#dynamic-counter').text(198001).digits();
+                    });
+                </script>
+
+            
 
             <!-- MENU -->
             <div class="global-menu">
-                <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
-                <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
+            <a class="global-menu-btn hamburger"><span>Menu</span><i class="fa fa fa-navicon hidden-sm-down"></i></a>
+            <a class="global-menu-btn" data-toggle="modal" data-target="#modal-login"><span class="hidden-sm-down">Login</span><i class="fa fa fa-user"></i></a>
             </div>
 
         </div>
@@ -129,7 +129,7 @@
 				<p class="text-xs-center"><img width="100%" src="/assets/img/content/sms-alert.png"></p>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-				<p><img width="100%" src="/assets/img/content/load-board.jpg" alt="Load Board"></p>
+				<p><img width="100%" src="/assets/img/content/load-board@2x.jpg" alt="Load Board"></p>
 			</div>
 		</div>
 		<br>
@@ -147,31 +147,8 @@
 				<h2 class="m-y-3 text-xs-center">Be Seen.</h2>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-				
-
-<iframe class="lv-google-map"
-        width="100%"
-        height="250"
-        frameborder="0"
-        src="https://maps.google.com/maps?hl=en&q=P.O. Box 349Windsor NSW, 2756&ie=UTF8&t=roadmap&z=14&iwloc=B&output=embed">
-</iframe>
+				<p><img width="100%" src="/assets/img/content/truck-register@2x.jpg" alt="Truck Availability Register"></p>
 			</div>
-		</div>
-	</div>
-</section>
-
-<!-- SIMPLE - TRANSPARENT - JOB LEADS -->
-<section class="section section">
-	<div class="container">
-		<p>Note: loadshift.com.au is an online business service that specialises in the heavy load transport industry. It simply delivers your quotation request into transport businesses. Loadshift DOES NOT participate in any quotation, nor does it receive commissions. You deal directly with the transport carriers at all times.</p>
-		<p>Carriers subscribe to this marketplace (on a monthly basis), to receive your quote request as a job lead into their businesses.</p>
-		<br>
-		<div class="container">
-			<ul class="block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through">
-				<li><span class="h2">SIMPLE</span></li>
-				<li><span class="h2">TRANSPARENT</span></li>
-				<li><span class="h2">JOB LEADS</span></li>
-			</ul>
 		</div>
 	</div>
 </section>
@@ -244,6 +221,22 @@
 					
 				</ul>
 			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SIMPLE - TRANSPARENT - JOB LEADS -->
+<section class="section section">
+	<div class="container">
+		<p>Note: loadshift.com.au is an online business service that specialises in the heavy load transport industry. It simply delivers your quotation request into transport businesses. Loadshift DOES NOT participate in any quotation, nor does it receive commissions. You deal directly with the transport carriers at all times.</p>
+		<p>Carriers subscribe to this marketplace (on a monthly basis), to receive your quote request as a job lead into their businesses.</p>
+		<br>
+		<div class="container">
+			<ul class="block-grid-xs-1 block-grid-md-3 text-xs-center long-strike-through">
+				<li><span class="h2">SIMPLE</span></li>
+				<li><span class="h2">TRANSPARENT</span></li>
+				<li><span class="h2">JOB LEADS</span></li>
+			</ul>
 		</div>
 	</div>
 </section>
