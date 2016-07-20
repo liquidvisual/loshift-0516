@@ -40,8 +40,8 @@ h1, h2, h3, h4, h5, h6 {
 .price-font {
 	font-family: 'Open Sans';
 
-	&::first-letter {
-		// vertical-align: super;
+	&:before {
+		content: "$";
 		font-size: rem-calc(40);
 		font-weight: 400;
 	}
