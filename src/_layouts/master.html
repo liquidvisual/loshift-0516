@@ -8,7 +8,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-	<title>{{ site.data.settings.title }}</title>
+	<title>
+    {% if page.url == '/' %}
+      {{ site.data.settings.seo_title }}
+    {% else %}
+      {{ page.title }} - {{ site.data.settings.title }}
+    {% endif %}
+  </title>
 
 	<!-- CDN -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700|Jura:400,500,600">
