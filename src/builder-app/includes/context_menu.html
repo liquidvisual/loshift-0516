@@ -1,0 +1,141 @@
+---
+---
+
+{% assign settings = site.data.settings %}
+{% assign github_repo = settings.github_repo %}
+{% assign github_repo_commits = github_repo | append: '/commits/master' %}
+{% assign github_pages = github_repo | append: '/tree/gh-pages' %}
+{% assign github_pages_assets = github_pages | append: '/assets' %}
+
+<nav class="lv-context-menu">
+
+    <!-- HEADER -->
+    <header class="lv-context-menu-header">
+        <h3 data-tool-tab-title class="subheader"></h3>
+    </header>
+
+    <!-- TOOLBAR (LEFT) -->
+    <div class="lv-context-menu-toolbar">
+        <ul class="lv-context-menu-site-tools">
+            <!-- Logo -->
+            <li>
+                <a data-logout href="/manage/" class="lv-context-menu-user-logo">
+                    <img width="30" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200" alt="...">
+                    <!-- <img data-gravitar class="gravitar" width="32" src="" alt="Gravitar"> -->
+                    <!-- <script>
+                        var grav = "https://www.gravatar.com/avatar/";
+                        var gravURI = MD5("{{ site.data.settings.email | remove: ' ' | strip_newlines | downcase }}");
+                        $('[data-gravitar]').attr("src", grav + gravURI);
+                    </script> -->
+                </a>
+            </li>
+
+            <!-- TOOL TABS -->
+            <li data-tool-tab="essential"><a href="#/essential/"><i class="fa fa-dashboard"></i></a></li>
+            <!-- <li data-tool-tab="overview"><a href="#/overview/"><i class="fa fa-dashboard"></i></a></li> -->
+            <!-- <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li> -->
+            <!-- <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li> -->
+            <li data-tool-tab="development"><a href="#/development/site/"><i class="fa fa-code"></i></a></li>
+            <li data-tool-tab="preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
+        </ul>
+
+    </div>
+
+    <div class="lv-context-menu-scroller">
+
+        <!-- BODY -->
+        <div class="lv-context-menu-body">
+
+            <!-- ESSENTIAL -->
+            <div data-tool-tab-content="essential" class="lv-context-menu-panel">
+                <ul>
+                    <li><a href="#/overview/welcome/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
+                    <li><a href="#/content/settings/"><span class="lv-context-menu-digit">04</span>Settings</a></li>
+                    <li><a href="#/content/sitemap/"><span class="lv-context-menu-digit">05</span>Sitemap</a></li>
+                    <li><a href="#/design/styleguide/"><span class="lv-context-menu-digit">11</span>Styleguide</a></li>
+                    <li><a href="#/design/component-library/"><span class="lv-context-menu-digit">13</span>Component Library</a></li>
+
+                </ul>
+            </div>
+
+            <!-- OVERVIEW -->
+            <div data-tool-tab-content="overview" class="lv-context-menu-panel">
+                <ul>
+                    <li><a href="#/overview/welcome/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
+                    <li><a href="#/overview/quote/"><span class="lv-context-menu-digit">02</span>Quote</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTENT -->
+            <div data-tool-tab-content="content" class="lv-context-menu-panel">
+                <ul>
+                    <li><a href="#/content/settings/"><span class="lv-context-menu-digit">04</span>Settings</a></li>
+                    <li><a href="#/content/sitemap/"><span class="lv-context-menu-digit">05</span>Sitemap</a></li>
+                    <li><a href="#/content/assets/"><span class="lv-context-menu-digit">06</span>Assets</a></li>
+                    <li><a href="#/content/copywriting/"><span class="lv-context-menu-digit">07</span>Copywriting</a></li>
+                    <li><a href="#/content/seo/"><span class="lv-context-menu-digit">08</span>SEO</a></li>
+                </ul>
+            </div>
+
+            <!-- DESIGN -->
+            <div data-tool-tab-content="design" class="lv-context-menu-panel">
+                <ul>
+                    <li><a href="#/design/moodboard/"><span class="lv-context-menu-digit">09</span>Moodboard</a></li>
+                    <li><a href="#/design/wireframes/"><span class="lv-context-menu-digit">10</span>Wireframes</a></li>
+                    <li><a href="#/design/styleguide/"><span class="lv-context-menu-digit">11</span>Styleguide</a></li>
+                    <li><a href="#/design/branding/"><span class="lv-context-menu-digit">12</span>Branding</a></li>
+                    <li><a href="#/design/component-library/"><span class="lv-context-menu-digit">13</span>Component Library</a></li>
+                </ul>
+            </div>
+
+            <!-- DEVELOPMENT -->
+            <div data-tool-tab-content="development" class="lv-context-menu-panel">
+
+                <ul class="lv-context-menu-panel-tabs-header">
+                    <li data-tool-tab="site"><a href="#/development/site/">Site</a></li>
+                    <li data-tool-tab="docs"><a href="#/development/docs/">Docs</a></li>
+                </ul>
+
+                <!-- LEVEL 03: SITE -->
+                <div data-tool-tab-content="site">
+                    <ul>
+                        <li><a href="{{ github_repo_commits }}" target="_blank"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Changelog</a></li>
+                        <li><a href="{{ github_pages_assets }}" target="_blank"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Download Assets</a></li>
+                        <li><a href="{{ github_pages }}" target="_blank"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Compiled Branch</a></li>
+                        <li><a href="{{ github_repo }}" target="_blank" class="btn btn-primary"><span class="fa fa-github"></span>Source Repo</a></li>
+                    </ul>
+                </div>
+
+                <!-- LEVEL 03: DOCS -->
+                <div data-tool-tab-content="docs">
+                    <nav>
+                        <h3>Getting Started</h3>
+                        <ul class="m-b-1">
+                            {% assign docs = site.pages | where: "type", "development_doc" %}
+                            {% for item in docs %}
+                                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- PREVIEW -->
+            <div data-tool-tab-content="preview" class="lv-context-menu-panel listo">
+                <ul>
+                    <li><a href="#/preview/">Home <br><small class="listo-light" style="color: #1FB5C3;">/</small></a></li>
+                    {% assign pages = site.pages | sort: 'title' %}
+                    {% for item in pages | offset: 1 %}
+                        {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
+                          <li><a href="#/preview{{item.url}}">{{ item.title }} <br><small class="listo-light" style="color: #1FB5C3;">{{ item.url }}</small></a></li>
+                        {% endunless %}
+                    {% endfor %}
+                    <li><a href="#/404/">404 - Page Not Found<br><small class="listo-light" style="color: #1FB5C3;">/404/</small></a></li>
+                </ul>
+            </div>
+
+        </div> <!-- /.lv-context-menu-body -->
+    </div> <!-- /.lv-context-menu-scroller -->
+
+    <div class="lv-context-menu-top-strip"></div>
+</nav>

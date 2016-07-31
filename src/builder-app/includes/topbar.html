@@ -1,0 +1,31 @@
+---
+---
+
+<header class="lv-topbar">
+
+    <a class="lv-topbar-logo" href="/manage/">
+        <img src="{{ '/favicon.ico' | prepend: site.assets }}" alt="Logo">
+
+        <span class="lv-topbar-logo-text">
+            <span class="lv-topbar-logo-text-truncate">{{ site.data.settings.title }}</span><br>
+            <small class="lv-topbar-logo-timestamp">Updated <b>{{ site.time | date: "%-d %B %Y" }}</b></small>
+        </span>
+    </a>
+
+    <nav class="lv-topbar-tools">
+        <ul>
+            <li>
+                <button data-menu-btn class="lv-tool-button lv-menu-btn">
+                    <span class="hidden-xs-down text"></span>
+                    <span class="hidden-sm-up"><i class="fa fa-bars"></i></span>
+                </button>
+            </li>
+            <!-- <li class="hidden-xs-down"><button data-notifications-btn class="lv-tool-button lv-notifications-btn"><i class="fa fa-bell-o"></i></button></li> -->
+        </ul>
+    </nav>
+
+    <!-- Change back to button soon -->
+    <button data-close-btn class="lv-topbar-close-btn" title="Exit Frame" href="/"><i class="fa fa-close"></i></button>
+    <!-- <button data-close-btn class="lv-topbar-close-btn" title="Exit Frame" href="/"><i class="fa fa-bell"></i></button> -->
+
+</header>

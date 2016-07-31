@@ -37,4 +37,3 @@ dist
 src/_bower_components
 node_modules
 .tmp
-builder-app

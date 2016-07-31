@@ -1,0 +1,42 @@
+/*
+    SPECIAL.CSS
+
+    - Last updated: 06.04.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+:focus {
+	outline: none !important;
+}
+
+::-moz-focus-inner {
+	border: 0 !important; // what is this?
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+// .hide {
+// 	display: none;
+// }
+
+// .lv-expander {
+// 	position: relative;
+// 	cursor: pointer;
+
+// 	-webkit-touch-callout: none;
+// 	  -webkit-user-select: none;
+// 	   -khtml-user-select: none;
+// 	     -moz-user-select: none;
+// 	       -o-user-select: none;
+// 	      -ms-user-select: none;
+// 	          user-select: none;
+// }
+
+// .lv-expander-hidden + .lv-expander-content {
+// 	display: none;
+// }

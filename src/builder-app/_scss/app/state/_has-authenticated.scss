@@ -1,0 +1,182 @@
+/*
+    HAS-AUTHENTICATED.CSS
+
+    - Last updated: 28.07.16
+    - hello@liquidvisual.com
+*/
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 01. ANIMATE OVERLAY
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.has-authenticated .lv-login-overlay {
+
+    // NUDGE RIGHT
+    @keyframes overlay-nudge-right {
+        from { transform: translateX(0); }
+        to   { transform: translateX($app-menu-toolbar-width); }
+    }
+
+    // SLIDE DOWN EXIT (SMALL)
+    @keyframes overlay-slide-down {
+        from {
+            transform: translate(0, 0);
+        } to {
+            transform: translate(0, 100%);
+            visibility: hidden;
+        }
+    }
+
+    // SLIDE DOWN EXIT (LARGE)
+    @keyframes overlay-slide-down-lg {
+        from {
+            transform: translate($app-menu-toolbar-width, 0);
+        } to {
+            transform: translate($app-menu-toolbar-width, 90%);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    animation: overlay-slide-down 0.4s ease .6s alternate 1 forwards;
+
+    @include media-breakpoint-up(lg) {
+        animation:
+            overlay-nudge-right 0.3s ease .1s alternate 1 forwards,
+            overlay-slide-down-lg 0.4s ease .6s alternate 1 forwards;
+    }
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 02. ANIMATE TOOLBAR
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.has-authenticated .lv-context-menu-toolbar {
+    transform: translateX(-$app-menu-toolbar-width);
+
+    // NUDGE RIGHT (Give illusion of page nudge)
+    @keyframes toolbarNudgeRight {
+        from { transform: translateX(-$app-menu-toolbar-width); }
+        to   { transform: translateX(0); }
+    }
+
+    animation: toolbarNudgeRight 0.5s ease .0s alternate 1 forwards;
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 03. PAGE STRIP (SUBTLE EFFECT)
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.has-authenticated .lv-context-menu-top-strip {
+    transform: translateY(-($lv-topbar-height-medium + $lv-stage-top-offset));
+
+    // PULL DOWN FOR EFFECT
+    @keyframes pullStripDown {
+        0% {
+            transform: translateY(-$lv-topbar-height-medium + $lv-stage-top-offset);
+        } 100% {
+            transform: translateY(0);
+        }
+    }
+
+    animation: pullStripDown 0.35s ease .6s alternate 1 forwards;
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 04. CONTEXT MENU CONTENTS
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.has-authenticated .lv-context-menu-header,
+.has-authenticated .lv-context-menu-body {
+    opacity: 0;
+
+    // PULL DOWN FOR EFFECT
+    @keyframes fadeInContextMenu {
+        0% {
+            opacity: 0;
+        } 100% {
+            opacity: 1;
+        }
+    }
+
+    animation: fadeInContextMenu 0.5s ease-out 1s alternate 1 forwards;
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 05. STAGE ANIMATION
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.has-authenticated .lv-stage {
+
+    // NUDGE RIGHT (Give illusion of page nudge)
+    @keyframes pull-stage-up {
+        0% {
+            transform: translate($app-menu-width-small, 100%);
+        }
+        100% {
+            transform: translate($app-menu-width-small, $lv-stage-top-offset); // make one for MOBILE here ***
+        }
+    }
+
+    //========================================= DESKTOP BELOW
+
+    // NUDGE RIGHT (Give illusion of page nudge)
+    @keyframes pull-stage-up-md {
+        0% {
+            transform: translate($app-menu-width-medium, 100%);
+        }
+        100% {
+            transform: translate($app-menu-width-medium, $lv-stage-top-offset); // make one for MOBILE here ***
+        }
+    }
+
+    transform: translate($app-menu-width-small, 100%);
+    animation: pull-stage-up 0.6s ease .7s alternate 1 forwards; // cubic-bezier(0.5, 0.2, 0.3, 1.0)
+
+    @include media-breakpoint-up(md) {
+        transform: translate($app-menu-width-medium, 100%);
+        animation: pull-stage-up-md 0.6s ease .7s alternate 1 forwards; // cubic-bezier(0.5, 0.2, 0.3, 1.0)
+    }
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 06. TOPBAR ANIMATION
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.has-authenticated .lv-topbar {
+
+    // NUDGE RIGHT (Give illusion of page nudge)
+    @keyframes pull-topbar-up {
+        0% {
+            transform: translate($app-menu-width-small, -80px);
+        }
+        100% {
+            transform: translate($app-menu-width-small, $lv-stage-top-offset); // make one for MOBILE here ***
+        }
+    }
+
+    //========================================= DESKTOP BELOW
+
+    @keyframes pull-topbar-up-md {
+        0% {
+            transform: translate($app-menu-width-medium, -80px);
+        }
+        100% {
+            transform: translate($app-menu-width-medium, $lv-stage-top-offset); // make one for MOBILE here ***
+        }
+    }
+
+    transform: translate($app-menu-width-small, -80px);
+    animation: pull-topbar-up 0.5s ease 0.8s alternate 1 forwards;
+
+    @include media-breakpoint-up(md) {
+        transform: translate($app-menu-width-medium, -80px);
+        animation: pull-topbar-up-md 0.5s ease 0.8s alternate 1 forwards;
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================

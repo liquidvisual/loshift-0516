@@ -1,0 +1,398 @@
+/*
+    CONTEXT-MENU.CSS
+
+    - Last updated: 23.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$app-menu-toolbar-width: 55px !default;
+$dark-bg-color: $gray-dark !default; // recently changed this
+
+//-----------------------------------------------------------------
+// CONTEXT MENU
+//-----------------------------------------------------------------
+
+.lv-context-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: $app-menu-width-small;
+	height: 100%;
+	background: $dark-bg-color;
+	// box-shadow: inset -4px 0px 7px 0px rgba(0,0,0,0.20); // inset needs visibility
+
+	@include media-breakpoint-up(md) {
+	    width: $app-menu-width-medium;
+	}
+}
+
+//-----------------------------------------------------------------
+// PAGE STRIP - For INIT animation only
+//-----------------------------------------------------------------
+
+.lv-context-menu-top-strip {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: $lv-topbar-height-medium + $lv-stage-top-offset;
+	background: darken($dark-bg-color, 4%);
+	z-index: -1;
+
+	// Repeated below
+	@include media-breakpoint-up(md) {
+	    padding-left: $app-menu-toolbar-width;
+	}
+}
+
+//-----------------------------------------------------------------
+// SCROLLER
+//-----------------------------------------------------------------
+
+.lv-context-menu-scroller {
+	position: absolute;
+	top: $lv-topbar-height-medium + $lv-stage-top-offset;
+	left: 0;
+	bottom: $app-menu-toolbar-width;
+	width: 100%;
+	overflow: auto; // iOS needs reliable scroll focus
+	-webkit-overflow-scrolling: touch;
+
+	@include media-breakpoint-up(md) {
+		bottom: 0; // failsafe
+	    height: calc(100% - #{$lv-footer-height}); // failsafe
+	}
+
+	@include media-breakpoint-up(xl) {
+		// overflow: hidden; // make scrollbars prettier on desktop only
+	}
+
+	&:hover {
+		overflow: auto;
+	}
+}
+
+//-----------------------------------------------------------------
+// SCROLL BAR (WEBKIT)
+//-----------------------------------------------------------------
+
+.lv-context-menu ::-webkit-scrollbar {
+    width: 5px;
+    // background: darken($gray-dark, 5%);
+}
+
+.lv-context-menu ::-webkit-scrollbar-thumb {
+    border: 0;
+    background: darken($gray-light, 20%); //lighten($gray-dark, 15%);
+}
+
+.lv-context-menu ::-webkit-scrollbar-thumb:window-inactive {
+	// background: $brand-primary;
+	// background: lighten($gray-dark, 20%);
+}
+
+//-----------------------------------------------------------------
+// HEADER
+//-----------------------------------------------------------------
+
+.lv-context-menu-header {
+	display: table;
+	width: 100%;
+	background: darken($dark-bg-color, 4%);
+	text-align: center;
+
+	@include media-breakpoint-up(md) {
+	    padding-left: $app-menu-toolbar-width;
+	}
+
+	h3 {
+		position: relative;
+		top: 3px;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0; // failsafe
+		margin: 0; // failsafe
+		font-family: $font-family-serif;
+		font-size: rem-calc(20); //22
+		font-weight: normal;
+		height: $lv-topbar-height-medium + $lv-stage-top-offset;
+		color: $brand-primary;
+	}
+}
+
+//-----------------------------------------------------------------
+// TOOLBAR
+//-----------------------------------------------------------------
+
+.lv-context-menu-toolbar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: $app-menu-width-small;
+	height: $app-menu-toolbar-width;
+	background: #151519; // locked
+	z-index: 100;
+
+	@include media-breakpoint-up(md) {
+		top: 0;
+    	width: $app-menu-toolbar-width;
+        height: 100%;
+	}
+
+	a {
+		display: block;
+		padding: rem-calc(5 0);
+		font-size: rem-calc(22);
+		text-align: center;
+		color: lighten($dark-bg-color, 15%);
+
+		@include media-breakpoint-down(sm) {
+		    line-height: $app-menu-toolbar-width;
+		    padding: 0;
+		}
+
+		&:hover {
+			color: lighten($dark-bg-color, 30%);
+		}
+	}
+
+	.active a {
+		color: white;
+	}
+}
+
+//-----------------------------------------------------------------
+// TOOLS
+//-----------------------------------------------------------------
+
+.lv-context-menu .lv-context-menu-user-logo {
+    padding: rem-calc(14 0);
+
+     .gravitar {
+     	border-radius: 100%;
+     }
+}
+
+//=========================================
+// Site Tools
+//=========================================
+
+ul.lv-context-menu-site-tools {
+	@include media-breakpoint-down(sm) {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		float: left;
+
+		li {
+			display: table-cell;
+		}
+
+		li:first-child {
+			display: none;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// Body
+//-----------------------------------------------------------------
+
+.lv-context-menu-body {
+	padding: 20px 0; // used to hoist up in dev tablist
+	font-size: rem-calc(14);
+	// font-family: "Gotham";
+
+	@include media-breakpoint-up(md) {
+	    margin-left: $app-menu-toolbar-width; // locked
+	}
+
+	//=========================================
+	// Anchors
+	//=========================================
+
+	a,
+	h3 {
+		display: block;
+		padding: rem-calc(15 20);
+		border-bottom: 1px solid lighten($dark-bg-color, 5%);
+		margin: rem-calc(0 15);
+		line-height: 1.4;
+		color: white;
+
+		.lv-context-menu-digit {
+			font-family: 'Oswald', sans-serif;
+			color: lighten($dark-bg-color, 15%);
+			font-size: rem-calc(12);
+			// padding-right: 20px;
+			width: 25px; // lock
+			display: inline-block;
+		}
+
+		@include media-breakpoint-up(md) {
+	    	padding: rem-calc(10 15);
+	        border: 0;
+		}
+	}
+
+	//=========================================
+	// Headers (Eg. Docs)
+	//=========================================
+
+	h1, h2, h3, h4, h5, h6 {
+		color: lighten($gray-dark, 20%);
+		font-size: rem-calc(12);
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	// --- ACTIVE ---
+
+	.active a {
+		background: lighten($dark-bg-color, 8%);
+		border-radius: $border-radius-sm;
+
+		// @keyframes bounceIn { from { transform: scale(0.0); } to { transform: scale(1.0); } }
+
+		// transform: scale(0.0);  /* make things invisible upon start */
+		// animation: bounceIn ease-out 1;
+		// animation-fill-mode: forwards;
+		// animation-duration: 0.2s;
+		// animation-delay: 0.05s;
+
+		.lv-context-menu-digit {
+			color: lighten($dark-bg-color, 35%);
+		}
+	}
+}
+
+.lv-context-menu .btn {
+	margin: $spacer 30px 30px 30px;
+
+	.fa {
+		position: relative;
+		top: 2px;
+		font-size: rem-calc(20);
+		color: white;
+		margin-right: 13px;
+	}
+}
+
+//-----------------------------------------------------------------
+// Tablist (Dev menu only)  [SITE | DOCS]
+//-----------------------------------------------------------------
+
+.lv-context-menu-panel-tabs-header {
+	position: relative;
+	top: -20px;
+	display: table;
+	width: 100%;
+
+	li {
+		display: table-cell;
+		text-align: center;
+		width: 50%;
+
+		a {
+			margin: 0;
+			padding: 15px 0;
+			text-transform: uppercase;
+			font-size: rem-calc(13);
+			background: lighten($dark-bg-color, 5%);
+
+			@include media-breakpoint-down(sm) {
+			    border-bottom: 0;
+			}
+		}
+	}
+
+	.active a {
+		background: $dark-bg-color;
+	}
+}
+
+//-----------------------------------------------------------------
+// App Menu Lists
+//-----------------------------------------------------------------
+
+.lv-context-menu ul {
+	list-style: none;
+	margin: 0; // failsafe
+	padding: 0; // failsafe
+}
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------
+// temporary fix for preview pane
+//-----------------------------------------------------------------
+
+.listo {
+	> ul > li:nth-child(odd) > a {
+		// border-bottom: 1px solid #1E1E24;
+		// background: #2F2F37;
+		border-radius: 4px;
+	}
+
+	> ul > li > a {
+		padding-left: 40px;
+		position: relative;
+
+		&:before {
+			font-family: "FontAwesome";
+			content: "\f110";
+			// content: "\f096";
+			position: absolute;
+			left: 10px;
+			top: 20px;
+			color: $brand-secondary;
+			color: #444950;
+			font-weight: bold;
+		}
+	}
+
+	> ul > li:nth-child(3n+1) > a {
+		&:before {
+			content: "\f046";
+			// content: "\f14a";
+			content: "\f00c";
+			// color: #444950;
+			color: $brand-secondary;
+
+		}
+	}
+
+	> ul > li:nth-child(1) > a {
+		// background: $brand-secondary;
+		background: #2F2F37;
+	}
+
+	.listo-light {
+		color: #535D63 !important;
+	}
+
+	ul > li > ul {
+		display: none;
+	}
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================

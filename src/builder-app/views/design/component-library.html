@@ -1,0 +1,85 @@
+---
+---
+
+{% assign settings = site.data.settings %}
+{% assign components = site.docs | where: "type", "component" %}
+
+<style>
+	.section-component {
+		background: white;
+		padding: 15px;
+		margin-bottom: 4rem;
+		box-shadow: 0px 6px 14px 2px rgba(0,0,0,0.1);
+		border-radius: 8px;
+	}
+
+	@media (min-width: 768px) {
+		.section-component {
+			background: white;
+			padding: 30px;
+			margin-bottom: 4rem;
+			box-shadow: 0px 6px 14px 2px rgba(0,0,0,0.1);
+		}
+	}
+
+	.component-desc {
+		background: #FAF7F2;
+		padding: 15px;
+		border-radius: 5px;
+	}
+</style>
+
+<p class="lead">A handy reusable collection of UI patterns, modules and components used across {{ settings.title }}.</p>
+
+<!-- COMPONENT SELECTOR -->
+<nav class="m-t-2 m-b-3">
+	<select class="c-select" name="Select Components" id="component-select">
+		<option value>Jump to component...</option>
+			{% for item in components %}
+				<option value="#guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</option>
+				{% for entry in item.items %}
+				<option value="#guide-{{ entry.title | slugify | downcase }}">&nbsp;&nbsp;&nbsp;{{ entry.title }}</option>
+			{% endfor %}
+		{% endfor %}
+	</select>
+</nav>
+
+<!-- COMPONENT SELECTOR: JAVASCRIPT -->
+<script>
+  (function (document, undefined) {
+  	document.getElementById('component-select').onchange = function() {
+    	var val = this.value;
+      	if (val !== "") window.location = val;
+    }
+  })(document);
+</script>
+
+<!-- COMPONENTS -->
+{% for item in components %}
+	<section class="section-component">
+		<header>
+			<h2 id="guide-{{ item.title | slugify | downcase }}">{{ item.title | capitalize }}</h2>
+
+			<!-- DESC -->
+			<div class="component-desc m-y-2">
+				{% if item.usage %}
+					<p><strong>Usage:</strong> {{ item.usage }}</p>
+				{% endif %}
+				{% if item.scss %}
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="{{ settings.github_repo }}{{ item.scss }}">{{ item.scss }}</a></p>
+				{% endif %}
+			</div>
+		</header>
+
+		<!-- RENDERED COMPONENT -->
+		<div class="component-rendered m-y-2">
+			{{ item.content }}
+		</div>
+
+		<!-- HTML -->
+		<strong>The HTML:</strong>
+		<div class="component-code">
+			{% highlight html %}{{ item.content }}{% endhighlight %}
+		</div>
+	</section>
+{% endfor %}

@@ -1,0 +1,68 @@
+---
+---
+
+{% assign settings = site.data.settings %}
+
+<div class="lv-login-overlay">
+	<div class="display-table">
+		<div class="display-table-cell">
+			<div class="lv-login text-xs-center animated fadeInDown">
+
+				<!-- HEADER -->
+				<header class="lv-login-header">
+					<img width="75" class="m-b-1" src="http://en.gravatar.com/userimage/22499729/5790ab257688413ef327dc61fad2e066.png?size=200">
+					<h1 class="h4 m-b-2">CLIENT LOGIN</h1>
+				</header>
+
+				<!-- IF SUCCESS -->
+				<div class="alert alert-success" hidden>
+					<h4>Success!</h4>
+					<p>Your form has been submitted.</p>
+				</div>
+
+				<!-- IF FAILURE -->
+				<div class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+				    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				        <span aria-hidden="true">&times;</span>
+				    </button>
+				    <h4>Oops!</h4>
+				    <p>Something went wrong. Please check your details.</p>
+				</div>
+
+				<form data-toggle="validator" class="lv-login-panel">
+
+			    	<!-- USERNAME -->
+			    	<div class="form-group">
+			    		<!-- <label for="username"><i class="fa fa-user"></i> Username*</label> -->
+			    		<input class="form-control" id="username" type="text" placeholder="" maxlength="255" autocapitalize="off" value="admin" required>
+			    		<small class="error" hidden>Your name is required.</small>
+			    	</div>
+
+			    	<!-- PASSWORD -->
+			    	<div class="form-group m-b-1">
+			    		<!-- <label for="password"><i class="fa fa-key"></i> Password*</label> -->
+			    		<input class="form-control" id="password" type="password" placeholder="" value="admin" required>
+			    		<small class="error" hidden>A valid password is required.</small>
+			    	</div>
+
+					<!-- FORGOT? -->
+					<!-- <div class="text-xs-right">
+						<a class="forgot-password" href="#password-reset">Forgot?</a>
+					</div> -->
+
+					<!-- REMEMBER ME -->
+					<div class="remember-me text-xs-left m-b-1">
+						<input id="remember-me" name="remember-me" type="checkbox" checked>&nbsp; <label for="remember-me">Remember me</label>
+					</div>
+
+					<!-- SUBMIT -->
+					<div>
+					    <!-- <button id="login-btn" data-login type="submit" class="btn btn-primary btn-block btn-lg">Enter</button>  -->
+					    <a data-login class="btn btn-primary btn-block btn-lg">Enter</a>
+
+					</div>
+				</form>
+			</div> <!-- /.lv-login -->
+		</div>
+	</div>
+</div>

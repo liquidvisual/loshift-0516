@@ -1,0 +1,66 @@
+/*
+    IE9.CSS
+
+    - Last updated: 22.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 01. ANIMATE OVERLAY
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.no-cssanimations .has-authenticated .lv-login-overlay {
+    transform: translate($app-menu-toolbar-width, 90%);
+    opacity: 0;
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 02. ANIMATE TOOLBAR
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.no-cssanimations .has-authenticated .lv-context-menu-toolbar {
+    transform: translate(0, 0);
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 03. PAGE STRIP (SUBTLE EFFECT)
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.no-cssanimations .has-authenticated .lv-context-menu-top-strip {
+    visibility: visible;
+    transform: translate(0, 0);
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 04. CONTEXT MENU
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.no-cssanimations .has-authenticated .lv-context-menu-header,
+.no-cssanimations .has-authenticated .lv-context-menu-body {
+    visibility: visible;
+    opacity: 1;
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 05. STAGE ANIMATION *********************
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.no-cssanimations .has-authenticated .lv-stage {
+    visibility: visible;
+    transform: translate($app-menu-width-medium, $lv-stage-top-offset);
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 06. TOPBAR ANIMATION
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+.no-cssanimations .has-authenticated .lv-topbar {
+    visibility: visible;
+    transform: translate($app-menu-width-medium, $lv-stage-top-offset);
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------

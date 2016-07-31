@@ -1,0 +1,175 @@
+/*
+    TOPBAR.CSS
+
+    - Last updated: 03.08.15
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+$lv-topbar-height-small: 100px !default;
+$lv-topbar-height-medium: 75px !default;
+
+//-----------------------------------------------------------------
+// TOPBAR
+//-----------------------------------------------------------------
+
+.lv-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $lv-topbar-height-small;
+    font-family: "Montserrat"; // fix this in bootstrap
+    background: white;
+    box-shadow: 0px -26px 0px 0px darken($dark-bg-color, 4%); // top trick shadow for curve
+    z-index: 100;
+
+    @include media-breakpoint-up(md) {
+        height: $lv-topbar-height-medium;
+    }
+}
+
+//-----------------------------------------------------------------
+// TOPBAR SHADOW
+// Create bottom shadow. B/c can't have two shadows.
+//-----------------------------------------------------------------
+
+.lv-topbar:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    z-index: -1;
+}
+
+//-----------------------------------------------------------------
+// TOPBAR LOGO
+//-----------------------------------------------------------------
+
+.lv-topbar-logo {
+    display: table;
+    height: 100%;
+    padding: rem-calc(0 15);
+    float: left;
+    font-size: rem-calc(22);
+    color: #444;
+
+    img { // May or may not appear
+        display: none;
+        width: auto;
+        height: $lv-topbar-height-medium;
+        padding: 15px 0;
+        margin-right: rem-calc(10);
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        // Unecessary on mobile
+        @include media-breakpoint-up(md) {
+            display: inline-block;
+        }
+    }
+
+    &:hover {
+        color: #444;
+    }
+}
+
+//=========================================
+// TOPBAR LOGO TEXT
+//=========================================
+
+.lv-topbar-logo-text {
+    display: table-cell;
+    line-height: 20px; // or 1 (?)
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.lv-topbar-logo-text-truncate {
+    display: inline-block;
+    margin-bottom: -3px;
+    max-width: 150px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        max-width: 320px;
+    }
+}
+
+.lv-topbar-logo-timestamp {
+    font-size: rem-calc(12);
+    font-weight: normal;
+    padding-top: 10px;
+    color: #9A9A9A;
+}
+
+//-----------------------------------------------------------------
+// TOOLS (STRUCTURE)
+//-----------------------------------------------------------------
+
+.lv-topbar-tools {
+    float: right;
+    height: 100%;
+
+    @include media-breakpoint-up(md) {
+        float: left; // for alert
+    }
+
+    > ul {
+        display: table;
+        margin: 0; // failsafe
+        height: 100%;
+        padding: 0 50px 0 0;
+        list-style: none;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 40px; // locked
+            margin-right: 35px;
+        }
+
+        > li {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+// CLOSE BUTTON
+//-----------------------------------------------------------------
+
+.lv-topbar-close-btn {
+    @include transition();
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 100%;
+    // line-height: $lv-topbar-height-medium;
+    text-align: center;
+    font-size: 20px;
+    color: desaturate(darken($lvb-button-color, 35%), 20%);
+    border: 0;
+    background: none;
+
+    @include media-breakpoint-up(md) {
+        width: 60px;
+        height: 100%; // need to avoid bleed
+
+        &:hover {
+            background: lighten(rgba(229, 231, 233, 1), 5%);
+        }
+    }
+}
+
+//=========================================
+//
+//=========================================

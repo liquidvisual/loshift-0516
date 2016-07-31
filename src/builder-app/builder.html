@@ -1,0 +1,106 @@
+---
+title: Builder
+permalink: /manage/
+---
+
+<!DOCTYPE html>
+<!--[if lt IE 9]>       <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>          <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Builder: A visualiser for Jekyll">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="{{ site.data.settings.title }}">
+    <title>{{ page.title }}</title>
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Permanent+Marker|Montserrat:400,700|Oswald|Open+Sans:300italic,400italic,700italic,400,300,700|Source+Sans+Pro:400,600">
+
+    <!-- Fav Icons -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <!-- build:css({src,.tmp}) /assets/css/minified.css -->
+    <link rel="stylesheet" href="/css/builder.css">
+    <!-- endbuild -->
+
+    <!-- Priority Scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+</head>
+<body class="is-loading">
+    <div class="lv-super">
+        <div class="lv-page">
+
+            <div id="lv-context-menu" data-include="/builder-app/includes/context_menu.html"></div>
+            <div id="lv-topbar" data-include="/builder-app/includes/topbar.html"></div>
+            <div id="lv-login" data-include="/builder-app/includes/login.html"></div>
+
+            <div class="lv-stage">
+                <main class="lv-main" data-view></main>
+                <!-- <iframe class="lv-iframe-loader"  src="/"></iframe> -->
+            </div>
+
+        </div> <!-- /.lv-page -->
+    </div> <!-- /.lv-super -->
+
+    <!--[if lt IE 9]>
+        <div class="lv-alert-bar">
+            <p>You're using an outdated browser. Please <a title="Click me, you know you want to." href="http://outdatedbrowser.com">upgrade</a> to improve your experience.</p>
+            <span class="lv-alert-bar-close-btn">&times;</span>
+        </div>
+    <![endif]-->
+
+    <!-- **** JAVASCRIPT **** -->
+
+    <!-- build:js(src) /builder-app/assets/scripts/minified.js -->
+    <script src="/_bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="/_bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/_bower_components/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="/_bower_components/nprogress/nprogress.js"></script>
+
+    <script src="/scripts/vendor/headroom.js"></script>
+    <script src="/scripts/liquidvisual/alert-bar.js"></script>
+    <script src="/scripts/liquidvisual/equal-height.js"></script>
+    <script src="/scripts/liquidvisual/utilities.js"></script>
+
+    <script src="/builder-app/scripts/vendor/pxgradient-1.0.3.js"></script>
+    <script src="/builder-app/scripts/vendor/md5.js"></script>
+
+    <script src="/builder-app/scripts/login.js"></script>
+    <script src="/builder-app/scripts/routes.js"></script>
+    <script src="/builder-app/scripts/app.js"></script>
+    <!-- endbuild -->
+
+    {% comment %}
+    <script src="/scripts/main.js"></script>
+        <script src="/_bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+        <script src="/_bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+        <script src="/_bower_components/slick.js/slick/slick.js"></script>
+        <script src="/_bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="/_bower_components/bxSlider/jquery.bxslider.min.js"></script>
+        <script src="/_bower_components/isotope/dist/isotope.pkgd.min.js"></script>
+        <script src="/_bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+        <script src="/_bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+        <script src="/_bower_components/slick.js/slick/slick.js"></script>
+        <script src="/_bower_components/WOW/dist/wow.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    {% endcomment %}
+
+    <!-- No Javascript Warning -->
+    <noscript>
+        <div class="lv-noscript">
+            <div class="lv-noscript-panel animated tada">
+                <i class="fa fa-exclamation-triangle"></i>
+                <h4>NO JAVASCRIPT</h4>
+                <p>How would you feel if JavaScript walked in and turned you off?</p>
+            </div>
+        </div>
+    </noscript>
+
+</body>
+</html>

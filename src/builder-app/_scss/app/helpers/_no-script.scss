@@ -1,0 +1,52 @@
+/*
+    NO-SCRIPT.CSS
+
+    - Last updated: 23.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// NO SCRIPT
+//-----------------------------------------------------------------
+
+noscript {
+	display: table;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $brand-danger; //$gray-dark;
+    visibility: visible;
+	z-index: 999999;
+}
+
+.lv-noscript {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.lv-noscript-panel {
+    position: relative;
+    padding: 40px;
+    margin: 0 10px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.1);
+    background: white;
+    text-align: center;
+    z-index: 999999999999;
+
+    @include media-breakpoint-up(sm) {
+    	width: 370px;
+    	margin: 0 auto 150px auto;
+    }
+
+    i {
+    	font-size: rem-calc(50);
+    	color: $brand-danger;
+    	margin-bottom: $spacer-y;
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------

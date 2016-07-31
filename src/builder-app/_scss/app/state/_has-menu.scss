@@ -1,0 +1,202 @@
+/*
+    HAS-MENU.CSS
+
+    - Last updated: 29.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+$subtle-toggle-animation: true !default;
+
+//-----------------------------------------------------------------
+// MENU TOGGLE
+//-----------------------------------------------------------------
+
+@if $subtle-toggle-animation {
+    .has-open-menu .lv-topbar,
+    .has-open-menu .lv-stage {
+        transition: transform 280ms ease;
+    }
+
+    // CLOSE animation for mobile - larger looks bad
+    .has-closed-menu .lv-topbar,
+    .has-closed-menu .lv-stage {
+        @include media-breakpoint-down(sm) {
+            transition: transform 200ms ease;
+        }
+    }
+
+    // Visibility Cooldown
+    .has-closed-menu .lv-context-menu {
+        @include media-breakpoint-down(sm) {
+            transition: visibility 300ms ease;
+        }
+    }
+}
+
+.has-open-menu .lv-context-menu-header,
+.has-open-menu .lv-context-menu-scroller {
+    transition: transform 350ms ease;
+}
+
+
+// Applies to closed menu on iPad - no black BG when "flicking"
+.has-authenticated.has-closed-menu { // toggle
+    @include media-breakpoint-down(lg) {
+        background: $gray-light;
+    }
+}
+
+// Applies portrait iPad - no black BG when "flicking"
+.has-authenticated {
+    @include media-breakpoint-down(md) {
+        background: $gray-light;
+    }
+}
+
+//-----------------------------------------------------------------
+// MENU IS OPEN (FYI: STARTING DESKTOP DEFAULT)
+//-----------------------------------------------------------------
+
+.has-open-menu .lv-topbar,
+.has-open-menu .lv-stage {
+    animation: none;
+    transform: translate($app-menu-width-small, $lv-stage-top-offset);
+
+    @include media-breakpoint-up(md) {
+        transform: translate($app-menu-width-medium, $lv-stage-top-offset);
+    }
+}
+
+//=========================================
+// A: Context Menu subtle animation
+//=========================================
+
+.has-open-menu .lv-context-menu-header,
+.has-open-menu .lv-context-menu-scroller {
+    @include media-breakpoint-up(md) {
+        transform: translateX(0);
+    }
+}
+
+//-----------------------------------------------------------------
+// MENU IS CLOSED
+//-----------------------------------------------------------------
+
+.has-closed-menu .lv-topbar,
+.has-closed-menu .lv-stage {
+    animation: none;
+    transform: translate(0, 0);
+    width: 100%; // override
+    border-radius: 0; // add delay
+}
+
+//=========================================
+// B: Reset context menu - give slight animation
+//=========================================
+
+@if $subtle-toggle-animation == false {
+    .has-closed-menu .lv-context-menu-header,
+    .has-closed-menu .lv-context-menu-scroller {
+        @include media-breakpoint-up(md) {
+            transform: translateX(-30px);
+        }
+    }
+}
+
+// Small gutters on mobile only
+.has-closed-menu .lv-main {
+    @include media-breakpoint-down(sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.has-closed-menu .lv-context-menu {
+    visibility: hidden; // prevent scroll mess up
+}
+
+.has-closed-menu .lv-menu-btn .text:after {
+    content: "See more";
+}
+
+//=========================================
+// MENU IS CLOSED BY DEFAULT ON MOBILE
+//=========================================
+
+body:not(.has-open-menu) {
+    .lv-topbar,
+    .lv-stage {
+        @include media-breakpoint-down(md) {
+            animation: none;
+            transform: translate(0, 0);
+            width: 100%; // override
+            border-radius: 0; // add delay
+        }
+    }
+
+    .lv-context-menu {
+        @include media-breakpoint-down(md) {
+            visibility: hidden;
+        }
+    }
+
+    .lv-menu-btn .text:after {
+        @include media-breakpoint-down(md) {
+            content: "See more";
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+// CREATE EXIT OVERLAY - ON OPEN MENU
+//-----------------------------------------------------------------
+
+.has-open-menu .lv-menu-btn {
+    @include media-breakpoint-down(md) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%; // safe guard
+        height: 100vh;
+        background: rgba(black, 0.4);
+        border: 0;
+        margin: 3px;
+        z-index: 1;
+
+        opacity: 0; // fixed glitch
+
+        .text:after {
+            content: ""; // no text required
+        }
+
+        @keyframes menu-btn-fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        animation: menu-btn-fade-in 1s ease 0.05s alternate 1 forwards;
+
+        // Override existing behavior
+        &:active {
+            position: fixed;
+            top: 0;
+            transform: scale(1.0);
+        }
+
+        &:hover {
+            background: rgba(black, 0.4);
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================

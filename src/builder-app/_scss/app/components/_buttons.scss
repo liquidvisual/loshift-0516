@@ -1,0 +1,110 @@
+/*
+    BUTTONS.CSS
+
+    - Last updated: 23.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+$lvb-button-color: saturate(darken(#EFF1F4, 5%), 10%) !default; //#D5DAE6;
+
+//-----------------------------------------------------------------
+// BUTTONS
+//-----------------------------------------------------------------
+
+button,
+.btn {
+    @extend .lv-unselectable;
+}
+
+//-----------------------------------------------------------------
+// TOOL BUTTON
+//-----------------------------------------------------------------
+
+.lv-tool-button {
+    position: relative;
+    display: inline-block;
+    min-width: 44px;
+    line-height: 30px;
+    padding: rem-calc(0 12);
+    border: 1px solid darken($lvb-button-color, 2%);
+    border-bottom: 2px solid darken($lvb-button-color, 5%);
+    margin: rem-calc(5);
+    border-radius: 3px; //$global-radius;
+    box-shadow: 0 1px 0px rgba(0,0,0,0.04);
+    background: $lvb-button-color;
+    font-size: rem-calc(14);
+    color: desaturate(darken($lvb-button-color, 35%), 20%);
+    outline: none;
+    transition: background-color .10s linear;
+
+    i {
+        position: relative;
+        top: 2px;
+        height: 100%;
+        font-size: rem-calc(20);
+        line-height: 0;
+    }
+
+    //=========================================
+    // increase hit area - magic nums
+    //=========================================
+
+    &:after {
+        content: "";
+        position: absolute;
+        // background: rgba(red, 0.2); // keep
+        top: -4px;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+    }
+
+    //=========================================
+    // Hover
+    //=========================================
+
+    &:hover {
+        background: lighten($lvb-button-color, 2%);
+        border-color: darken($lvb-button-color, 1%);
+        border-bottom: 2px solid darken($lvb-button-color, 5%);
+        color: desaturate(darken($lvb-button-color, 35%), 20%);
+    }
+
+    //=========================================
+    // Focus
+    //=========================================
+
+    &:focus {
+        background: lighten($lvb-button-color, 2%);
+        color: desaturate(darken($lvb-button-color, 35%), 20%);
+    }
+
+    //=========================================
+    // Active
+    //=========================================
+
+    &:active {
+        position: relative;
+        top: 1px;
+        box-shadow: none; //0 1px 0px rgba(0,0,0,0.04);
+        border-bottom-width: 1px;
+        transform: scale(0.99);
+    }
+}
+
+//-----------------------------------------------------------------
+// NOTIFICATIONS BUTTON (BELL)
+//-----------------------------------------------------------------
+
+// .lv-notifications-btn {
+//     background: none;
+//     border: transparent;
+//     border-color: lighten(rgba(130, 138, 150, 1), 30%);
+// }
+
+//=========================================
+//
+//=========================================

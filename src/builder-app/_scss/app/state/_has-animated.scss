@@ -1,0 +1,26 @@
+/*
+    HAS-ANIMATED.CSS
+
+    - Last updated: 29.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// PREVENT ANIMATION ON RESIZE
+//-----------------------------------------------------------------
+
+.has-authenticated.has-animated:not(.has-closed-menu) {
+    .lv-topbar,
+    .lv-stage {
+        @include media-breakpoint-up(lg) {
+            animation: none;
+            transform: translate($app-menu-width-medium, $lv-stage-top-offset);
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================

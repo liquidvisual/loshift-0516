@@ -1,0 +1,100 @@
+/*
+    LOGIN.CSS
+
+    - Last updated: 20.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+$app-menu-toolbar-width: 55px !default;
+
+//-----------------------------------------------------------------
+// LOGIN OVERLAY
+//-----------------------------------------------------------------
+
+.lv-login-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    // background: rgba(30, 181, 195, 0.9);
+    background: white;
+    z-index: 999999;
+
+    @include media-breakpoint-up(md) {
+        background: $gray-dark;
+    }
+
+    .display-table {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+    .display-table-cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+//-----------------------------------------------------------------
+// CACHED - SKIP LOGIN
+//-----------------------------------------------------------------
+
+.has-authenticated-cached .lv-login-overlay {
+    display: none;
+}
+
+//-----------------------------------------------------------------
+// LOGIN
+//-----------------------------------------------------------------
+
+.lv-login {
+    padding: $spacer;
+    border-radius: $border-radius;
+    // box-shadow: 0 5px 30px -10px #656565;
+    // margin: 20px;
+
+    @include media-breakpoint-up(md) {
+        width: 370px;
+        padding: 40px;
+        margin: 0 auto;
+        box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.1);
+        background: white;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    input:not(:checked) {
+        padding: 15px 20px;
+        display: block;
+        border: 0;
+        border-radius: $border-radius-sm;
+        background: #E0E4EA;
+        margin-bottom: 15px;
+    }
+
+    input[type="password"] {
+        margin-bottom: 10px;
+    }
+
+    .forgot-password {
+        font-size: 14px;
+    }
+
+    .label-text {
+        display: block;
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================
